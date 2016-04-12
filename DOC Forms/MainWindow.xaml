@@ -1,0 +1,23 @@
+﻿<Window x:Class="DOC_Forms.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DOC_Forms"
+        mc:Ignorable="d"
+        Title="EPIC Forms Login" Height="180" Width="300" ResizeMode="NoResize">
+    <StackPanel>
+        <StackPanel HorizontalAlignment="Center" Margin="10" Orientation="Horizontal">
+            <!--Username stuff-->
+            <Label x:Name="LblUsername" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Username:" Height="23" VerticalContentAlignment="Top"/>
+            <TextBox x:Name="TbUsername" HorizontalAlignment="Center" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="120" TabIndex="1"/>
+        </StackPanel>
+        <StackPanel Margin="10" HorizontalAlignment="Center" Orientation="Horizontal">
+
+            <!--Password stuff-->
+            <Label x:Name="LblPassword" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Password:" Height="24"/>
+            <PasswordBox x:Name="PwbPassword" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="120" TabIndex="2"/>
+        </StackPanel>
+        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center" Width="75" TabIndex="3" Click="BtnLogin_Click"/>
+    </StackPanel>
+</Window>
