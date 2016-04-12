@@ -21,28 +21,29 @@ namespace DOC_Forms
 
         public bool ExportData(IEpicForm form)
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Title = "Save excel export";
-            saveFileDialog.DefaultExt = ".xls";
-            saveFileDialog.OverwritePrompt = true;
-            saveFileDialog.AddExtension = false;
+            //SaveFileDialog saveFileDialog = new SaveFileDialog();
+            //saveFileDialog.Title = "Save excel export";
+            //saveFileDialog.DefaultExt = ".xls";
+            //saveFileDialog.OverwritePrompt = true;
+            //saveFileDialog.AddExtension = false;
 
 
-            if ((saveFileDialog.ShowDialog() != true)) return false;
+            //if ((saveFileDialog.ShowDialog() != true)) return false;
 
             bool success = true;
 
             _application = new Application();
-            _application.Visible = false;
+            _application.Visible = true;
+            //_application.Visible = false;
 
             _workbook = _application.Workbooks.Add(XlWBATemplate.xlWBATWorksheet);
             _worksheet = (Worksheet)_workbook.Worksheets[1];
 
             form.ExportToExcel(_worksheet, out currentRow);
 
-            _workbook.SaveAs(saveFileDialog.FileName);
-            _workbook.Close();
-            _application.Quit();
+            //_workbook.SaveAs(saveFileDialog.FileName);
+            //_workbook.Close();
+            //_application.Quit();
             return success;
         }
 

@@ -10,7 +10,7 @@
         <Menu Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
             <MenuItem x:Name="SaveMenuItem" Height="20" Width="50" Header="_Save" Click="SaveMenuItem_Click"/>
             <MenuItem x:Name="LoadMenuItem" Width="50" Header="_Load" Click="LoadMenuItem_OnClick"/>
-            <MenuItem x:Name="ExcelMenuItem" Width="50" Header="_Load" Click="ExcelMenuItem_OnClick"/>
+            <MenuItem x:Name="ExcelMenuItem" Width="50" Header="_Export" Click="ExcelMenuItem_OnClick"/>
         </Menu>
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,20,0,30">
             <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden"></Frame>

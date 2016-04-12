@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Office.Interop.Excel;
+using Color = System.Drawing.Color;
 using Page = System.Windows.Controls.Page;
 
 namespace DOC_Forms
@@ -56,6 +58,7 @@ namespace DOC_Forms
             rng.Cells.Font.Size = 18;
             rng.Merge();
 
+            rng.Interior.Color = ColorTranslator.ToOle(Color.CornflowerBlue);
             rng.Value = "Skill Building or Problem Solving";
             curRow++;
 
