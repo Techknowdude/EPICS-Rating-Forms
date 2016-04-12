@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,11 +66,18 @@
     <Compile Include="ExcelDataExporter.cs" />
     <Compile Include="IDataExporter.cs" />
     <Compile Include="IPageInterface.cs" />
+    <Compile Include="LabeledCheckbox.xaml.cs">
+      <DependentUpon>LabeledCheckbox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page6.xaml.cs">
       <DependentUpon>Page6.xaml</DependentUpon>
     </Compile>
     <Compile Include="SharedResources.cs" />
     <Page Include="EpicsRatingFormA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LabeledCheckbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

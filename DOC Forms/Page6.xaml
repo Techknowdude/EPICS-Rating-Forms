@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DOC_Forms"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="800"
+      d:DesignHeight="900" d:DesignWidth="800"
       Title="Page6">
 
     <StackPanel>
@@ -18,45 +18,34 @@
             <Label HorizontalAlignment="Left" VerticalAlignment="Top">List:</Label>
             <ComboBox x:Name="CbbSkillBuilding" SelectionChanged="CbbSkillBuilding_OnSelectionChanged" VerticalAlignment="Top" MinWidth="250" HorizontalAlignment="Stretch" ItemsSource="{Binding Path=FiftySkills}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox x:Name="Cb1IntroTheSkill" Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Introduced the skill</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS1O1" LabelContent="Introduced the skill"></local:LabeledCheckbox>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox x:Name="Cb1DiscussedTheImportance" Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Discussed the importance or usefuleness of the skill</Label>
-        </StackPanel>
+
+
+        <local:LabeledCheckbox x:Name="LcbS1O2" LabelContent="Discussed the importance or usefuleness of the skill"></local:LabeledCheckbox>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox x:Name="Cb1Taught" Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Taught and explained the different steps of the skill</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS1O3" LabelContent="Taught and explained the different steps of the skill"></local:LabeledCheckbox>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox x:Name="Cb1Elicited" Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Elicited client input on the skill steps</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS1O4" LabelContent="Elicited client input on the skill steps"></local:LabeledCheckbox>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox x:Name="Cb1Applied" Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22" Content="Applied the skill to a specific situation of the client"/>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS1O5" LabelContent="Applied the skill to a specific situation of the client"></local:LabeledCheckbox>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox x:Name="Cb1Modeled" Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Modeled the skill</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS1O6" LabelContent="Modeled the skill"></local:LabeledCheckbox>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox x:Name="Cb1Had" Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Had the client role play/practice the skill with the specific situation</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS1O7" LabelContent="Had the client role play/practice the skill with the specific situation"></local:LabeledCheckbox>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox x:Name="Cb1Provided" Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Provided feedback to the client about the role play/skill practice</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS1O8" LabelContent="Provided feedback to the client about the role play/skill practice"></local:LabeledCheckbox>
+        <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
+        
+        
+        <!--Section 2-->
         <Grid>
             <Rectangle Fill="SkyBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
             <Rectangle Fill="Black" Height="10" Stroke="Black" VerticalAlignment="Top"/>
@@ -64,38 +53,28 @@
         </Grid>
         <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
             <Label HorizontalAlignment="Left" VerticalAlignment="Top">List Carey Guide/BIT intervention:</Label>
-            <ComboBox VerticalAlignment="Top" MinWidth="250" HorizontalAlignment="Stretch" ItemsSource="{Binding Path=BlueRedGuides}"/>
+            <ComboBox x:Name="CbbCarey" VerticalAlignment="Top" MinWidth="250" HorizontalAlignment="Stretch" ItemsSource="{Binding Path=BlueRedGuides}"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Introduced the Intervention</Label>
+
+        <local:LabeledCheckbox x:Name="LcbS2O1" LabelContent="Introduced the Intervention"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS2O2" LabelContent="Discussed the importance or usefulness of the intervention"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Discussed the importance or usefulness of the intervention</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS2O3" LabelContent="Walked through the steps/questions of the intervention using an example (Model)"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Walked through the steps/questions of the intervention using an example (Model)</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS2O4" LabelContent="Provided an opportunity for the client to walk through some of the questions before assigning it as homework"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Provided an opportunity for the client to walk through some of the questions before assigning it as homework</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS2O5" LabelContent="Provided feedback to the client about the new skill being used"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Provided feedback to the client about the new skill being used</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS2O6" LabelContent="Provided instructions in a clean manner"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Provided instructions in a clean manner</Label>
-        </StackPanel>
+        
+        <!--Section 3-->
         <Grid>
             <Rectangle Fill="SkyBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
             <Rectangle Fill="Black" Height="10" Stroke="Black" VerticalAlignment="Top"/>
@@ -104,43 +83,31 @@
         </Grid>
         <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
             <Label HorizontalAlignment="Left" VerticalAlignment="Top">List other intervention:</Label>
-            <TextBox VerticalAlignment="Top" MinWidth="250" Margin="0,4,0,0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="TxbOtherTextbox" VerticalAlignment="Top" MinWidth="250" Margin="0,4,0,0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Introduced the Intervention</Label>
-            <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS3O1" LabelContent="Introduced the Intervention"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Discussed the importance of usefulness of the intervention</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS3O2" LabelContent="Discussed the importance of usefulness of the intervention"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Taught and explained the different components/steps</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS3O3" LabelContent="Taught and explained the different components/steps"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Applied the different components/steps to a specific situation</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS3O4" LabelContent="Applied the different components/steps to a specific situation"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Modeled the intervention to the client</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS3O5" LabelContent="Modeled the intervention to the client"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Had the client practice use of the intervention</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS3O6" LabelContent="Had the client practice use of the intervention"/>
         <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Provided feedback to the client on the use of the intervention (reinforced or constructive feedback</Label>
-        </StackPanel>
+
+        <local:LabeledCheckbox x:Name="LcbS3O7" LabelContent="Provided feedback to the client on the use of the intervention (reinforced or constructive feedback"/>
+        <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
+
+        <!--Section 4-->
         <Grid>
             <Rectangle Fill="SkyBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
             <Rectangle Fill="Black" Height="10" Stroke="Black" VerticalAlignment="Top"/>
@@ -150,11 +117,9 @@
             <Label HorizontalAlignment="Left" VerticalAlignment="Top">List intervention:</Label>
             <ComboBox x:Name="CbbGraduated" ItemsSource="{Binding Path=FiftySkills}" VerticalAlignment="Top" MinWidth="250" Margin="0,4,0,0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <CheckBox Margin="5,0" VerticalAlignment="Center" Background="DarkGray"></CheckBox>
-            <Label FontSize="10" VerticalAlignment="Top" Margin="0,-3,0,0" VerticalContentAlignment="Top" Height="22">Introduced the Intervention</Label>
-            <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
-        </StackPanel>
+        
+        <local:LabeledCheckbox x:Name="LcbS4O1" LabelContent="Practiced a previously taught intervention again but in a different situation"/>
+        <Rectangle Height="1" Stroke="Black" StrokeThickness="1"/>
 
     </StackPanel>
 </Page>
