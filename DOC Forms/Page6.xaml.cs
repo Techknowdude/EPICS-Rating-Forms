@@ -27,16 +27,19 @@ namespace DOC_Forms
 
         public bool IsCompleted()
         {
-            throw new NotImplementedException();
+            // TODO: Check all of the fields to see if there is a blank one
+            return true;
         }
 
         public bool Save(BinaryWriter writer)
         {
+            // TODO: Implement save feature by saving the state of the page.
             throw new NotImplementedException();
         }
 
         public bool Load(BinaryReader reader)
         {
+            // TODO: Implement load feature by loading the state of the page.
             throw new NotImplementedException();
         }
 
@@ -44,12 +47,18 @@ namespace DOC_Forms
         {
             bool success = true;
 
+            try
+            {
+                curRow = ExportSection1(worksheet, curRow) + 1;
+                curRow = ExportSection2(worksheet, curRow) + 1;
+                curRow = ExportSection3(worksheet, curRow) + 1;
+                curRow = ExportSection4(worksheet, curRow) + 1;
+            }
+            catch (Exception)
+            {
+                success = false;
+            }
 
-            curRow = ExportSection1(worksheet, curRow);
-            curRow = ExportSection2(worksheet, curRow);
-            curRow = ExportSection3(worksheet, curRow);
-            curRow = ExportSection4(worksheet, curRow);
-        
             outRow = curRow;
             return success;
         }
@@ -174,7 +183,6 @@ namespace DOC_Forms
 
             return curRow;
         }
-        
         int ExportSection3(Worksheet worksheet, int curRow)
         {
             // ## Section 3 ##
@@ -232,7 +240,6 @@ namespace DOC_Forms
 
             return curRow;
         }
-
         int ExportSection4(Worksheet worksheet, int curRow)
         {
             // ## Section 4 ##

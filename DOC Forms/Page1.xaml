@@ -5,16 +5,16 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DOC_Forms"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="800"
+      d:DesignHeight="1000" d:DesignWidth="800"
       Title="Page1">
 
     <Grid>
         <StackPanel>
-            <Label Content="EPICS CODING FORM" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5"/>
+            <Label Content="EPICS CODING FORM" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5"/>
             <Grid Height="50">
-                <Label Content="Instructions:" Margin="5,0"></Label>
-                <Label FontSize="10" Margin="0,3" Content="                          Please complete the coding form below for each recorded EPICS session. Refer to the coding manual as you proceed and note specific strengths and areas for"/>
-                <Label FontSize="10" Margin="5,15,0,0">improvement.</Label>
+                <Label FontSize="16" Content="Instructions:" Margin="5,0"></Label>
+                <Label FontSize="12" Margin="0,4" Content="                            Please complete the coding form below for each recorded EPICS session. Refer to the coding manual as you proceed and note "/>
+                <Label FontSize="12" Margin="5,15,0,0">specific strengths and areas for improvement.</Label>
             </Grid>
             <Grid>
                 <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
@@ -33,28 +33,158 @@
                     <ColumnDefinition Width=".8*"/>
                     <ColumnDefinition Width="1.9*"/>
                 </Grid.ColumnDefinitions>
-                <Label BorderThickness="1" BorderBrush="Black" Grid.Row="0" Grid.Column="0">Session date:</Label>
-                <DatePicker BorderThickness="1" BorderBrush="Black" x:Name="SessionDate" Grid.Row="0" Grid.Column="1" ></DatePicker>
-                <Label BorderThickness="1" BorderBrush="Black" Grid.Row="0" Grid.Column="2">Staff's name:</Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" x:Name="StaffName" Grid.Row="0" Grid.Column="3" ></TextBox>
 
-                <Label BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.Column="0">Review date:</Label>
-                <DatePicker BorderThickness="1" BorderBrush="Black" x:Name="ReviewDate" Grid.Row="1" Grid.Column="1" ></DatePicker>
-                <Label BorderThickness="1" BorderBrush="Black" Grid.Row="1" Grid.Column="2">Reviewer's name:</Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" x:Name="ReviewerName" Grid.Row="1" Grid.Column="3"></TextBox>
+                <Label Grid.Row="0" Grid.Column="0">Session date:</Label>
+                <DatePicker  x:Name="SessionDate" Grid.Row="0" Grid.Column="1" ></DatePicker>
+                <Label Grid.Row="0" Grid.Column="2">Staff's name:</Label>
+                <TextBox x:Name="StaffName" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="3" ></TextBox>
 
-                <Label BorderThickness="1" BorderBrush="Black" Grid.Row="2" Grid.Column="0">Caseload number:</Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" x:Name="CaseloadNumber" Grid.Row="2" Grid.Column="1" ></TextBox>
-                <Label BorderThickness="1" BorderBrush="Black" Grid.Row="2" Grid.Column="2">Client's name:</Label>
-                <TextBox BorderThickness="1" BorderBrush="Black" x:Name="ClientName" Grid.Row="2" Grid.Column="3"></TextBox>
+                <Label Grid.Row="1" Grid.Column="0">Review date:</Label>
+                <DatePicker x:Name="ReviewDate" Grid.Row="1" Grid.Column="1" ></DatePicker>
+                <Label Grid.Row="1" Grid.Column="2">Reviewer's name:</Label>
+                <TextBox x:Name="ReviewerName" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="3"></TextBox>
+
+                <Label Grid.Row="2" Grid.Column="0">Caseload number:</Label>
+                <TextBox x:Name="CaseloadNumber" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" ></TextBox>
+                <Label Grid.Row="2" Grid.Column="2">Client's name:</Label>
+                <TextBox x:Name="ClientName" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="3"></TextBox>
 
                 <Label Grid.Row="3" Grid.Column="0">Session length (mins):</Label>
-                <TextBox x:Name="SessionLength" Grid.Row="3" Grid.Column="1" ></TextBox>
+                <TextBox x:Name="SessionLength" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="1" ></TextBox>
                 <Label Grid.Row="3" Grid.Column="2">Client SID#:</Label>
-                <TextBox x:Name="ClientSID" Grid.Row="3" Grid.Column="3"></TextBox>
+                <TextBox x:Name="ClientSid" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="3"></TextBox>
+
+                <!--Borders-->
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="3"></Border>
+
+
+            </Grid>
+            <Grid Margin="0,10,0,0">
+                <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
+                <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">ADDITIONAL INFORMATION</Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".8*"/>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width=".8*"/>
+                    <ColumnDefinition Width=".3*"/>
+                    <ColumnDefinition Width=".533333*"/>
+                    <ColumnDefinition Width=".533333*"/>
+                    <ColumnDefinition Width=".533333*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0">Client DOB:</Label>
+                <DatePicker x:Name="ClientDob" Grid.Row="0" Grid.Column="1"/>
+                <Label Grid.Row="0" Grid.Column="2">Client gender:</Label>
+                <CheckBox x:Name="ClientMale" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="5,0,0,0" Click="ClientMale_OnClick"/>
+                <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="20,0,0,0">Male</Label>
+                <CheckBox x:Name="ClientFemale" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="65,0,0,0" Click="ClientFemale_OnClick"/>
+                <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="79,0,0,0">Female</Label>
+                <CheckBox x:Name="ClientOther" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="135,0,0,0" Click="ClientOther_OnClick"/>
+                <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="152,0,0,0">Other</Label>
+                <TextBox x:Name="ClientOtherText" Grid.Row="0" VerticalContentAlignment="Center" Grid.Column="3" Grid.ColumnSpan="4" Margin="198,0,0,0"></TextBox>
+
+                <Label Grid.Column="0" Grid.Row="1">Client Race:</Label>
+                <TextBox x:Name="ClientRace" Grid.Row="1" VerticalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="6"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">Was this the client's first meeting with this staff person?</Label>
+                <local:LabeledCheckbox x:Name="MeetingYes" CheckBoxChecked="MeetingYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="2" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox x:Name="MeetingNo" CheckBoxChecked="MeetingNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="2" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox x:Name="MeetingNA" CheckBoxChecked="MeetingNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="2" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+
+
+                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">Was the client homeless at the time of the session?</Label>
+                <local:LabeledCheckbox x:Name="HomelessYes" CheckBoxChecked="HomelessYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="3" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox x:Name="HomelessNo" CheckBoxChecked="HomelessNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="3" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox x:Name="HomelessNA" CheckBoxChecked="HomelessNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="3" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+
+                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">Did the client seem to be in a state of agitation, crisis, or acute need?</Label>
+                <local:LabeledCheckbox x:Name="AgitationYes" CheckBoxChecked="AgitationYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="4" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox x:Name="AgitationNo" CheckBoxChecked="AgitationNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="4" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox x:Name="AgitationNA" CheckBoxChecked="AgitationNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="4" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+
+                <!--Borders-->
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="2"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="4"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="5"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="6"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="4"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="5"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="6"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="4"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="5"/>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="6"/>
+
+            </Grid>
+            <Grid>
+                <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
+                <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">RATING QUICK SUMMARY</Label>
+            </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=".8*"/>
+                    <ColumnDefinition Width=".5*"/>
+                    <ColumnDefinition Width=".8*"/>
+                    <ColumnDefinition Width="1.9*"/>
+                </Grid.ColumnDefinitions>
+
+                
+
+                <!--Borders-->
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="3"></Border>
             </Grid>
         </StackPanel>
-        
-        
     </Grid>
 </Page>

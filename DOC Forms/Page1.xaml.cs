@@ -23,6 +23,77 @@ namespace DOC_Forms
         public Page1()
         {
             InitializeComponent();
+
+            ClientOtherText.IsEnabled = false;
+        }
+
+        private void ClientMale_OnClick(object sender, RoutedEventArgs e)
+        {
+            ClientFemale.IsChecked = false;
+            ClientOther.IsChecked = false;
+            ClientOtherText.IsEnabled = false;
+        }
+        private void ClientFemale_OnClick(object sender, RoutedEventArgs e)
+        {
+            ClientMale.IsChecked = false;
+            ClientOther.IsChecked = false;
+            ClientOtherText.IsEnabled = false;
+        }
+        private void ClientOther_OnClick(object sender, RoutedEventArgs e)
+        {
+            ClientMale.IsChecked = false;
+            ClientFemale.IsChecked = false;
+            ClientOtherText.IsEnabled = true;
+        }
+
+        private void MeetingYes_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            MeetingNo.Checked = false;
+            MeetingNA.Checked = false;
+        }
+        private void MeetingNo_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            MeetingYes.Checked = false;
+            MeetingNA.Checked = false;
+        }
+        private void MeetingNA_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            MeetingNo.Checked = false;
+            MeetingYes.Checked = false;
+        }
+
+        private void HomelessYes_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            HomelessNo.Checked = false;
+            HomelessNA.Checked = false;
+        }
+        private void HomelessNo_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            HomelessYes.Checked = false;
+            HomelessNA.Checked = false;
+        }
+        private void HomelessNA_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            HomelessNo.Checked = false;
+            HomelessYes.Checked = false;
+        }
+
+        private void AgitationYes_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            AgitationNA.Checked = false;
+            AgitationNo.Checked = false;
+        }
+
+        private void AgitationNo_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            AgitationNA.Checked = false;
+            AgitationYes.Checked = false;
+        }
+
+        private void AgitationNA_OnCheckBoxChecked(object sender, RoutedEventArgs e)
+        {
+            AgitationYes.Checked = false;
+            AgitationNo.Checked = false;
         }
     }
 }
