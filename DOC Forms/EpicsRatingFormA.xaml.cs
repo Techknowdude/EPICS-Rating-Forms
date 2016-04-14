@@ -12,13 +12,12 @@ namespace DOC_Forms
     {
         private Page[] Pages = new Page[] { new Page1(), new Page(), new Page(), new Page(), new Page(), new Page6(), };
 
-        private Page CurrentlyDisplayedPage;
-        private int currentPage = -1;
+        private Page _currentlyDisplayedPage;
+        private int _currentPage = -1;
 
 
         public EpicsRatingFormA()
         {
-
             DataContext = this;
 
             InitializeComponent();
@@ -27,14 +26,14 @@ namespace DOC_Forms
 
         public int CurrentPage
         {
-            get { return currentPage; }
+            get { return _currentPage; }
             set
             {
-                if (value != currentPage && value < Pages.Length && value >= 0)
+                if (value != _currentPage && value < Pages.Length && value >= 0)
                 {
                     PageLabel.Content = (value + 1).ToString();
                     PageFrame.Content = Pages[value];
-                    currentPage = value;
+                    _currentPage = value;
 
                     ToggleButtons();
                 }
@@ -43,8 +42,8 @@ namespace DOC_Forms
 
         private void ToggleButtons()
         {
-            PrevPageButton.IsEnabled = currentPage > 0;
-            NextPageButton.IsEnabled = currentPage + 1 < Pages.Length;
+            PrevPageButton.IsEnabled = _currentPage > 0;
+            NextPageButton.IsEnabled = _currentPage + 1 < Pages.Length;
         }
 
         private void NextPageButton_Click(object sender, RoutedEventArgs e)

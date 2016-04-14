@@ -79,7 +79,7 @@
             <Rectangle Fill="CornflowerBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
             <Rectangle Fill="Black" Height="10" Stroke="Black" VerticalAlignment="Top"/>
             <Label FontWeight="Bold" Margin="5,10" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top">Other Intervention</Label>
-            <Label FontSize="10" Margin="120,0,0,0" VerticalAlignment="Center">(Decisional Balance, T4C interventions, MIO/EPICS interventions, etc</Label>
+            <Label FontSize="10" Margin="120,0,0,0" VerticalAlignment="Center">(Decisional Balance, T4C interventions, MIO/EPICS interventions, etc)</Label>
         </Grid>
         <StackPanel Margin="0,0,0,0" Orientation="Horizontal">
             <Label HorizontalAlignment="Left" VerticalAlignment="Top">List other intervention:</Label>

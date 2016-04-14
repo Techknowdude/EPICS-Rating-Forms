@@ -10,7 +10,7 @@
              FontSize="10"
              Margin="5,0">
     <StackPanel Orientation="Horizontal" x:Name="MainPanel">
-        <CheckBox x:Name="CheckBox" VerticalAlignment="Center" IsChecked="{Binding Checked, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" Checked="CheckBox_OnChecked"></CheckBox>
+        <CheckBox x:Name="CheckBox" VerticalAlignment="Center" IsChecked="{Binding Checked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Checked="CheckBox_OnChecked"></CheckBox>
         <Label x:Name="Label" VerticalAlignment="Center" Content="{Binding LabelContent}"></Label>
         
     </StackPanel>

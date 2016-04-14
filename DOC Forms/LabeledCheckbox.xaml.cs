@@ -9,15 +9,15 @@ namespace DOC_Forms
     /// </summary>
     public partial class LabeledCheckbox : UserControl
     {
-        private bool _checked;
+        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register("Checked", typeof (Boolean),
+            typeof(LabeledCheckbox));
 
         public bool Checked
         {
-            get { return _checked; }
+            get { return (bool)GetValue(IsCheckedProperty); }
             set
             {
-                CheckBox.IsChecked = value;
-                _checked = value;
+                SetValue(IsCheckedProperty,value);
             }
         }
 
