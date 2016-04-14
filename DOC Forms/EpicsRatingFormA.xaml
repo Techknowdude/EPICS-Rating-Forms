@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DOC_Forms"
         mc:Ignorable="d"
-        Title="EpicsRatingFormA" Height="650" Width="800">
+        Title="Epics Coding Form" Height="650" Width="800">
     <Grid>
         <Menu Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
             <MenuItem x:Name="SaveMenuItem" Height="20" Width="50" Header="_Save" Click="SaveMenuItem_Click"/>

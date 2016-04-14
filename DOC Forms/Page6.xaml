@@ -10,7 +10,7 @@
 
     <StackPanel>
         <Grid>
-            <Rectangle Fill="SkyBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+            <Rectangle Fill="CornflowerBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
             <Rectangle Fill="Black" Height="10" Stroke="Black" VerticalAlignment="Top"/>
             <Label FontWeight="Bold" Margin="5,10" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top">Skill Building or Problem Solving</Label>
         </Grid>
@@ -47,7 +47,7 @@
         
         <!--Section 2-->
         <Grid>
-            <Rectangle Fill="SkyBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+            <Rectangle Fill="CornflowerBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
             <Rectangle Fill="Black" Height="10" Stroke="Black" VerticalAlignment="Top"/>
             <Label FontWeight="Bold" Margin="5,10" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top">Carey Guide/Carey BIT</Label>
         </Grid>
@@ -76,7 +76,7 @@
         
         <!--Section 3-->
         <Grid>
-            <Rectangle Fill="SkyBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+            <Rectangle Fill="CornflowerBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
             <Rectangle Fill="Black" Height="10" Stroke="Black" VerticalAlignment="Top"/>
             <Label FontWeight="Bold" Margin="5,10" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top">Other Intervention</Label>
             <Label FontSize="10" Margin="120,0,0,0" VerticalAlignment="Center">(Decisional Balance, T4C interventions, MIO/EPICS interventions, etc</Label>
@@ -109,7 +109,7 @@
 
         <!--Section 4-->
         <Grid>
-            <Rectangle Fill="SkyBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
+            <Rectangle Fill="CornflowerBlue" Height="40" Stroke="Black" VerticalAlignment="Top"/>
             <Rectangle Fill="Black" Height="10" Stroke="Black" VerticalAlignment="Top"/>
             <Label FontWeight="Bold" Margin="5,10" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top">Graduated Rehearsal</Label>
         </Grid>
