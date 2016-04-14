@@ -95,5 +95,32 @@ namespace DOC_Forms
             AgitationYes.Checked = false;
             AgitationNo.Checked = false;
         }
+
+        private void CompletedBox_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdatePercentComplete();
+        }
+
+        private void OutOfBox_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdatePercentComplete();
+        }
+
+        private void UpdatePercentComplete()
+        {
+            int completed = 0;
+            int total = 0;
+            double percent = double.NaN;
+
+            Int32.TryParse(CompletedBox.Text, out completed);
+            Int32.TryParse(OutOfBox.Text, out total);
+
+            if (completed != 0 && total != 0)
+            {
+                percent = completed/(double)total;
+                PercentBox.Text = percent.ToString("P0");
+            }
+
+        }
     }
 }

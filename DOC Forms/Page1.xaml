@@ -16,6 +16,8 @@
                 <Label FontSize="12" Margin="0,4" Content="                            Please complete the coding form below for each recorded EPICS session. Refer to the coding manual as you proceed and note "/>
                 <Label FontSize="12" Margin="5,15,0,0">specific strengths and areas for improvement.</Label>
             </Grid>
+
+            <!-- Section 1 -->
             <Grid>
                 <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
                 <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">Session Information</Label>
@@ -74,6 +76,9 @@
 
 
             </Grid>
+
+            <!-- Section 2 -->
+
             <Grid Margin="0,10,0,0">
                 <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
                 <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">ADDITIONAL INFORMATION</Label>
@@ -147,12 +152,27 @@
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="6"/>
 
             </Grid>
+
+            <!-- Section 3 -->
             <Grid>
                 <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
                 <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">RATING QUICK SUMMARY</Label>
             </Grid>
             <Grid>
+                <Border BorderBrush="Black" BorderThickness="1"/>
+                <Label Margin="20,0">Coders, return to this summary table after completing the remainder of the form. Enter section scored into the appropriate boxes below.</Label>
+            </Grid>
+            <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
                     <RowDefinition />
@@ -161,12 +181,60 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width=".8*"/>
                     <ColumnDefinition Width=".5*"/>
-                    <ColumnDefinition Width=".8*"/>
-                    <ColumnDefinition Width="1.9*"/>
+                    <ColumnDefinition Width="2.1*"/>
+                    <ColumnDefinition Width="0.6*"/>
                 </Grid.ColumnDefinitions>
 
-                
+                <Label Grid.Row="0" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center">Section</Label>
+                <Label Grid.Row="0" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center">Score</Label>
+                <Label Grid.Row="0" Grid.Column="2" FontWeight="Bold" HorizontalAlignment="Center">Summaries</Label>
+                <Label Grid.Row="0" Grid.Column="3" FontWeight="Bold" HorizontalAlignment="Center">Score</Label>
 
+                <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">CHECK IN (C)</Label>
+                <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">REVIEW (R)</Label>
+                <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">INTERVENTION (I)</Label>
+                <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">HOMEWORK (H)</Label>
+                <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">BEHAVIORAL PRACTICES</Label>
+                <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center">GLOBAL PRACTICES</Label>
+                <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2">In bullet points list the top staff strengths</Label>
+                <Label Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="0" Margin="0,20,0,0" HorizontalAlignment="Center">based on the session:</Label>
+                <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2">In bullet points list the top staff strengths</Label>
+                <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0,20,0,0">for staff improvement based on the session:</Label>
+
+                <TextBox x:Name="CheckInScore" Grid.Column="1" Grid.Row="1"></TextBox>
+                <TextBox x:Name="ReviewScore" Grid.Column="1" Grid.Row="2"></TextBox>
+                <TextBox x:Name="InterventionScore" Grid.Column="1" Grid.Row="3"></TextBox>
+                <TextBox x:Name="HomeworkScore" Grid.Column="1" Grid.Row="4"></TextBox>
+                <TextBox x:Name="BehavioralScore" Grid.Column="1" Grid.Row="5"></TextBox>
+                <TextBox x:Name="GlobalPracticesScore" Grid.Column="1" Grid.Row="6"></TextBox>
+
+                <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">OVERALL SESSION SCORE = (Sum of all section scored)/6</Label>
+                <Label Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center">*Overall score ranges from 0 to 4*</Label>
+                <Label Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">Number of EPICS components with score >= 2.0 (C, R, I, H only)</Label>
+                <Label Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center">*This is only including Check in, Review, Intervention, and Homework*</Label>
+                <Label Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center">% of EPICS components with score >= 2.0 (C, R, I, H only)</Label>
+                <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center">*This is only including Check in, Review, Intervention, and Homework*</Label>
+                
+                <TextBox x:Name="OverallSessionScore" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2"></TextBox>
+                <TextBox x:Name="NumberofHighScore" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"></TextBox>
+                <TextBox x:Name="PercentageHighScoring" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2"></TextBox>
+
+                <Rectangle Grid.Row="9" Grid.ColumnSpan="4" Grid.Column="0" Fill="CornflowerBlue"></Rectangle>
+                <Rectangle Grid.Row="11" Grid.ColumnSpan="4" Grid.Column="0" Fill="CornflowerBlue"></Rectangle>
+                <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="58,10,0,10" >Completed</Label>
+                <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="180,10,0,10">EPICS sessions out of</Label>
+                <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="378,10,0,10">office visits in the last 6 months =</Label>
+                <TextBox x:Name="CompletedBox" TextChanged="CompletedBox_OnTextChanged" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="40" Margin="139,10,0,10" HorizontalAlignment="Left"/>
+                <TextBox x:Name="OutOfBox" TextChanged="OutOfBox_OnTextChanged" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="40" Margin="332,9.6,0,10.2" HorizontalAlignment="Left"/>
+                <TextBox x:Name="PercentBox" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="60" Margin="610,9.6,0,10.2" HorizontalAlignment="Left" IsEnabled="False"/>
+
+                <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="10" FontSize="14" FontWeight="Bold" Margin="250,5,0,5">Your next tape is due</Label>
+                <DatePicker Grid.ColumnSpan="4" Grid.Row="10" Grid.Column="0" Width="100" HorizontalAlignment="Left" Margin="410,5,0,5"></DatePicker>
+                
+                <Label Grid.ColumnSpan="4" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,5">Please enter additional comments in the space below</Label>
+                
+                <TextBox Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="12" MinLines="4"></TextBox>
+                
                 <!--Borders-->
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1"></Border>
@@ -174,17 +242,34 @@
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="3"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="3"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="0"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.RowSpan="2" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.RowSpan="2" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="5" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="5" Grid.Column="1"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2" Grid.Row="5" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2" Grid.Row="5" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="2"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="4" Grid.Row="9" Grid.Column="0"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="4"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4"></Border>
             </Grid>
+
+
         </StackPanel>
     </Grid>
 </Page>
