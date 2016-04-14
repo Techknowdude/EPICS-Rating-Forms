@@ -20,11 +20,12 @@ namespace DOC_Forms
     /// </summary>
     public partial class Page1 : Page
     {
+        private bool doneLoading = false;
         public Page1()
         {
             InitializeComponent();
-
-            ClientOtherText.IsEnabled = false;
+            doneLoading = true;
+            UpdateScores();
         }
 
         private void ClientMale_OnClick(object sender, RoutedEventArgs e)
@@ -121,6 +122,34 @@ namespace DOC_Forms
                 PercentBox.Text = percent.ToString("P0");
             }
 
+        }
+
+        private void Score_OnTextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (doneLoading) UpdateScores();
+        }
+
+        private void UpdateScores()
+        {
+            double[] scores = new double[4];
+
+            double behavior;
+            double global;
+
+            Double.TryParse(CheckInScore.Text, out scores[0]);
+            Double.TryParse(ReviewScore.Text, out scores[1]);
+            Double.TryParse(InterventionScore.Text, out scores[2]);
+            Double.TryParse(HomeworkScore.Text, out scores[3]);
+            Double.TryParse(BehavioralScore.Text, out behavior);
+            Double.TryParse(GlobalPracticesScore.Text, out global);
+
+            double overallScore = (scores.Sum()+behavior+global)/6;
+            double numHighScore = scores.Count(x => x >= 2.0);
+            double percentageHighScore = numHighScore/4;
+
+            OverallSessionScore.Text = overallScore.ToString("N");
+            NumberofHighScore.Text = numHighScore.ToString("N");
+            PercentageHighScoring.Text = percentageHighScore.ToString("P");
         }
     }
 }
