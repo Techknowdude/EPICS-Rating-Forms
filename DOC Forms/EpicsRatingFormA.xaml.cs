@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using Microsoft.Office.Interop.Excel;
@@ -82,23 +83,47 @@ namespace DOC_Forms
 
             try
             {
-
+                using (BinaryWriter writer = new BinaryWriter(new FileStream(saveDialog.FileName, FileMode.OpenOrCreate)))
+                {
+                    foreach (var pageInterface in PageInterfaces)
+                    {
+                        pageInterface.Logic.Save(writer);
+                    }
+                }
             }
             catch (Exception exception)
             {
-                
+                MessageBox.Show("ERROR", "There was an issue opening or creating the file: " + exception.Message);
             }
         }
 
         private void LoadMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            
+            OpenFileDialog loadDialog = new OpenFileDialog();
+            loadDialog.Title = "Load EPIC form";
+            loadDialog.Filter = "EPIC forms (*.ef)|*.ef|All Files (*.*)|*.*";
+
+            if (loadDialog.ShowDialog() != true) return;
+
+            try
+            {
+                using (BinaryReader reader = new BinaryReader(new FileStream(loadDialog.FileName, FileMode.Open)))
+                {
+                    foreach (var pageInterface in PageInterfaces)
+                    {
+                        pageInterface.Logic.Load(reader);
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("ERROR", "There was an issue opening the file: " + exception.Message);
+            }
         }
 
         private void ExcelMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            IDataExporter de = new ExcelDataExporter();
-            de.ExportData(logic);
+            ExcelDataExporter.ExportData(logic);
         }
     }
 }

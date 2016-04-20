@@ -65,7 +65,6 @@
     <Compile Include="EPICForm.cs" />
     <Compile Include="EpicsRatingFormLogic.cs" />
     <Compile Include="ExcelDataExporter.cs" />
-    <Compile Include="IDataExporter.cs" />
     <Compile Include="IPageInterface.cs" />
     <Compile Include="IPageLogic.cs" />
     <Compile Include="LabeledCheckbox.xaml.cs">

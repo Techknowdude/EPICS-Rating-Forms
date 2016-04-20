@@ -10,40 +10,26 @@ namespace DOC_Forms
 
         public bool Save(BinaryWriter writer)
         {
-            throw new NotImplementedException();
+            //TODO: Fill this in
+            return true;
         }
 
         public bool Load(BinaryReader reader)
         {
-            throw new NotImplementedException();
+            //TODO: Fill this in
+            return true;
         }
 
         public bool ExportToExcel(Worksheet worksheet, int curRow, out int outRow)
         {
-            bool success = true;
-
-            try
-            {
-                curRow = ExportSection1(worksheet, curRow) + 1;
-            }
-            catch (Exception)
-            {
-                success = false;
-            }
-
+            //TODO: Fill this in
             outRow = curRow;
-            return success;
+            return true;
         }
-
         public void Connect(IPageInterface page)
         {
             page.Logic = this;
             PageInterface = page;
-        }
-
-        private int ExportSection1(Worksheet worksheet, int curRow)
-        {
-            throw new NotImplementedException();
         }
     }
 }

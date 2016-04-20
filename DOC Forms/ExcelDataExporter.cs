@@ -3,18 +3,14 @@ using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
-    public class ExcelDataExporter : IDataExporter
+    public class ExcelDataExporter
     {
-        private Application _application;
-        private Workbook _workbook;
-        private Worksheet _worksheet;
-        private int currentRow = 0;
-
-        public ExcelDataExporter()
-        {
-        }
-
-        public bool ExportData(IEpicForm form)
+        private static Application _application;
+        private static Workbook _workbook;
+        private static Worksheet _worksheet;
+        private static int currentRow = 0;
+        
+        public static bool ExportData(IEpicForm form)
         {
             //SaveFileDialog saveFileDialog = new SaveFileDialog();
             //saveFileDialog.Title = "Save excel export";

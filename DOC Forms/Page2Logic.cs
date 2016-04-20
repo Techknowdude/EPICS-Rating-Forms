@@ -7,20 +7,23 @@ namespace DOC_Forms
     class Page2Logic : IPageLogic
     {
         public IPageInterface PageInterface { get; set; }
-
         public bool Save(BinaryWriter writer)
         {
-            throw new NotImplementedException();
+            //TODO: Fill this in
+            return true;
         }
 
         public bool Load(BinaryReader reader)
         {
-            throw new NotImplementedException();
+            //TODO: Fill this in
+            return true;
         }
 
         public bool ExportToExcel(Worksheet worksheet, int curRow, out int outRow)
         {
-            throw new NotImplementedException();
+            //TODO: Fill this in
+            outRow = curRow;
+            return true;
         }
 
         public void Connect(IPageInterface page)
