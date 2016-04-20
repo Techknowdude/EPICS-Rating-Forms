@@ -1,5 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 using Microsoft.Office.Interop.Excel;
+using Microsoft.Win32;
 using Page = System.Windows.Controls.Page;
 using Window = System.Windows.Window;
 
@@ -8,18 +12,30 @@ namespace DOC_Forms
     /// <summary>
     /// Interaction logic for EpicsRatingFormA.xaml
     /// </summary>
-    public partial class EpicsRatingFormA : Window, IEpicForm
+    public partial class EpicsRatingFormA : Window
     {
-        private Page[] Pages = new Page[] { new Page1(), new Page(), new Page(), new Page(), new Page(), new Page6(), };
-
+        private List<Page> Pages { get; set; }
+        private List<IPageInterface> PageInterfaces { get; set; }
         private Page _currentlyDisplayedPage;
         private int _currentPage = -1;
 
+        private EpicsRatingFormLogic logic;
 
         public EpicsRatingFormA()
         {
             DataContext = this;
 
+
+            var p1 = new Page1();
+            var p2 = new Page2();
+            var p3 = new Page3();
+            var p4 = new Page4();
+            var p5 = new Page5();
+
+            Pages = new List<Page>() {p1,p2,p3,p4,p5};
+            PageInterfaces = new List<IPageInterface>() {p1,p2,p3,p4,p5};
+
+            logic = EpicsRatingFormLogic.Create(PageInterfaces, this);
             InitializeComponent();
             CurrentPage = 0;
         }
@@ -29,7 +45,7 @@ namespace DOC_Forms
             get { return _currentPage; }
             set
             {
-                if (value != _currentPage && value < Pages.Length && value >= 0)
+                if (value != _currentPage && value < Pages.Count && value >= 0)
                 {
                     PageLabel.Content = (value + 1).ToString();
                     PageFrame.Content = Pages[value];
@@ -43,7 +59,7 @@ namespace DOC_Forms
         private void ToggleButtons()
         {
             PrevPageButton.IsEnabled = _currentPage > 0;
-            NextPageButton.IsEnabled = _currentPage + 1 < Pages.Length;
+            NextPageButton.IsEnabled = _currentPage + 1 < Pages.Count;
         }
 
         private void NextPageButton_Click(object sender, RoutedEventArgs e)
@@ -58,7 +74,20 @@ namespace DOC_Forms
 
         private void SaveMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Title = "Save EPIC form";
+            saveDialog.Filter = "EPIC forms (*.ef)|*.ef|All Files (*.*)|*.*";
 
+            if (saveDialog.ShowDialog() != true) return;
+
+            try
+            {
+
+            }
+            catch (Exception exception)
+            {
+                
+            }
         }
 
         private void LoadMenuItem_OnClick(object sender, RoutedEventArgs e)
@@ -66,34 +95,10 @@ namespace DOC_Forms
             
         }
 
-
-        public bool ExportData(IDataExporter exporter)
-        {
-            return exporter.ExportData(this);
-        }
-
-        public bool ExportToExcel(Worksheet worksheet, out int currentRow)
-        {
-            bool? success = true;
-            int curRow = 1;
-            int outRow = 1;
-
-            foreach (var page1 in Pages)
-            {
-                var page = page1 as IPageInterface;
-                success = page?.ExportToExcel(worksheet, curRow, out outRow);
-                //if (success != true) break;
-                curRow = outRow;
-            }
-
-            currentRow = curRow;
-            return success == true;
-        }
-
         private void ExcelMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
             IDataExporter de = new ExcelDataExporter();
-            ExportData(de);
+            de.ExportData(logic);
         }
     }
 }

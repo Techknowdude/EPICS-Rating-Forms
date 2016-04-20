@@ -5,11 +5,16 @@ namespace DOC_Forms
 {
     public interface IPageInterface
     {
+        /// <summary>
+        /// Used to verify if the page has been completely filled by the user
+        /// </summary>
+        /// <returns></returns>
         bool IsCompleted();
 
-        bool Save(BinaryWriter writer);
-        bool Load(BinaryReader reader);
 
-        bool ExportToExcel(Worksheet worksheet, int curRow, out int outRow);
+        /// <summary>
+        /// The logic underlying the page. This is the controller and model for this view.
+        /// </summary>
+        IPageLogic Logic { get; set; }
     }
 }

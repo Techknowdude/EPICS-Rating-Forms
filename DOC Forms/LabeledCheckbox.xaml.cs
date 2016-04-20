@@ -9,7 +9,9 @@ namespace DOC_Forms
     /// </summary>
     public partial class LabeledCheckbox : UserControl
     {
-        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register("Checked", typeof (Boolean),
+        public static readonly DependencyProperty IsCheckedProperty = DependencyProperty.Register("Checked", typeof(Boolean),
+            typeof(LabeledCheckbox));
+        public static readonly DependencyProperty LabelTextProperty = DependencyProperty.Register("LabelContent", typeof(String),
             typeof(LabeledCheckbox));
 
         public bool Checked
@@ -21,7 +23,14 @@ namespace DOC_Forms
             }
         }
 
-        public String LabelContent { get; set; }
+        public String LabelContent
+        {
+            get { return (String) GetValue(LabelTextProperty); }
+            set
+            {
+                SetValue(LabelTextProperty,value);
+            }
+        }
         public event RoutedEventHandler CheckBoxChecked;
 
         public LabeledCheckbox()
@@ -32,7 +41,12 @@ namespace DOC_Forms
 
         private void CheckBox_OnChecked(object sender, RoutedEventArgs e)
         {
-            CheckBoxChecked?.Invoke(sender, e);
+            Checked = true;
+        }
+
+        private void CheckBox_OnUnchecked(object sender, RoutedEventArgs e)
+        {
+            Checked = false;
         }
     }
 }

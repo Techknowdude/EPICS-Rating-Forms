@@ -63,17 +63,33 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="EPICForm.cs" />
+    <Compile Include="EpicsRatingFormLogic.cs" />
     <Compile Include="ExcelDataExporter.cs" />
     <Compile Include="IDataExporter.cs" />
     <Compile Include="IPageInterface.cs" />
+    <Compile Include="IPageLogic.cs" />
     <Compile Include="LabeledCheckbox.xaml.cs">
       <DependentUpon>LabeledCheckbox.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page6.xaml.cs">
-      <DependentUpon>Page6.xaml</DependentUpon>
+    <Compile Include="Page1Logic.cs" />
+    <Compile Include="Page2.xaml.cs">
+      <DependentUpon>Page2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page2Logic.cs" />
+    <Compile Include="Page3.xaml.cs">
+      <DependentUpon>Page3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page3Logic.cs" />
+    <Compile Include="Page4.xaml.cs">
+      <DependentUpon>Page4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page4Logic.cs" />
+    <Compile Include="Page5Logic.cs" />
+    <Compile Include="Page5.xaml.cs">
+      <DependentUpon>Page5.xaml</DependentUpon>
     </Compile>
     <Compile Include="SharedResources.cs" />
     <Page Include="EpicsRatingFormA.xaml">
@@ -103,7 +119,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page6.xaml">
+    <Page Include="Page2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page5.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

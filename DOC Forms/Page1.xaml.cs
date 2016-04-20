@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,15 @@ namespace DOC_Forms
     /// <summary>
     /// Interaction logic for Page1.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class Page1 : Page, IPageInterface
     {
         private bool doneLoading = false;
         public Page1()
         {
+            Logic = new Page1Logic();
+            Logic.PageInterface = this;
+            DataContext = Logic;
+
             InitializeComponent();
             doneLoading = true;
             UpdateScores();
@@ -151,5 +156,12 @@ namespace DOC_Forms
             NumberofHighScore.Text = numHighScore.ToString("N");
             PercentageHighScoring.Text = percentageHighScore.ToString("P");
         }
+
+        public bool IsCompleted()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IPageLogic Logic { get; set; }
     }
 }
