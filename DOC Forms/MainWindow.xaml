@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DOC_Forms"
         mc:Ignorable="d"
-        Title="EPIC Forms Login" Height="180" Width="300" ResizeMode="NoResize">
+        Title="EPIC Forms Login" Height="180" Width="300" ResizeMode="NoResize"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+   
+    <Window.InputBindings>
+        <KeyBinding Key="Enter" Command="{Binding SubmitLoginCommand}"/>
+    </Window.InputBindings>
+
     <StackPanel>
         <StackPanel HorizontalAlignment="Center" Margin="10" Orientation="Horizontal">
             <!--Username stuff-->
@@ -18,6 +24,6 @@
             <Label x:Name="LblPassword" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Password:" Height="24"/>
             <PasswordBox x:Name="PwbPassword" HorizontalAlignment="Center" Height="24" VerticalAlignment="Center" Width="120" TabIndex="2"/>
         </StackPanel>
-        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center" Width="75" TabIndex="3" Click="BtnLogin_Click"/>
+        <Button x:Name="BtnLogin" Content="Login" HorizontalAlignment="Center" Margin="10" VerticalAlignment="Center" Width="75" TabIndex="3" Command="{Binding SubmitLoginCommand}"/>
     </StackPanel>
 </Window>

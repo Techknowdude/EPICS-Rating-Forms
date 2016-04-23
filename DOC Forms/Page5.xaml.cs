@@ -19,9 +19,9 @@ namespace DOC_Forms
     {
         private bool saving = false;
         private bool loading = false;
-        private Page5Logic _pageLogic;
+        private Page5ViewModel _pageLogic;
 
-        public Page5Logic PageLogic
+        public Page5ViewModel PageLogic
         {
             get { return _pageLogic; }
             set { _pageLogic = value; }
@@ -29,7 +29,7 @@ namespace DOC_Forms
 
         public Page5()
         {
-            PageLogic = new Page5Logic();
+            PageLogic = new Page5ViewModel();
             Logic = PageLogic;
             DataContext = PageLogic;
             InitializeComponent();

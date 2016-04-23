@@ -7,7 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="800"
       Title="Page1">
-
+<Page.DataContext>
+    <local:Page1ViewModel x:Name="PageViewModel"/>
+</Page.DataContext>
+    
     <Grid>
         <StackPanel>
             <Label Content="EPICS CODING FORM" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5"/>
@@ -37,24 +40,24 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0">Session date:</Label>
-                <DatePicker  x:Name="SessionDate" Grid.Row="0" Grid.Column="1" ></DatePicker>
+                <DatePicker  Grid.Row="0" Grid.Column="1" SelectedDate="{Binding SessionDate}" ></DatePicker>
                 <Label Grid.Row="0" Grid.Column="2">Staff's name:</Label>
-                <TextBox x:Name="StaffName" VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="3" ></TextBox>
+                <TextBox VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="3" ></TextBox>
 
                 <Label Grid.Row="1" Grid.Column="0">Review date:</Label>
-                <DatePicker x:Name="ReviewDate" Grid.Row="1" Grid.Column="1" ></DatePicker>
+                <DatePicker Grid.Row="1" Grid.Column="1" ></DatePicker>
                 <Label Grid.Row="1" Grid.Column="2">Reviewer's name:</Label>
-                <TextBox x:Name="ReviewerName" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="3"></TextBox>
+                <TextBox VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="3"></TextBox>
 
                 <Label Grid.Row="2" Grid.Column="0">Caseload number:</Label>
-                <TextBox x:Name="CaseloadNumber" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" ></TextBox>
+                <TextBox VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" ></TextBox>
                 <Label Grid.Row="2" Grid.Column="2">Client's name:</Label>
-                <TextBox x:Name="ClientName" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="3"></TextBox>
+                <TextBox VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="3"></TextBox>
 
                 <Label Grid.Row="3" Grid.Column="0">Session length (mins):</Label>
-                <TextBox x:Name="SessionLength" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="1" ></TextBox>
+                <TextBox VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="1" ></TextBox>
                 <Label Grid.Row="3" Grid.Column="2">Client SID#:</Label>
-                <TextBox x:Name="ClientSid" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="3"></TextBox>
+                <TextBox VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="3"></TextBox>
 
                 <!--Borders-->
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"></Border>
@@ -102,34 +105,34 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0">Client DOB:</Label>
-                <DatePicker x:Name="ClientDob" Grid.Row="0" Grid.Column="1"/>
+                <DatePicker Grid.Row="0" Grid.Column="1"/>
                 <Label Grid.Row="0" Grid.Column="2">Client gender:</Label>
-                <CheckBox x:Name="ClientMale" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="5,0,0,0" Click="ClientMale_OnClick"/>
+                <CheckBox Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="5,0,0,0" Click="ClientMale_OnClick"/>
                 <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="20,0,0,0">Male</Label>
-                <CheckBox x:Name="ClientFemale" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="65,0,0,0" Click="ClientFemale_OnClick"/>
+                <CheckBox Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="65,0,0,0" Click="ClientFemale_OnClick"/>
                 <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="79,0,0,0">Female</Label>
-                <CheckBox x:Name="ClientOther" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="135,0,0,0" Click="ClientOther_OnClick"/>
+                <CheckBox Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="135,0,0,0" Click="ClientOther_OnClick"/>
                 <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="152,0,0,0">Other</Label>
-                <TextBox x:Name="ClientOtherText" Grid.Row="0" VerticalContentAlignment="Center" Grid.Column="3" Grid.ColumnSpan="4" Margin="198,0,0,0" IsEnabled="False"></TextBox>
+                <TextBox Grid.Row="0" VerticalContentAlignment="Center" Grid.Column="3" Grid.ColumnSpan="4" Margin="198,0,0,0" IsEnabled="False"></TextBox>
 
                 <Label Grid.Column="0" Grid.Row="1">Client Race:</Label>
-                <TextBox x:Name="ClientRace" Grid.Row="1" VerticalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="6"/>
+                <TextBox Grid.Row="1" VerticalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="6"/>
 
                 <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">Was this the client's first meeting with this staff person?</Label>
-                <local:LabeledCheckbox x:Name="MeetingYes" CheckBoxChecked="MeetingYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="2" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <local:LabeledCheckbox x:Name="MeetingNo" CheckBoxChecked="MeetingNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="2" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <local:LabeledCheckbox x:Name="MeetingNA" CheckBoxChecked="MeetingNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="2" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox CheckBoxChecked="MeetingYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="2" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox CheckBoxChecked="MeetingNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="2" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox CheckBoxChecked="MeetingNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="2" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
 
 
                 <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">Was the client homeless at the time of the session?</Label>
-                <local:LabeledCheckbox x:Name="HomelessYes" CheckBoxChecked="HomelessYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="3" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <local:LabeledCheckbox x:Name="HomelessNo" CheckBoxChecked="HomelessNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="3" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <local:LabeledCheckbox x:Name="HomelessNA" CheckBoxChecked="HomelessNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="3" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox CheckBoxChecked="HomelessYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="3" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox CheckBoxChecked="HomelessNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="3" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox CheckBoxChecked="HomelessNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="3" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
 
                 <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">Did the client seem to be in a state of agitation, crisis, or acute need?</Label>
-                <local:LabeledCheckbox x:Name="AgitationYes" CheckBoxChecked="AgitationYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="4" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <local:LabeledCheckbox x:Name="AgitationNo" CheckBoxChecked="AgitationNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="4" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <local:LabeledCheckbox x:Name="AgitationNA" CheckBoxChecked="AgitationNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="4" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox CheckBoxChecked="AgitationYes_OnCheckBoxChecked" LabelContent="Yes" Grid.Row="4" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox  CheckBoxChecked="AgitationNo_OnCheckBoxChecked" LabelContent="No" Grid.Row="4" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <local:LabeledCheckbox CheckBoxChecked="AgitationNA_OnCheckBoxChecked" LabelContent="N/A" Grid.Row="4" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
 
                 <!--Borders-->
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"/>
@@ -200,13 +203,15 @@
                 <Label Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="0" Margin="0,20,0,0" HorizontalAlignment="Center">based on the session:</Label>
                 <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2">In bullet points list the top staff strengths</Label>
                 <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0,20,0,0">for staff improvement based on the session:</Label>
+                <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2"></TextBox>
+                <TextBox VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2"></TextBox>
 
-                <TextBox x:Name="CheckInScore" TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1"></TextBox>
-                <TextBox x:Name="ReviewScore" TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2"></TextBox>
-                <TextBox x:Name="InterventionScore" TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="3"></TextBox>
-                <TextBox x:Name="HomeworkScore" TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="4"></TextBox>
-                <TextBox x:Name="BehavioralScore" TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="5"></TextBox>
-                <TextBox x:Name="GlobalPracticesScore" TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="6"></TextBox>
+                <TextBox TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1"></TextBox>
+                <TextBox TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2"></TextBox>
+                <TextBox TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="3"></TextBox>
+                <TextBox TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="4"></TextBox>
+                <TextBox TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="5"></TextBox>
+                <TextBox TextChanged="Score_OnTextChanged" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="6"></TextBox>
 
                 <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">OVERALL SESSION SCORE = (Sum of all section scored)/6</Label>
                 <Label Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center">*Overall score ranges from 0 to 4*</Label>
@@ -215,24 +220,24 @@
                 <Label Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center">% of EPICS components with score >= 2.0 (C, R, I, H only)</Label>
                 <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center">*This is only including Check in, Review, Intervention, and Homework*</Label>
 
-                <TextBox x:Name="OverallSessionScore" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2"></TextBox>
-                <TextBox x:Name="NumberofHighScore" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"></TextBox>
-                <TextBox x:Name="PercentageHighScoring" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2"></TextBox>
+                <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2"></TextBox>
+                <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"></TextBox>
+                <TextBox IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2"></TextBox>
 
                 <Rectangle Grid.Row="9" Grid.ColumnSpan="4" Grid.Column="0" Fill="CornflowerBlue"></Rectangle>
                 <Rectangle Grid.Row="11" Grid.ColumnSpan="4" Grid.Column="0" Fill="CornflowerBlue"></Rectangle>
                 <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="58,10,0,10" >Completed</Label>
                 <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="180,10,0,10">EPICS sessions out of</Label>
                 <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="378,10,0,10">office visits in the last 6 months =</Label>
-                <TextBox x:Name="CompletedBox" TextChanged="CompletedBox_OnTextChanged" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="40" Margin="139,10,0,10" HorizontalAlignment="Left"/>
-                <TextBox x:Name="OutOfBox" TextChanged="OutOfBox_OnTextChanged" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="40" Margin="332,9.6,0,10.2" HorizontalAlignment="Left"/>
-                <TextBox x:Name="PercentBox" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="60" Margin="610,9.6,0,10.2" HorizontalAlignment="Left" IsEnabled="False"/>
+                <TextBox TextChanged="CompletedBox_OnTextChanged" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="40" Margin="139,10,0,10" HorizontalAlignment="Left"/>
+                <TextBox TextChanged="OutOfBox_OnTextChanged" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="40" Margin="332,9.6,0,10.2" HorizontalAlignment="Left"/>
+                <TextBox FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="60" Margin="610,9.6,0,10.2" HorizontalAlignment="Left" IsEnabled="False"/>
 
                 <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="10" FontSize="14" FontWeight="Bold" Margin="250,5,0,5">Your next tape is due</Label>
                 <DatePicker Grid.ColumnSpan="4" Grid.Row="10" Grid.Column="0" Width="100" HorizontalAlignment="Left" Margin="410,5,0,5"></DatePicker>
                 
                 <Label Grid.ColumnSpan="4" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,5">Please enter additional comments in the space below</Label>
-                
+
                 <TextBox Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="12" MinLines="4"></TextBox>
                 
                 <!--Borders-->
@@ -259,11 +264,9 @@
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="6" Grid.Column="0" ></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="6" Grid.Column="1" ></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="3"></Border>
+                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="4" Grid.Row="9" Grid.Column="0"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4"></Border>
                 <Border BorderBrush="Black" BorderThickness="1" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="4"></Border>

@@ -24,13 +24,14 @@ namespace DOC_Forms
         private bool doneLoading = false;
         public Page1()
         {
-            Logic = new Page1Logic();
-            Logic.PageInterface = this;
-            DataContext = Logic;
+            //Logic = new Page1ViewModel();
+            //Logic.PageInterface = this;
+            //DataContext = Logic;
 
             InitializeComponent();
             doneLoading = true;
             UpdateScores();
+            Logic = PageViewModel;
         }
 
         private void ClientMale_OnClick(object sender, RoutedEventArgs e)

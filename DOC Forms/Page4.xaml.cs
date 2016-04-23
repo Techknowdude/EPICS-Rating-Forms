@@ -11,7 +11,7 @@ namespace DOC_Forms
     {
         public Page4()
         {
-            Logic = new Page4Logic();
+            Logic = new Page4ViewModel();
             DataContext = Logic;
 
             InitializeComponent();

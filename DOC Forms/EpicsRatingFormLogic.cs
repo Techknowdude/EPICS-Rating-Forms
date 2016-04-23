@@ -50,10 +50,9 @@ namespace DOC_Forms
         public void ExportToExcel(Worksheet worksheet)
         {
             int currentRow = 1;
-            int nextRow = 1;
             foreach (var pageLogic in Pages)
             {
-                pageLogic.ExportToExcel(worksheet, currentRow, out nextRow);
+                currentRow = pageLogic.ExportToExcel(worksheet, currentRow);
             }
         }
     }

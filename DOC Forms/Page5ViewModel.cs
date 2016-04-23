@@ -9,112 +9,112 @@ using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
-    public class Page5Logic : DependencyObject, IPageLogic
+    public class Page5ViewModel : DependencyObject, IPageLogic
     {
         #region DependencyProperties
 
         public static readonly DependencyProperty SkillBuildingProperty = DependencyProperty.Register("SkillBuildingSkill", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O1Property = DependencyProperty.Register("OptionS1O1", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O1TextProperty = DependencyProperty.Register("OptionS1O1Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O2Property = DependencyProperty.Register("OptionS1O2", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O2TextProperty = DependencyProperty.Register("OptionS1O2Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O3Property = DependencyProperty.Register("OptionS1O3", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O3TextProperty = DependencyProperty.Register("OptionS1O3Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O4Property = DependencyProperty.Register("OptionS1O4", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O4TextProperty = DependencyProperty.Register("OptionS1O4Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O5Property = DependencyProperty.Register("OptionS1O5", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O5TextProperty = DependencyProperty.Register("OptionS1O5Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O6Property = DependencyProperty.Register("OptionS1O6", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O6TextProperty = DependencyProperty.Register("OptionS1O6Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O7Property = DependencyProperty.Register("OptionS1O7", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O7TextProperty = DependencyProperty.Register("OptionS1O7Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O8Property = DependencyProperty.Register("OptionS1O8", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS1O8TextProperty = DependencyProperty.Register("OptionS1O8Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
 
         public static readonly DependencyProperty CareyTextProperty = DependencyProperty.Register("CareyText", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
 
         public static readonly DependencyProperty OptionS2O1Property = DependencyProperty.Register("OptionS2O1", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O1TextProperty = DependencyProperty.Register("OptionS2O1Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O2Property = DependencyProperty.Register("OptionS2O2", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O2TextProperty = DependencyProperty.Register("OptionS2O2Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O3Property = DependencyProperty.Register("OptionS2O3", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O3TextProperty = DependencyProperty.Register("OptionS2O3Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O4Property = DependencyProperty.Register("OptionS2O4", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O4TextProperty = DependencyProperty.Register("OptionS2O4Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O5Property = DependencyProperty.Register("OptionS2O5", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O5TextProperty = DependencyProperty.Register("OptionS2O5Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O6Property = DependencyProperty.Register("OptionS2O6", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS2O6TextProperty = DependencyProperty.Register("OptionS2O6Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
 
         public static readonly DependencyProperty OtherInterventionProperty = DependencyProperty.Register("OtherInterventionText", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
 
 
         public static readonly DependencyProperty OptionS3O1Property = DependencyProperty.Register("OptionS3O1", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O1TextProperty = DependencyProperty.Register("OptionS3O1Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O2Property = DependencyProperty.Register("OptionS3O2", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O2TextProperty = DependencyProperty.Register("OptionS3O2Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O3Property = DependencyProperty.Register("OptionS3O3", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O3TextProperty = DependencyProperty.Register("OptionS3O3Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O4Property = DependencyProperty.Register("OptionS3O4", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O4TextProperty = DependencyProperty.Register("OptionS3O4Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O5Property = DependencyProperty.Register("OptionS3O5", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O5TextProperty = DependencyProperty.Register("OptionS3O5Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O6Property = DependencyProperty.Register("OptionS3O6", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O6TextProperty = DependencyProperty.Register("OptionS3O6Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O7Property = DependencyProperty.Register("OptionS3O7", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS3O7TextProperty = DependencyProperty.Register("OptionS3O7Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
 
         public static readonly DependencyProperty GradutaedTextProperty = DependencyProperty.Register("GraduatedText", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS4O1TextProperty = DependencyProperty.Register("OptionS4O1Text", typeof(String),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         public static readonly DependencyProperty OptionS4O1Property = DependencyProperty.Register("OptionS4O1", typeof(Boolean),
-            typeof(Page5Logic));
+            typeof(Page5ViewModel));
         #endregion
         #region Properties
 
@@ -184,7 +184,7 @@ namespace DOC_Forms
 
         public IPageInterface PageInterface { get; set; }
 
-        public Page5Logic()
+        public Page5ViewModel()
         {
             LoadText();
         }
@@ -352,10 +352,8 @@ namespace DOC_Forms
             return true;
         }
 
-        public bool ExportToExcel(Worksheet worksheet, int curRow, out int outRow)
+        public int ExportToExcel(Worksheet worksheet, int curRow)
         {
-            bool success = true;
-
             try
             {
                 lock (this)
@@ -371,11 +369,10 @@ namespace DOC_Forms
             {
                 Console.WriteLine("### Page 5 Logic Excel export error:" + exception.Message);
 
-                success = false;
+                curRow = -1;
             }
 
-            outRow = curRow;
-            return success;
+            return curRow;
         }
 
         public void Connect(IPageInterface page)

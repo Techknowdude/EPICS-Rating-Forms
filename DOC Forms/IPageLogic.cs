@@ -30,7 +30,7 @@ namespace DOC_Forms
         /// <returns>True upon a successful load. False if there were any errors</returns>
         bool Load(BinaryReader reader);
 
-        bool ExportToExcel(Worksheet worksheet, int curRow, out int outRow);
+        int ExportToExcel(Worksheet worksheet, int curRow);
         void Connect(IPageInterface page);
     }
 }

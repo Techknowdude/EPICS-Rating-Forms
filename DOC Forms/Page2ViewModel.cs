@@ -4,7 +4,7 @@ using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
-    class Page2Logic : IPageLogic
+    class Page2ViewModel : IPageLogic
     {
         public IPageInterface PageInterface { get; set; }
         public bool Save(BinaryWriter writer)
@@ -19,11 +19,10 @@ namespace DOC_Forms
             return true;
         }
 
-        public bool ExportToExcel(Worksheet worksheet, int curRow, out int outRow)
+        public int ExportToExcel(Worksheet worksheet, int curRow)
         {
             //TODO: Fill this in
-            outRow = curRow;
-            return true;
+            return curRow;
         }
 
         public void Connect(IPageInterface page)

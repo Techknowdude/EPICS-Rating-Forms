@@ -30,7 +30,7 @@ namespace DOC_Forms
 
             _application = new Application();
             _application.DisplayAlerts = false;
-            _application.Visible = false;
+            _application.Visible = true;
             _application.Workbooks.Add();
 
             _workbook = _application.ActiveWorkbook;

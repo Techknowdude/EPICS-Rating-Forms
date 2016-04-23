@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Threading;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Win32;
@@ -25,25 +26,6 @@ namespace DOC_Forms
 
         private EpicsRatingFormLogic logic;
 
-        public EpicsRatingFormA()
-        {
-            DataContext = this;
-
-
-            var p1 = new Page1();
-            var p2 = new Page2();
-            var p3 = new Page3();
-            var p4 = new Page4();
-            var p5 = new Page5();
-
-            Pages = new List<Page>() {p1,p2,p3,p4,p5};
-            PageInterfaces = new List<IPageInterface>() {p1,p2,p3,p4,p5};
-
-            logic = EpicsRatingFormLogic.Create(PageInterfaces, this);
-            InitializeComponent();
-            CurrentPage = 0;
-        }
-
         public int CurrentPage
         {
             get { return _currentPage; }
@@ -60,20 +42,38 @@ namespace DOC_Forms
             }
         }
 
+        public EpicsRatingFormA()
+        {
+            var p1 = new Page1();
+            var p2 = new Page2();
+            var p3 = new Page3();
+            var p4 = new Page4();
+            var p5 = new Page5();
+
+            Pages = new List<Page>() {p1,p2,p3,p4,p5};
+            PageInterfaces = new List<IPageInterface>() {p1,p2,p3,p4,p5};
+
+            logic = EpicsRatingFormLogic.Create(PageInterfaces, this);
+            InitializeComponent();
+            CurrentPage = 0;
+        }
+
+        public ICommand NextPageCommand
+        {
+            get { return new DelegateCommand(() => ++CurrentPage); }
+        }
+
+        public ICommand PrevPageCommand
+        {
+            get { return new DelegateCommand(() => --CurrentPage); }
+        }
+
+
+
         private void ToggleButtons()
         {
             PrevPageButton.IsEnabled = _currentPage > 0;
             NextPageButton.IsEnabled = _currentPage + 1 < Pages.Count;
-        }
-
-        private void NextPageButton_Click(object sender, RoutedEventArgs e)
-        {
-            CurrentPage++;
-        }
-
-        private void PrevPageButton_Click(object sender, RoutedEventArgs e)
-        {
-            CurrentPage--;
         }
 
         private void SaveMenuItem_Click(object sender, RoutedEventArgs e)

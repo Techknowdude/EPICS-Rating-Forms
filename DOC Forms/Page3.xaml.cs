@@ -23,7 +23,7 @@ namespace DOC_Forms
     {
         public Page3()
         {
-            Logic = new Page3Logic();
+            Logic = new Page3ViewModel();
             DataContext = Logic;
 
             InitializeComponent();

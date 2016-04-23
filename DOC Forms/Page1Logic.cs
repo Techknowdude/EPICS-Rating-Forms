@@ -1,40 +1,43 @@
 ﻿using System;
-using System.IO;
+using System.Drawing;
 using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
-    public class Page1Logic : IPageLogic
+    class Page1Logic
     {
-        public IPageInterface PageInterface { get; set; }
-
-        public bool Save(BinaryWriter writer)
+        public Page1Logic()
         {
-            //TODO: Fill this in
-            return true;
         }
 
-        public bool Load(BinaryReader reader)
+        public int ExportToExcel(Page1ExportInfo info, Worksheet worksheet, int curRow)
         {
-            //TODO: Fill this in
-            return true;
-        }
+            Range rng = worksheet.get_Range("A" + curRow, "G" + curRow);
+            rng.Cells.Font.Size = 18;
+            rng.Cells.Font.Bold = true;
+            rng.Merge();
+            rng.Value = "EPICS CODING FORM";
+            curRow++;
 
-        public bool ExportToExcel(Worksheet worksheet, int curRow, out int outRow)
-        {
-            //TODO: Fill this in
-            outRow = curRow;
-            return true;
-        }
-        public void Connect(IPageInterface page)
-        {
-            page.Logic = this;
-            PageInterface = page;
-        }
+            rng = worksheet.get_Range("A" + curRow, "G" + curRow);
+            rng.Cells.Font.Size = 14;
+            rng.Cells.Font.Bold = true;
+            rng.Cells.Font.Color = ColorTranslator.ToOle(Color.Black); //bg
+            rng.Style.Font.Color = ColorTranslator.ToOle(Color.White); // text
+            rng.Merge();
+            rng.Value = "Session Information";
+            curRow++;
 
-        public object Clone()
-        {
-            return MemberwiseClone();
+            rng = worksheet.get_Range("A" + curRow);
+            rng.Cells.Font.Size = 12;
+            rng.Value = "Session date:";
+            rng = worksheet.get_Range("B" + curRow);
+            rng.Cells.Font.Size = 12;
+            rng.Value = info.SessionDate.ToString("d");
+            curRow++;
+
+
+            return curRow;
         }
     }
 }

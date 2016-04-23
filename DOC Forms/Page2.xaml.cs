@@ -25,7 +25,7 @@ namespace DOC_Forms
 
         public Page2()
         {
-            Logic = new Page2Logic();
+            Logic = new Page2ViewModel();
             DataContext = Logic;
             InitializeComponent();
         }

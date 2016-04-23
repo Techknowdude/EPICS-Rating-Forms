@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace DOC_Forms
 {
@@ -15,8 +16,13 @@ namespace DOC_Forms
         {
             InitializeComponent();
         }
+        
+        public ICommand SubmitLoginCommand
+        {
+            get { return new DelegateCommand(TryLogin); }
+        }
 
-        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        private void TryLogin()
         {
             if (LoginAccepted())
             {
@@ -27,7 +33,7 @@ namespace DOC_Forms
             else
             {
                 failedLogins++;
-                if(failedLogins >= maxFailedLogins) Close();
+                if (failedLogins >= maxFailedLogins) Close();
 
                 MessageBox.Show("Login failed.");
             }

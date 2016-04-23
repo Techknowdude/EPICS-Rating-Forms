@@ -5,7 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DOC_Forms"
         mc:Ignorable="d"
-        Title="Epics Coding Form" Height="650" Width="800">
+        Title="Epics Coding Form" Height="650" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Window.InputBindings>
+        <KeyBinding Key="Right" Command="{Binding NextPageCommand}"></KeyBinding>
+        <KeyBinding Key="Left" Command="{Binding PrevPageCommand}"></KeyBinding>
+    </Window.InputBindings>
     <Grid>
         <Menu Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150">
             <MenuItem x:Name="SaveMenuItem" Height="20" Width="50" Header="_Save" Click="SaveMenuItem_Click"/>
@@ -15,9 +20,9 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,20,0,30">
             <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden"></Frame>
         </ScrollViewer>
-        <Button x:Name="PrevPageButton" Margin="10,1,1,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" Click="PrevPageButton_Click">Prev</Button>
+        <Button x:Name="PrevPageButton" Margin="10,1,1,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" >Prev</Button>
         <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,1,1,5">Page</Label>
         <Label x:Name="PageLabel" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="35,1,1,5">1</Label>
-        <Button x:Name="NextPageButton" Margin="1,1,10,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="NextPageButton_Click">Next</Button>
+        <Button x:Name="NextPageButton" Margin="1,1,10,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Right">Next</Button>
     </Grid>
 </Window>
