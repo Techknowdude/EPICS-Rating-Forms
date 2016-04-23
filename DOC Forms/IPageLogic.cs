@@ -9,7 +9,7 @@ using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
-    public interface IPageLogic 
+    public interface IPageLogic : ICloneable
     {
         /// <summary>
         /// This is the page control. Communication is not normally back to the UI except through binding.

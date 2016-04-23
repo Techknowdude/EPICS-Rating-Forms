@@ -3,12 +3,13 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization;
+using System.Threading.Tasks;
 using System.Windows;
 using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
-    public class Page5Logic : DependencyObject, IPageLogic, ISerializable
+    public class Page5Logic : DependencyObject, IPageLogic
     {
         #region DependencyProperties
 
@@ -357,13 +358,19 @@ namespace DOC_Forms
 
             try
             {
-                curRow = ExportSection1(worksheet, curRow) + 1;
-                curRow = ExportSection2(worksheet, curRow) + 1;
-                curRow = ExportSection3(worksheet, curRow) + 1;
-                curRow = ExportSection4(worksheet, curRow) + 1;
+                lock (this)
+                {
+
+                    curRow = ExportSection1(worksheet, curRow) + 1;
+                    curRow = ExportSection2(worksheet, curRow) + 1;
+                    curRow = ExportSection3(worksheet, curRow) + 1;
+                    curRow = ExportSection4(worksheet, curRow) + 1;
+                }
             }
-            catch (Exception)
+            catch (Exception exception)
             {
+                Console.WriteLine("### Page 5 Logic Excel export error:" + exception.Message);
+
                 success = false;
             }
 
@@ -585,8 +592,14 @@ namespace DOC_Forms
             return curRow;
         }
 
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
+
+        /// <summary>
+        /// Creates a shallow copy of the logic.
+        /// </summary>
+        /// <returns></returns>
+        public object Clone()
         {
+            return MemberwiseClone();
         }
     }
 }

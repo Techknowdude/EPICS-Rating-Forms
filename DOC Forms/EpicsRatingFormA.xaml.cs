@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Win32;
 using Page = System.Windows.Controls.Page;
@@ -121,9 +124,20 @@ namespace DOC_Forms
             }
         }
 
-        private void ExcelMenuItem_OnClick(object sender, RoutedEventArgs e)
+        private async void ExcelMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
-            ExcelDataExporter.ExportData(logic);
+            try
+            {
+                ExcelDataExporter.ExportData(logic);
+
+                }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
+
+
     }
+
 }

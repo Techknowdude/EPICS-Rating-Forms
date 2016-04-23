@@ -1,9 +1,10 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using System.Collections.Generic;
+using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
     public interface IEpicForm
     {
-        bool ExportToExcel(Worksheet worksheet, out int currentRow);
+        void ExportToExcel(Worksheet worksheet);
     }
 }

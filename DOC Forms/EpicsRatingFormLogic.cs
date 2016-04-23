@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Threading;
 using Microsoft.Office.Interop.Excel;
 using Page = System.Windows.Controls.Page;
 
@@ -12,6 +14,12 @@ namespace DOC_Forms
     {
         private List<IPageLogic> _pages;
         private EpicsRatingFormA _controlWindow;
+
+        public List<IPageLogic> Pages
+        {
+            get { return _pages; }
+            set { _pages = value; }
+        }
 
         /// <summary>
         /// Factory
@@ -28,7 +36,6 @@ namespace DOC_Forms
         /// Private ctor for factory
         /// </summary>
         /// <param name="pages"></param>
-        /// <param name="pageInterfaces"></param>
         /// <param name="epicsRatingFormA"></param>
         private EpicsRatingFormLogic(List<IPageInterface> pages, EpicsRatingFormA epicsRatingFormA)
         {
@@ -40,21 +47,14 @@ namespace DOC_Forms
             }
         }
 
-        public bool ExportToExcel(Worksheet worksheet, out int currentRow)
+        public void ExportToExcel(Worksheet worksheet)
         {
-            bool? success = true;
-            int curRow = 1;
-            int outRow = 1;
-
-            foreach (var page in _pages)
-            {;
-                success = page?.ExportToExcel(worksheet, curRow, out outRow);
-                //if (success != true) break;
-                curRow = outRow;
+            int currentRow = 1;
+            int nextRow = 1;
+            foreach (var pageLogic in Pages)
+            {
+                pageLogic.ExportToExcel(worksheet, currentRow, out nextRow);
             }
-
-            currentRow = curRow;
-            return success == true;
         }
     }
 }

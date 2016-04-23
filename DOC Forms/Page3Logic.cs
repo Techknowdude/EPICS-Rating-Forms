@@ -31,5 +31,11 @@ namespace DOC_Forms
             page.Logic = this;
             PageInterface = page;
         }
+
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }
