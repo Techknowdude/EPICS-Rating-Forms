@@ -39,5 +39,24 @@ namespace DOC_Forms
 
             return curRow;
         }
+
+
+        private void Something()
+        {
+
+            //int completed = 0;
+            //int total = 0;
+            //double percent = double.NaN;
+
+            //Int32.TryParse(Completed, out completed);
+            //Int32.TryParse(Total, out total);
+
+            //if (completed != 0 && total != 0)
+            //{
+            //    percent = completed / (double)total;
+            //    Percent = percent.ToString("P0");
+            //}
+
+        }
     }
 }
