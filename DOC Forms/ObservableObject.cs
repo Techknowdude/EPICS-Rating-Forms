@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DOC_Forms
 {
-    public class ObservableObject : INotifyPropertyChanged
+    [Serializable]
+    public class ObservableObject : DependencyObject, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

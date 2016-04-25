@@ -20,9 +20,9 @@
         <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,20,0,30">
             <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden"></Frame>
         </ScrollViewer>
-        <Button x:Name="PrevPageButton" Margin="10,1,1,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" >Prev</Button>
+        <Button x:Name="PrevPageButton" Command="{Binding PrevPageCommand}" Margin="10,1,1,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" >Prev</Button>
         <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,1,1,5">Page</Label>
         <Label x:Name="PageLabel" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="35,1,1,5">1</Label>
-        <Button x:Name="NextPageButton" Margin="1,1,10,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Right">Next</Button>
+        <Button x:Name="NextPageButton" Command="{Binding NextPageCommand}" Margin="1,1,10,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Right">Next</Button>
     </Grid>
 </Window>

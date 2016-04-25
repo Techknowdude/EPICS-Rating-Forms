@@ -12,10 +12,10 @@ namespace DOC_Forms
 {
     public class EpicsRatingFormLogic : IEpicForm
     {
-        private List<IPageLogic> _pages;
+        private List<IPageViewModel> _pages;
         private EpicsRatingFormA _controlWindow;
 
-        public List<IPageLogic> Pages
+        public List<IPageViewModel> Pages
         {
             get { return _pages; }
             set { _pages = value; }
@@ -39,7 +39,7 @@ namespace DOC_Forms
         /// <param name="epicsRatingFormA"></param>
         private EpicsRatingFormLogic(List<IPageInterface> pages, EpicsRatingFormA epicsRatingFormA)
         {
-            _pages = new List<IPageLogic>();
+            _pages = new List<IPageViewModel>();
             _controlWindow = epicsRatingFormA;
             for (int i = 0; i < pages.Count; ++i)
             {

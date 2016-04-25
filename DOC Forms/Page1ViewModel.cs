@@ -2,15 +2,15 @@
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
     [Serializable]
-    public class Page1ViewModel : ObservableObject, IPageLogic, ISerializable
+    public class Page1ViewModel : IPageViewModel
     {
 
-        public IPageInterface PageInterface { get; set; }
         private readonly Page1Logic _pageLogic;
 
         #region Fields
@@ -656,19 +656,7 @@ namespace DOC_Forms
             GenderOtherTextEnabled = false;
         }
 
-        public bool Save(BinaryWriter writer)
-        {
-            //TODO: Fill this in
-            return true;
-        }
-
-        public bool Load(BinaryReader reader)
-        {
-            //TODO: Fill this in
-            return true;
-        }
-
-        public int ExportToExcel(Worksheet worksheet, int curRow)
+        public override int ExportToExcel(Worksheet worksheet, int curRow)
         {
             return _pageLogic.ExportToExcel(BuildInfo(), worksheet, curRow);
         }
@@ -680,18 +668,7 @@ namespace DOC_Forms
             info.SessionDate = SessionDate;
             return info;
         }
-
-        public void Connect(IPageInterface page)
-        {
-            page.Logic = this;
-            PageInterface = page;
-        }
-
-        public object Clone()
-        {
-            return MemberwiseClone();
-        }
-
+        
         private void UpdateScores()
         {
             double[] scores = new double[4];
@@ -717,8 +694,8 @@ namespace DOC_Forms
 
         private void UpdatePercentCompleted()
         {
-            int completed = 1;
-            int total = 1;
+            int completed;
+            int total;
 
             int.TryParse(CompletedEpics, out completed);
             int.TryParse(TotalEpics, out total);
@@ -727,152 +704,68 @@ namespace DOC_Forms
         }
 
 
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            info.AddValue("SessionDate", SessionDate, typeof(DateTime));
-            info.AddValue("ReviewDate", ReviewDate, typeof(DateTime));
-            info.AddValue("ClientDOB", ClientDOB, typeof(DateTime));
-            info.AddValue("NextTapeDueDate", NextTapeDueDate, typeof(DateTime));
-
-            info.AddValue("StaffName", StaffName, typeof(string));
-            info.AddValue("ReviewName", ReviewName, typeof(string));
-            info.AddValue("CaseloadNumber", CaseloadNumber, typeof(string));
-            info.AddValue("ClientName", ClientName, typeof(string));
-            info.AddValue("SessionLength", SessionLength, typeof(string));
-            info.AddValue("ClientSID", ClientSID, typeof(string));
-            info.AddValue("GenderOtherText", GenderOtherText, typeof(string));
-            info.AddValue("Race", Race, typeof(string));
-            info.AddValue("InterventionScore", InterventionScore, typeof(string));
-            info.AddValue("HomeworkScore", HomeworkScore, typeof(string));
-            info.AddValue("BehavioralScore", BehavioralScore, typeof(string));
-            info.AddValue("GlobalScore", GlobalScore, typeof(string));
-            info.AddValue("OverallScore", OverallScore, typeof(string));
-            info.AddValue("TopStaffStrengths", TopStaffStrengths, typeof(string));
-            info.AddValue("TopStaffImprovements", TopStaffImprovements, typeof(string));
-            info.AddValue("NumberEpicsOver2", NumberEpicsOver2, typeof(string));
-            info.AddValue("PercentEpicsOver2", PercentEpicsOver2, typeof(string));
-            info.AddValue("CompletedEpics", CompletedEpics, typeof(string));
-            info.AddValue("TotalEpics", TotalEpics, typeof(string));
-            info.AddValue("PercentEpicsCompleted", PercentEpicsCompleted, typeof(string));
-            info.AddValue("AdditionalCommentsText", AdditionalCommentsText, typeof(string));
-            info.AddValue("CheckInScore", CheckInScore, typeof(string));
-
-            info.AddValue("GenderMale", GenderMale, typeof(bool));
-            info.AddValue("GenderFemale", GenderFemale, typeof(bool));
-            info.AddValue("GenderOther", GenderOther, typeof(bool));
-            info.AddValue("FirstMeetingYes", FirstMeetingYes, typeof(bool));
-            info.AddValue("FirstMeetingNo", FirstMeetingNo, typeof(bool));
-            info.AddValue("FirstMeetingNA", FirstMeetingNA, typeof(bool));
-            info.AddValue("ClientHomelessYes", ClientHomelessYes, typeof(bool));
-            info.AddValue("ClientHomelessNo", ClientHomelessNo, typeof(bool));
-            info.AddValue("ClientHomelessNA", ClientHomelessNA, typeof(bool));
-            info.AddValue("ClientAgressiveYes", ClientAgressiveYes, typeof(bool));
-            info.AddValue("ClientAgressiveNo", ClientAgressiveNo, typeof(bool));
-            info.AddValue("ClientAgressiveNA", ClientAgressiveNA, typeof(bool));
-            info.AddValue("GenderOtherTextEnabled", GenderOtherTextEnabled, typeof(bool));
-        }
-
-        public Page1ViewModel(SerializationInfo info, StreamingContext context)
-        {
-            // Reset the property value using the GetValue method.
-            //myProperty_value = (string)info.GetValue("props", typeof(string));
-
-            SessionDate = (DateTime)info.GetValue("SessionDate", typeof(DateTime));
-            ReviewDate = (DateTime)info.GetValue("ReviewDate", typeof(DateTime));
-            ClientDOB = (DateTime)info.GetValue("ClientDOB", typeof(DateTime));
-            NextTapeDueDate = (DateTime)info.GetValue("NextTapeDueDate", typeof(DateTime));
-
-            StaffName = (string)info.GetValue("StaffName", typeof(string));
-            ReviewName = (string)info.GetValue("ReviewName", typeof(string));
-            CaseloadNumber = (string)info.GetValue("CaseloadNumber", typeof(string));
-            ClientName = (string)info.GetValue("ClientName", typeof(string));
-            SessionLength = (string)info.GetValue("SessionLength", typeof(string));
-            ClientSID = (string)info.GetValue("ClientSID", typeof(string));
-            GenderOtherText = (string)info.GetValue("GenderOtherText", typeof(string));
-            Race = (string)info.GetValue("Race", typeof(string));
-            InterventionScore = (string)info.GetValue("InterventionScore", typeof(string));
-            HomeworkScore = (string)info.GetValue("HomeworkScore", typeof(string));
-            BehavioralScore = (string)info.GetValue("BehavioralScore", typeof(string));
-            GlobalScore = (string)info.GetValue("GlobalScore", typeof(string));
-            OverallScore = (string)info.GetValue("OverallScore", typeof(string));
-            TopStaffStrengths = (string)info.GetValue("TopStaffStrengths", typeof(string));
-            TopStaffImprovements = (string)info.GetValue("TopStaffImprovements", typeof(string));
-            NumberEpicsOver2 = (string)info.GetValue("NumberEpicsOver2", typeof(string));
-            PercentEpicsOver2 = (string)info.GetValue("PercentEpicsOver2", typeof(string));
-            CompletedEpics = (string)info.GetValue("CompletedEpics", typeof(string));
-            TotalEpics = (string)info.GetValue("TotalEpics", typeof(string));
-            PercentEpicsCompleted = (string)info.GetValue("PercentEpicsCompleted", typeof(string));
-            AdditionalCommentsText = (string)info.GetValue("AdditionalCommentsText", typeof(string));
-            CheckInScore = (string)info.GetValue("CheckInScore", typeof(string));
-
-            GenderMale = (bool)info.GetValue("GenderMale", typeof(bool));
-            GenderFemale = (bool)info.GetValue("GenderFemale", typeof(bool));
-            GenderOther = (bool)info.GetValue("GenderOther", typeof(bool));
-            FirstMeetingYes = (bool)info.GetValue("FirstMeetingYes", typeof(bool));
-            FirstMeetingNo = (bool)info.GetValue("FirstMeetingNo", typeof(bool));
-            FirstMeetingNA = (bool)info.GetValue("FirstMeetingNA", typeof(bool));
-            ClientHomelessYes = (bool)info.GetValue("ClientHomelessYes", typeof(bool));
-            ClientHomelessNo = (bool)info.GetValue("ClientHomelessNo", typeof(bool));
-            ClientHomelessNA = (bool)info.GetValue("ClientHomelessNA", typeof(bool));
-            ClientAgressiveYes = (bool)info.GetValue("ClientAgressiveYes", typeof(bool));
-            ClientAgressiveNo = (bool)info.GetValue("ClientAgressiveNo", typeof(bool));
-            ClientAgressiveNA = (bool)info.GetValue("ClientAgressiveNA", typeof(bool));
-            GenderOtherTextEnabled = (bool)info.GetValue("GenderOtherTextEnabled", typeof(bool));
-        }
-
         protected bool Equals(Page1ViewModel other)
         {
-            return Equals(_pageLogic, other._pageLogic) && _sessionDate.Equals(other._sessionDate) && _reviewDate.Equals(other._reviewDate) && _clientDOB.Equals(other._clientDOB) && _nextTapeDueDate.Equals(other._nextTapeDueDate) && string.Equals(_staffName, other._staffName) && string.Equals(_reviewName, other._reviewName) && string.Equals(_caseloadNumber, other._caseloadNumber) && string.Equals(_clientName, other._clientName) && string.Equals(_sessionLength, other._sessionLength) && string.Equals(_clientSID, other._clientSID) && string.Equals(_genderOtherText, other._genderOtherText) && string.Equals(_race, other._race) && string.Equals(_checkInScore, other._checkInScore) && string.Equals(_reviewScore, other._reviewScore) && string.Equals(_interventionScore, other._interventionScore) && string.Equals(_homeworkScore, other._homeworkScore) && string.Equals(_behavioralScore, other._behavioralScore) && string.Equals(_globalScore, other._globalScore) && string.Equals(_overallScore, other._overallScore) && string.Equals(_topStaffStrengths, other._topStaffStrengths) && string.Equals(_topStaffImprovements, other._topStaffImprovements) && string.Equals(_numberEpicsOver2, other._numberEpicsOver2) && string.Equals(_percentEpicsOver2, other._percentEpicsOver2) && string.Equals(_completedEpics, other._completedEpics) && string.Equals(_totalEpics, other._totalEpics) && string.Equals(_percentEpicsCompleted, other._percentEpicsCompleted) && string.Equals(_additionalCommentsText, other._additionalCommentsText) && _genderMale == other._genderMale && _genderFemale == other._genderFemale && _genderOther == other._genderOther && _firstMeetingYes == other._firstMeetingYes && _firstMeetingNo == other._firstMeetingNo && _firstMeetingNA == other._firstMeetingNA && _clientHomelessYes == other._clientHomelessYes && _clientHomelessNo == other._clientHomelessNo && _clientHomelessNA == other._clientHomelessNA && _clientAgressiveYes == other._clientAgressiveYes && _clientAgressiveNo == other._clientAgressiveNo && _clientAgressiveNA == other._clientAgressiveNA && _genderOtherTextEnabled == other._genderOtherTextEnabled && Equals(PageInterface, other.PageInterface);
+            return Equals(_pageLogic, other._pageLogic) &&
+                   _sessionDate.Equals(other._sessionDate) &&
+                   _reviewDate.Equals(other._reviewDate) &&
+                   _clientDOB.Equals(other._clientDOB) &&
+                   _nextTapeDueDate.Equals(other._nextTapeDueDate) &&
+                   string.Equals(_staffName, other._staffName) &&
+                   string.Equals(_reviewName, other._reviewName) &&
+                   string.Equals(_caseloadNumber, other._caseloadNumber) &&
+                   string.Equals(_clientName, other._clientName) &&
+                   string.Equals(_sessionLength, other._sessionLength) &&
+                   string.Equals(_clientSID, other._clientSID) &&
+                   string.Equals(_genderOtherText, other._genderOtherText) &&
+                   string.Equals(_race, other._race) &&
+                   string.Equals(_checkInScore, other._checkInScore) &&
+                   string.Equals(_reviewScore, other._reviewScore) &&
+                   string.Equals(_interventionScore, other._interventionScore) &&
+                   string.Equals(_homeworkScore, other._homeworkScore) &&
+                   string.Equals(_behavioralScore, other._behavioralScore) &&
+                   string.Equals(_globalScore, other._globalScore) &&
+                   string.Equals(_overallScore, other._overallScore) &&
+                   string.Equals(_topStaffStrengths, other._topStaffStrengths) &&
+                   string.Equals(_topStaffImprovements, other._topStaffImprovements) &&
+                   string.Equals(_numberEpicsOver2, other._numberEpicsOver2) &&
+                   string.Equals(_percentEpicsOver2, other._percentEpicsOver2) &&
+                   string.Equals(_completedEpics, other._completedEpics) &&
+                   string.Equals(_totalEpics, other._totalEpics) &&
+                   string.Equals(_percentEpicsCompleted, other._percentEpicsCompleted) &&
+                   string.Equals(_additionalCommentsText, other._additionalCommentsText) &&
+                   _genderMale == other._genderMale &&
+                   _genderFemale == other._genderFemale &&
+                   _genderOther == other._genderOther &&
+                   _firstMeetingYes == other._firstMeetingYes &&
+                   _firstMeetingNo == other._firstMeetingNo &&
+                   _firstMeetingNA == other._firstMeetingNA &&
+                   _clientHomelessYes == other._clientHomelessYes &&
+                   _clientHomelessNo == other._clientHomelessNo &&
+                   _clientHomelessNA == other._clientHomelessNA &&
+                   _clientAgressiveYes == other._clientAgressiveYes &&
+                   _clientAgressiveNo == other._clientAgressiveNo &&
+                   _clientAgressiveNA == other._clientAgressiveNA &&
+                   _genderOtherTextEnabled == other._genderOtherTextEnabled;
+        }
+        
+
+        public static Page1ViewModel Load(FileStream stream, BinaryFormatter formatter)
+        {
+            return (Page1ViewModel)formatter.Deserialize(stream);
+        }
+        public new bool Save(FileStream stream, BinaryFormatter formatter)
+        {
+            try
+            {
+                formatter.Serialize(stream, this);
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+            return true;
         }
 
-        public override int GetHashCode()
-        {
-            unchecked
-            {
-                var hashCode = (_pageLogic != null ? _pageLogic.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ _sessionDate.GetHashCode();
-                hashCode = (hashCode*397) ^ _reviewDate.GetHashCode();
-                hashCode = (hashCode*397) ^ _clientDOB.GetHashCode();
-                hashCode = (hashCode*397) ^ _nextTapeDueDate.GetHashCode();
-                hashCode = (hashCode*397) ^ (_staffName != null ? _staffName.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_reviewName != null ? _reviewName.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_caseloadNumber != null ? _caseloadNumber.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_clientName != null ? _clientName.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_sessionLength != null ? _sessionLength.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_clientSID != null ? _clientSID.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_genderOtherText != null ? _genderOtherText.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_race != null ? _race.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_checkInScore != null ? _checkInScore.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_reviewScore != null ? _reviewScore.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_interventionScore != null ? _interventionScore.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_homeworkScore != null ? _homeworkScore.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_behavioralScore != null ? _behavioralScore.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_globalScore != null ? _globalScore.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_overallScore != null ? _overallScore.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_topStaffStrengths != null ? _topStaffStrengths.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_topStaffImprovements != null ? _topStaffImprovements.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_numberEpicsOver2 != null ? _numberEpicsOver2.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_percentEpicsOver2 != null ? _percentEpicsOver2.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_completedEpics != null ? _completedEpics.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_totalEpics != null ? _totalEpics.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_percentEpicsCompleted != null ? _percentEpicsCompleted.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ (_additionalCommentsText != null ? _additionalCommentsText.GetHashCode() : 0);
-                hashCode = (hashCode*397) ^ _genderMale.GetHashCode();
-                hashCode = (hashCode*397) ^ _genderFemale.GetHashCode();
-                hashCode = (hashCode*397) ^ _genderOther.GetHashCode();
-                hashCode = (hashCode*397) ^ _firstMeetingYes.GetHashCode();
-                hashCode = (hashCode*397) ^ _firstMeetingNo.GetHashCode();
-                hashCode = (hashCode*397) ^ _firstMeetingNA.GetHashCode();
-                hashCode = (hashCode*397) ^ _clientHomelessYes.GetHashCode();
-                hashCode = (hashCode*397) ^ _clientHomelessNo.GetHashCode();
-                hashCode = (hashCode*397) ^ _clientHomelessNA.GetHashCode();
-                hashCode = (hashCode*397) ^ _clientAgressiveYes.GetHashCode();
-                hashCode = (hashCode*397) ^ _clientAgressiveNo.GetHashCode();
-                hashCode = (hashCode*397) ^ _clientAgressiveNA.GetHashCode();
-                hashCode = (hashCode*397) ^ _genderOtherTextEnabled.GetHashCode();
-                hashCode = (hashCode*397) ^ (PageInterface != null ? PageInterface.GetHashCode() : 0);
-                return hashCode;
-            }
-        }
     }
 }

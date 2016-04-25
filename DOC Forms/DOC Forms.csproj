@@ -67,7 +67,7 @@
     <Compile Include="EpicsRatingFormLogic.cs" />
     <Compile Include="ExcelDataExporter.cs" />
     <Compile Include="IPageInterface.cs" />
-    <Compile Include="IPageLogic.cs" />
+    <Compile Include="IPageViewModel.cs" />
     <Compile Include="LabeledCheckbox.xaml.cs">
       <DependentUpon>LabeledCheckbox.xaml</DependentUpon>
     </Compile>

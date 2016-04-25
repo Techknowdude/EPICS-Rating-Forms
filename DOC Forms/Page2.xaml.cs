@@ -21,7 +21,7 @@ namespace DOC_Forms
     /// </summary>
     public partial class Page2 : Page, IPageInterface
     {
-        public IPageLogic Logic { get; set; }
+        public IPageViewModel Logic { get; set; }
 
         public Page2()
         {

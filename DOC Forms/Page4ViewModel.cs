@@ -1,39 +1,27 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
-    class Page4ViewModel : IPageLogic
+    [Serializable]
+    class Page4ViewModel : IPageViewModel
     {
-        public IPageInterface PageInterface { get; set; }
-        public bool Save(BinaryWriter writer)
+        public Page4ViewModel()
         {
-            //TODO: Fill this in
-            return true;
+            
         }
 
-        public bool Load(BinaryReader reader)
-        {
-            //TODO: Fill this in
-            return true;
-        }
-
-        public int ExportToExcel(Worksheet worksheet, int curRow)
+        public override int ExportToExcel(Worksheet worksheet, int curRow)
         {
             //TODO: Fill this in
             return curRow;
         }
 
-        public void Connect(IPageInterface page)
+        public static Page4ViewModel Load(FileStream stream, BinaryFormatter formatter)
         {
-            page.Logic = this;
-            PageInterface = page;
-        }
-
-        public object Clone()
-        {
-            return MemberwiseClone();
+            return (Page4ViewModel)formatter.Deserialize(stream);
         }
     }
 }

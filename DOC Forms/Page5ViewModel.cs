@@ -2,14 +2,14 @@
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
-using System.Runtime.Serialization;
-using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows;
 using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
-    public class Page5ViewModel : DependencyObject, IPageLogic
+    [Serializable]
+    public class Page5ViewModel : IPageViewModel
     {
         #region DependencyProperties
 
@@ -223,7 +223,7 @@ namespace DOC_Forms
             OptionS4O1Text = "Practiced a previously taught intervention again but in a different situation";
         }
 
-        public bool Save(BinaryWriter writer)
+        private bool Save(BinaryWriter writer)
         {
             try
             {
@@ -288,7 +288,7 @@ namespace DOC_Forms
             return true;
         }
 
-        public bool Load(BinaryReader reader)
+        private bool Load(BinaryReader reader)
         {
             try
             {
@@ -352,7 +352,7 @@ namespace DOC_Forms
             return true;
         }
 
-        public int ExportToExcel(Worksheet worksheet, int curRow)
+        public override int ExportToExcel(Worksheet worksheet, int curRow)
         {
             try
             {
@@ -589,14 +589,9 @@ namespace DOC_Forms
             return curRow;
         }
 
-
-        /// <summary>
-        /// Creates a shallow copy of the logic.
-        /// </summary>
-        /// <returns></returns>
-        public object Clone()
+        public static Page5ViewModel Load(FileStream stream, BinaryFormatter formatter)
         {
-            return MemberwiseClone();
+            return (Page5ViewModel)formatter.Deserialize(stream);
         }
     }
 }

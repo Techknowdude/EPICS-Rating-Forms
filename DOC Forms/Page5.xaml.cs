@@ -43,7 +43,7 @@ namespace DOC_Forms
             return true;
         }
 
-        public IPageLogic Logic { get; set; }
+        public IPageViewModel Logic { get; set; }
         
         private void CbbSkillBuilding_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {

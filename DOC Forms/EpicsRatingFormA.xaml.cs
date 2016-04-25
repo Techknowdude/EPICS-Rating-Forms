@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Threading;
+using System.Xml.Serialization;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Win32;
 using Page = System.Windows.Controls.Page;
@@ -86,17 +88,19 @@ namespace DOC_Forms
 
             try
             {
-                using (BinaryWriter writer = new BinaryWriter(new FileStream(saveDialog.FileName, FileMode.OpenOrCreate)))
+                using (FileStream stream = File.OpenWrite(saveDialog.FileName))
                 {
+                    BinaryFormatter formatter = new BinaryFormatter();
+                    
                     foreach (var pageInterface in PageInterfaces)
                     {
-                        pageInterface.Logic.Save(writer);
+                        pageInterface.Logic.Save(stream,formatter);
                     }
                 }
             }
             catch (Exception exception)
             {
-                MessageBox.Show("ERROR", "There was an issue opening or creating the file: " + exception.Message);
+                MessageBox.Show("There was an issue opening or creating the file: " + exception.Message,"ERROR");
             }
         }
 
@@ -110,17 +114,20 @@ namespace DOC_Forms
 
             try
             {
-                using (BinaryReader reader = new BinaryReader(new FileStream(loadDialog.FileName, FileMode.Open)))
+                using (FileStream stream = File.OpenRead(loadDialog.FileName))
                 {
-                    foreach (var pageInterface in PageInterfaces)
-                    {
-                        pageInterface.Logic.Load(reader);
-                    }
+                    BinaryFormatter formatter = new BinaryFormatter();
+
+                    ((Page1) Pages[0]).Logic = Page1ViewModel.Load(stream, formatter);
+                    ((Page2) Pages[1]).Logic = Page2ViewModel.Load(stream, formatter);
+                    ((Page3) Pages[2]).Logic = Page3ViewModel.Load(stream, formatter);
+                    ((Page4) Pages[3]).Logic = Page4ViewModel.Load(stream, formatter);
+                    ((Page5) Pages[4]).Logic = Page5ViewModel.Load(stream, formatter);
                 }
             }
             catch (Exception exception)
             {
-                MessageBox.Show("ERROR", "There was an issue opening the file: " + exception.Message);
+                MessageBox.Show("There was an issue opening the file: " + exception.Message,"ERROR");
             }
         }
 

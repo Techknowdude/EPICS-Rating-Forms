@@ -15,6 +15,6 @@ namespace DOC_Forms
         /// <summary>
         /// The logic underlying the page. This is the controller and model for this view.
         /// </summary>
-        IPageLogic Logic { get; set; }
+        IPageViewModel Logic { get; set; }
     }
 }

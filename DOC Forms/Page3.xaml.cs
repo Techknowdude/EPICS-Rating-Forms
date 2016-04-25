@@ -44,6 +44,6 @@ namespace DOC_Forms
             throw new NotImplementedException();
         }
 
-        public IPageLogic Logic { get; set; }
+        public IPageViewModel Logic { get; set; }
     }
 }
