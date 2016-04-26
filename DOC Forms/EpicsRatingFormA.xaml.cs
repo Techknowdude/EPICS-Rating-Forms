@@ -17,7 +17,6 @@ namespace DOC_Forms
     {
         private List<Page> Pages { get; set; }
         private List<IPageInterface> PageInterfaces { get; set; }
-        private Page _currentlyDisplayedPage;
         private int _currentPage = -1;
 
         private EpicsRatingFormLogic logic;
@@ -91,6 +90,7 @@ namespace DOC_Forms
                         pageInterface.ViewModel.Save(stream,formatter);
                     }
                 }
+                MessageBox.Show("Saving complete.");
             }
             catch (Exception exception)
             {
@@ -113,11 +113,13 @@ namespace DOC_Forms
                     BinaryFormatter formatter = new BinaryFormatter();
 
                     ((Page1) Pages[0]).SetViewModel(Page1ViewModel.Load(stream, formatter));
-                    ((Page2) Pages[1]).SetLogic(Page2ViewModel.Load(stream, formatter));
-                    ((Page3) Pages[2]).SetLogic(Page3ViewModel.Load(stream, formatter));
-                    ((Page4) Pages[3]).SetLogic(Page4ViewModel.Load(stream, formatter));
-                    ((Page5) Pages[4]).SetLogic(Page5ViewModel.Load(stream, formatter));
+                    ((Page2) Pages[1]).SetViewModel(Page2ViewModel.Load(stream, formatter));
+                    ((Page3) Pages[2]).SetViewModel(Page3ViewModel.Load(stream, formatter));
+                    ((Page4) Pages[3]).SetViewModel(Page4ViewModel.Load(stream, formatter));
+                    ((Page5) Pages[4]).SetViewModel(Page5ViewModel.Load(stream, formatter));
                 }
+
+                MessageBox.Show("Loading complete.");
             }
             catch (Exception exception)
             {
@@ -125,7 +127,7 @@ namespace DOC_Forms
             }
         }
 
-        private async void ExcelMenuItem_OnClick(object sender, RoutedEventArgs e)
+        private void ExcelMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
             try
             {
