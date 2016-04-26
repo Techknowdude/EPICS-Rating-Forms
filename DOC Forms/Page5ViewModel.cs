@@ -114,11 +114,7 @@ namespace DOC_Forms
         //    typeof(Page5ViewModel));
         //public static readonly DependencyProperty OptionS4O1Property = DependencyProperty.Register("OptionS4O1", typeof(Boolean),
         //    typeof(Page5ViewModel));
-        //#endregion
-        #region Properties
 
-        public ObservableCollection<String> FiftySkills => SharedResources.FiftySocialSkills;
-        public ObservableCollection<String> BlueRedGuides => SharedResources.RedBlueGuides;
 
         //public String SkillBuildingSkill { get { return (String)GetValue(SkillBuildingProperty); } set { SetValue(SkillBuildingProperty, value); } }
 
@@ -177,6 +173,64 @@ namespace DOC_Forms
         //public String OptionS4O1Text { get { return (String)GetValue(OptionS4O1TextProperty); } set { SetValue(OptionS4O1TextProperty, value); } }
         //public bool OptionS4O1 { get { return (bool)GetValue(OptionS4O1Property); } set { SetValue(OptionS4O1Property, value); } }
 
+        //#endregion
+
+        #region Fields
+        private string _skillBuildingSkill;
+        private string _careyText;
+        private string _otherInterventionText;
+        private string _graduatedText;
+        private string _optionS1O1Text;
+        private string _optionS4O1Text;
+        private string _optionS1O2Text;
+        private string _optionS1O3Text;
+        private string _optionS1O4Text;
+        private string _optionS1O5Text;
+        private string _optionS1O6Text;
+        private string _optionS1O7Text;
+        private string _optionS1O8Text;
+        private string _optionS2O1Text;
+        private string _optionS2O2Text;
+        private string _optionS2O3Text;
+        private string _optionS2O4Text;
+        private string _optionS2O5Text;
+        private string _optionS2O6Text;
+        private string _optionS3O1Text;
+        private string _optionS3O2Text;
+        private string _optionS3O3Text;
+        private string _optionS3O4Text;
+        private string _optionS3O5Text;
+        private string _optionS3O6Text;
+        private string _optionS3O7Text;
+        private bool _optionS1O1;
+        private bool _optionS1O2;
+        private bool _optionS1O3;
+        private bool _optionS1O4;
+        private bool _optionS1O5;
+        private bool _optionS1O6;
+        private bool _optionS1O7;
+        private bool _optionS1O8;
+        private bool _optionS2O1;
+        private bool _optionS2O2;
+        private bool _optionS2O3;
+        private bool _optionS2O4;
+        private bool _optionS2O5;
+        private bool _optionS2O6;
+        private bool _optionS3O1;
+        private bool _optionS3O2;
+        private bool _optionS3O3;
+        private bool _optionS3O4;
+        private bool _optionS3O5;
+        private bool _optionS3O6;
+        private bool _optionS3O7;
+        private bool _optionS4O1;
+
+        #endregion
+        #region Properties
+
+        public ObservableCollection<String> FiftySkills => SharedResources.FiftySocialSkills;
+        public ObservableCollection<String> BlueRedGuides => SharedResources.RedBlueGuides;
+
 
         public String SkillBuildingSkill
         {
@@ -221,7 +275,11 @@ namespace DOC_Forms
         public String OptionS1O1Text
         {
             get { return _optionS1O1Text; }
-            set { _optionS1O1Text = value; }
+            set
+            {
+                _optionS1O1Text = value;
+                RaisePropertyChangedEvent("OptionS1O1Text");
+            }
         }
 
         public String OptionS1O2Text
@@ -230,34 +288,209 @@ namespace DOC_Forms
             set
             {
                 _optionS1O2Text = value;
-                RaisePropertyChangedEvent("OptionS1O1Text");
+                RaisePropertyChangedEvent("OptionS1O2Text");
             }
         }
 
-        public String OptionS1O3Text { get; set; }
-        public String OptionS1O4Text { get; set; }
-        public String OptionS1O5Text { get; set; }
-        public String OptionS1O6Text { get; set; }
-        public String OptionS1O7Text { get; set; }
-        public String OptionS1O8Text { get; set; }
-        public String OptionS2O1Text { get; set; }
-        public String OptionS2O2Text { get; set; }
-        public String OptionS2O3Text { get; set; }
-        public String OptionS2O4Text { get; set; }
-        public String OptionS2O5Text { get; set; }
-        public String OptionS2O6Text { get; set; }
-        public String OptionS3O1Text { get; set; }
-        public String OptionS3O2Text { get; set; }
-        public String OptionS3O3Text { get; set; }
-        public String OptionS3O4Text { get; set; }
-        public String OptionS3O5Text { get; set; }
-        public String OptionS3O6Text { get; set; }
-        public String OptionS3O7Text { get; set; }
+        public String OptionS1O3Text
+        {
+            get { return _optionS1O3Text; }
+            set
+            {
+                _optionS1O3Text = value;
+                RaisePropertyChangedEvent("OptionS1O3Text");
+            }
+        }
+
+        public String OptionS1O4Text
+        {
+            get { return _optionS1O4Text; }
+            set
+            {
+                _optionS1O4Text = value;
+                RaisePropertyChangedEvent("OptionS1O4Text");
+            }
+
+        }
+
+        public String OptionS1O5Text
+        {
+            get { return _optionS1O5Text; }
+            set
+            {
+                _optionS1O5Text = value;
+                RaisePropertyChangedEvent("OptionS1O5Text");
+            }
+        }
+
+        public String OptionS1O6Text
+        {
+            get { return _optionS1O6Text; }
+            set
+            {
+                _optionS1O6Text = value;
+                RaisePropertyChangedEvent("OptionS1O6Text");
+            }
+        }
+
+        public String OptionS1O7Text
+        {
+            get { return _optionS1O7Text; }
+            set
+            {
+                _optionS1O7Text = value;
+                RaisePropertyChangedEvent("OptionS1O7Text");
+            }
+        }
+
+        public String OptionS1O8Text
+        {
+            get { return _optionS1O8Text; }
+            set
+            {
+                _optionS1O8Text = value;
+                RaisePropertyChangedEvent("OptionS1O8Text");
+            }
+        }
+
+        public String OptionS2O1Text
+        {
+            get { return _optionS2O1Text; }
+            set
+            {
+                _optionS2O1Text = value;
+                RaisePropertyChangedEvent("OptionS2O1Text");
+            }
+        }
+
+        public String OptionS2O2Text
+        {
+            get { return _optionS2O2Text; }
+            set
+            {
+                _optionS2O2Text = value;
+                RaisePropertyChangedEvent("OptionS2O2Text");
+            }
+        }
+
+        public String OptionS2O3Text
+        {
+            get { return _optionS2O3Text; }
+            set
+            {
+                _optionS2O3Text = value;
+                RaisePropertyChangedEvent("OptionS2O3Text");
+            }
+        }
+
+        public String OptionS2O4Text
+        {
+            get { return _optionS2O4Text; }
+            set
+            {
+                _optionS2O4Text = value;
+                RaisePropertyChangedEvent("OptionS2O4Text");
+            }
+        }
+
+        public String OptionS2O5Text
+        {
+            get { return _optionS2O5Text; }
+            set
+            {
+                _optionS2O5Text = value;
+                RaisePropertyChangedEvent("OptionS2O5Text");
+            }
+        }
+
+        public String OptionS2O6Text
+        {
+            get { return _optionS2O6Text; }
+            set
+            {
+                _optionS2O6Text = value;
+                RaisePropertyChangedEvent("OptionS2O6Text");
+            }
+        }
+
+        public String OptionS3O1Text
+        {
+            get { return _optionS3O1Text; }
+            set
+            {
+                _optionS3O1Text = value;
+                RaisePropertyChangedEvent("OptionS3O1Text");
+            }
+        }
+
+        public String OptionS3O2Text
+        {
+            get { return _optionS3O2Text; }
+            set
+            {
+                _optionS3O2Text = value;
+                RaisePropertyChangedEvent("OptionS3O2Text");
+            }
+        }
+
+        public String OptionS3O3Text
+        {
+            get { return _optionS3O3Text; }
+            set
+            {
+                _optionS3O3Text = value;
+                RaisePropertyChangedEvent("OptionS3O3Text");
+            }
+        }
+
+        public String OptionS3O4Text
+        {
+            get { return _optionS3O4Text; }
+            set
+            {
+                _optionS3O4Text = value;
+                RaisePropertyChangedEvent("OptionS3O4Text");
+            }
+        }
+
+        public String OptionS3O5Text
+        {
+            get { return _optionS3O5Text; }
+            set
+            {
+                _optionS3O5Text = value;
+                RaisePropertyChangedEvent("OptionS3O5Text");
+            }
+        }
+
+        public String OptionS3O6Text
+        {
+            get { return _optionS3O6Text; }
+            set
+            {
+                _optionS3O6Text = value;
+                RaisePropertyChangedEvent("OptionS3O6Text");
+            }
+        }
+
+        public String OptionS3O7Text
+        {
+            get { return _optionS3O7Text; }
+            set
+            {
+                _optionS3O7Text = value;
+                RaisePropertyChangedEvent("OptionS3O7Text");
+            }
+        }
 
         public String OptionS4O1Text
         {
             get { return _optionS4O1Text; }
-            set { _optionS4O1Text = value; }
+            set
+            {
+                _optionS4O1Text = value;
+                RaisePropertyChangedEvent("OptionS4O1Text");
+            }
         }
 
         public bool OptionS1O1
@@ -280,44 +513,208 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O3 { get; set; }
-        public bool OptionS1O4 { get; set; }
-        public bool OptionS1O5 { get; set; }
-        public bool OptionS1O6 { get; set; }
-        public bool OptionS1O7 { get; set; }
-        public bool OptionS1O8 { get; set; }
-        public bool OptionS2O1 { get; set; }
-        public bool OptionS2O2 { get; set; }
-        public bool OptionS2O3 { get; set; }
-        public bool OptionS2O4 { get; set; }
-        public bool OptionS2O5 { get; set; }
-        public bool OptionS2O6 { get; set; }
-        public bool OptionS3O1 { get; set; }
-        public bool OptionS3O2 { get; set; }
-        public bool OptionS3O3 { get; set; }
-        public bool OptionS3O4 { get; set; }
-        public bool OptionS3O5 { get; set; }
-        public bool OptionS3O6 { get; set; }
-        public bool OptionS3O7 { get; set; }
-        public bool OptionS4O1 { get; set; }
+        public bool OptionS1O3
+        {
+            get { return _optionS1O3; }
+            set
+            {
+                _optionS1O3 = value;
+                RaisePropertyChangedEvent("OptionS1O3");
+            }
+        }
+
+        public bool OptionS1O4
+        {
+            get { return _optionS1O4; }
+            set
+            {
+                _optionS1O4 = value;
+                RaisePropertyChangedEvent("OptionS1O4");
+            }
+        }
+
+        public bool OptionS1O5
+        {
+            get { return _optionS1O5; }
+            set
+            {
+                _optionS1O5 = value;
+                RaisePropertyChangedEvent("OptionS1O5");
+            }
+        }
+
+        public bool OptionS1O6
+        {
+            get { return _optionS1O6; }
+            set
+            {
+                _optionS1O6 = value;
+                RaisePropertyChangedEvent("OptionS1O6");
+            }
+        }
+
+        public bool OptionS1O7
+        {
+            get { return _optionS1O7; }
+            set
+            {
+                _optionS1O7 = value;
+                RaisePropertyChangedEvent("OptionS1O7");
+            }
+        }
+
+        public bool OptionS1O8
+        {
+            get { return _optionS1O8; }
+            set
+            {
+                _optionS1O8 = value;
+                RaisePropertyChangedEvent("OptionS1O8");
+            }
+        }
+
+        public bool OptionS2O1
+        {
+            get { return _optionS2O1; }
+            set
+            {
+                _optionS2O1 = value;
+                RaisePropertyChangedEvent("OptionS2O1");
+            }
+        }
+
+        public bool OptionS2O2
+        {
+            get { return _optionS2O2; }
+            set
+            {
+                _optionS2O2 = value;
+                RaisePropertyChangedEvent("OptionS2O2");
+            }
+        }
+
+        public bool OptionS2O3
+        {
+            get { return _optionS2O3; }
+            set
+            {
+                _optionS2O3 = value;
+                RaisePropertyChangedEvent("OptionS2O3");
+            }
+        }
+
+        public bool OptionS2O4
+        {
+            get { return _optionS2O4; }
+            set
+            {
+                _optionS2O4 = value;
+                RaisePropertyChangedEvent("OptionS2O4");
+            }
+        }
+
+        public bool OptionS2O5
+        {
+            get { return _optionS2O5; }
+            set
+            {
+                _optionS2O5 = value;
+                RaisePropertyChangedEvent("OptionS2O5");
+            }
+        }
+
+        public bool OptionS2O6
+        {
+            get { return _optionS2O6; }
+            set
+            {
+                _optionS2O6 = value;
+                RaisePropertyChangedEvent("OptionS2O6");
+            }
+        }
+
+        public bool OptionS3O1
+        {
+            get { return _optionS3O1; }
+            set
+            {
+                _optionS3O1 = value;
+                RaisePropertyChangedEvent("OptionS3O1");
+            }
+        }
+
+        public bool OptionS3O2
+        {
+            get { return _optionS3O2; }
+            set
+            {
+                _optionS3O2 = value;
+                RaisePropertyChangedEvent("OptionS3O2");
+            }
+        }
+
+        public bool OptionS3O3
+        {
+            get { return _optionS3O3; }
+            set
+            {
+                _optionS3O3 = value;
+                RaisePropertyChangedEvent("OptionS3O3");
+            }
+        }
+
+        public bool OptionS3O4
+        {
+            get { return _optionS3O4; }
+            set
+            {
+                _optionS3O4 = value;
+                RaisePropertyChangedEvent("OptionS3O4");
+            }
+        }
+
+        public bool OptionS3O5
+        {
+            get { return _optionS3O5; }
+            set
+            {
+                _optionS3O5 = value;
+                RaisePropertyChangedEvent("OptionS3O5");
+            }
+        }
+
+        public bool OptionS3O6
+        {
+            get { return _optionS3O6; }
+            set
+            {
+                _optionS3O6 = value;
+                RaisePropertyChangedEvent("OptionS3O6");
+            }
+        }
+
+        public bool OptionS3O7
+        {
+            get { return _optionS3O7; }
+            set
+            {
+                _optionS3O7 = value;
+                RaisePropertyChangedEvent("OptionS3O7");
+            }
+        }
+
+        public bool OptionS4O1
+        {
+            get { return _optionS4O1; }
+            set
+            {
+                _optionS4O1 = value;
+                RaisePropertyChangedEvent("OptionS4O1");
+            }
+        }
 
 
-
-
-
-
-
-
-        public int BarColor = ColorTranslator.ToOle(Color.CornflowerBlue);
-        private string _skillBuildingSkill;
-        private bool _optionS1O1;
-        private string _careyText;
-        private string _otherInterventionText;
-        private string _graduatedText;
-        private string _optionS1O1Text;
-        private string _optionS4O1Text;
-        private string _optionS1O2Text;
-        private bool _optionS1O2;
+        public static readonly int BarColor = ColorTranslator.ToOle(Color.CornflowerBlue);
 
         #endregion
 

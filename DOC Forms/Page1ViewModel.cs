@@ -661,12 +661,18 @@ namespace DOC_Forms
             return _pageLogic.ExportToExcel(BuildInfo(), worksheet, curRow);
         }
 
-        private Page1ExportInfo BuildInfo()
+        private Page1ViewModel BuildInfo()
         {
-            var info = new Page1ExportInfo();
+            Page1ViewModel copy = null;
+            Stream stream = new MemoryStream();
+            BinaryFormatter formatter = new BinaryFormatter();
+            Save(stream, formatter);
 
-            info.SessionDate = SessionDate;
-            return info;
+            stream.Position = 0; // reset position
+            copy = Load(stream, formatter);
+            stream.Close();
+
+            return copy;
         }
         
         private void UpdateScores()
@@ -750,7 +756,7 @@ namespace DOC_Forms
         }
         
 
-        public static Page1ViewModel Load(FileStream stream, BinaryFormatter formatter)
+        public static Page1ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
             return (Page1ViewModel)formatter.Deserialize(stream);
         }

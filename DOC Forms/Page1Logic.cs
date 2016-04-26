@@ -9,7 +9,7 @@ namespace DOC_Forms
         {
         }
 
-        public int ExportToExcel(Page1ExportInfo info, Worksheet worksheet, int curRow)
+        public int ExportToExcel(Page1ViewModel info, Worksheet worksheet, int curRow)
         {
             Range rng = worksheet.get_Range("A" + curRow, "G" + curRow);
             rng.Cells.Font.Size = 18;
@@ -21,41 +21,19 @@ namespace DOC_Forms
             rng = worksheet.get_Range("A" + curRow, "G" + curRow);
             rng.Cells.Font.Size = 14;
             rng.Cells.Font.Bold = true;
-            rng.Cells.Font.Color = ColorTranslator.ToOle(Color.Black); //bg
-            rng.Style.Font.Color = ColorTranslator.ToOle(Color.White); // text
+            rng.Interior.Color = XlRgbColor.rgbBlack;//ColorTranslator.ToOle(Color.Black); //bg TODO: Fix this...
+            rng.Font.Color = XlRgbColor.rgbWhite; // text
             rng.Merge();
             rng.Value = "Session Information";
             curRow++;
 
             rng = worksheet.get_Range("A" + curRow);
             rng.Cells.Font.Size = 12;
-            rng.Value = "Session date:";
-            rng = worksheet.get_Range("B" + curRow);
-            rng.Cells.Font.Size = 12;
-            rng.Value = info.SessionDate.ToString("d");
+            rng.Value = "Session date: " + info.SessionDate.ToString("d");
             curRow++;
-
 
             return curRow;
         }
-
-
-        private void Something()
-        {
-
-            //int completed = 0;
-            //int total = 0;
-            //double percent = double.NaN;
-
-            //Int32.TryParse(Completed, out completed);
-            //Int32.TryParse(Total, out total);
-
-            //if (completed != 0 && total != 0)
-            //{
-            //    percent = completed / (double)total;
-            //    Percent = percent.ToString("P0");
-            //}
-
-        }
+        
     }
 }

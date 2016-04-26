@@ -12,7 +12,7 @@ namespace DOC_Forms
         /// Used to save a form as a file. May be used to save partial forms
         /// </summary>
         /// <returns>true on a successful save. Any errors will cause it to return false</returns>
-        public virtual bool Save(FileStream stream, BinaryFormatter formatter)
+        public virtual bool Save(Stream stream, BinaryFormatter formatter)
         {
             try
             {
