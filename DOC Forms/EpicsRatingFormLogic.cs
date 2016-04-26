@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Threading;
+﻿using System.Collections.Generic;
 using Microsoft.Office.Interop.Excel;
-using Page = System.Windows.Controls.Page;
 
 namespace DOC_Forms
 {
@@ -43,7 +36,7 @@ namespace DOC_Forms
             _controlWindow = epicsRatingFormA;
             for (int i = 0; i < pages.Count; ++i)
             {
-                _pages.Add(pages[i].Logic);
+                _pages.Add(pages[i].ViewModel);
             }
         }
 

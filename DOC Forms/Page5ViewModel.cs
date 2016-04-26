@@ -3,7 +3,6 @@ using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Windows;
 using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
@@ -11,174 +10,314 @@ namespace DOC_Forms
     [Serializable]
     public class Page5ViewModel : IPageViewModel
     {
-        #region DependencyProperties
+        //#region DependencyProperties
 
-        public static readonly DependencyProperty SkillBuildingProperty = DependencyProperty.Register("SkillBuildingSkill", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O1Property = DependencyProperty.Register("OptionS1O1", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O1TextProperty = DependencyProperty.Register("OptionS1O1Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O2Property = DependencyProperty.Register("OptionS1O2", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O2TextProperty = DependencyProperty.Register("OptionS1O2Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O3Property = DependencyProperty.Register("OptionS1O3", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O3TextProperty = DependencyProperty.Register("OptionS1O3Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O4Property = DependencyProperty.Register("OptionS1O4", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O4TextProperty = DependencyProperty.Register("OptionS1O4Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O5Property = DependencyProperty.Register("OptionS1O5", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O5TextProperty = DependencyProperty.Register("OptionS1O5Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O6Property = DependencyProperty.Register("OptionS1O6", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O6TextProperty = DependencyProperty.Register("OptionS1O6Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O7Property = DependencyProperty.Register("OptionS1O7", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O7TextProperty = DependencyProperty.Register("OptionS1O7Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O8Property = DependencyProperty.Register("OptionS1O8", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS1O8TextProperty = DependencyProperty.Register("OptionS1O8Text", typeof(String),
-            typeof(Page5ViewModel));
+        //public static readonly DependencyProperty SkillBuildingProperty = DependencyProperty.Register("SkillBuildingSkill", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O1Property = DependencyProperty.Register("OptionS1O1", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O1TextProperty = DependencyProperty.Register("OptionS1O1Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O2Property = DependencyProperty.Register("OptionS1O2", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O2TextProperty = DependencyProperty.Register("OptionS1O2Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O3Property = DependencyProperty.Register("OptionS1O3", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O3TextProperty = DependencyProperty.Register("OptionS1O3Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O4Property = DependencyProperty.Register("OptionS1O4", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O4TextProperty = DependencyProperty.Register("OptionS1O4Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O5Property = DependencyProperty.Register("OptionS1O5", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O5TextProperty = DependencyProperty.Register("OptionS1O5Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O6Property = DependencyProperty.Register("OptionS1O6", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O6TextProperty = DependencyProperty.Register("OptionS1O6Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O7Property = DependencyProperty.Register("OptionS1O7", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O7TextProperty = DependencyProperty.Register("OptionS1O7Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O8Property = DependencyProperty.Register("OptionS1O8", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS1O8TextProperty = DependencyProperty.Register("OptionS1O8Text", typeof(String),
+        //    typeof(Page5ViewModel));
 
-        public static readonly DependencyProperty CareyTextProperty = DependencyProperty.Register("CareyText", typeof(String),
-            typeof(Page5ViewModel));
+        //public static readonly DependencyProperty CareyTextProperty = DependencyProperty.Register("CareyText", typeof(String),
+        //    typeof(Page5ViewModel));
 
-        public static readonly DependencyProperty OptionS2O1Property = DependencyProperty.Register("OptionS2O1", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O1TextProperty = DependencyProperty.Register("OptionS2O1Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O2Property = DependencyProperty.Register("OptionS2O2", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O2TextProperty = DependencyProperty.Register("OptionS2O2Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O3Property = DependencyProperty.Register("OptionS2O3", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O3TextProperty = DependencyProperty.Register("OptionS2O3Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O4Property = DependencyProperty.Register("OptionS2O4", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O4TextProperty = DependencyProperty.Register("OptionS2O4Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O5Property = DependencyProperty.Register("OptionS2O5", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O5TextProperty = DependencyProperty.Register("OptionS2O5Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O6Property = DependencyProperty.Register("OptionS2O6", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS2O6TextProperty = DependencyProperty.Register("OptionS2O6Text", typeof(String),
-            typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O1Property = DependencyProperty.Register("OptionS2O1", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O1TextProperty = DependencyProperty.Register("OptionS2O1Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O2Property = DependencyProperty.Register("OptionS2O2", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O2TextProperty = DependencyProperty.Register("OptionS2O2Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O3Property = DependencyProperty.Register("OptionS2O3", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O3TextProperty = DependencyProperty.Register("OptionS2O3Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O4Property = DependencyProperty.Register("OptionS2O4", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O4TextProperty = DependencyProperty.Register("OptionS2O4Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O5Property = DependencyProperty.Register("OptionS2O5", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O5TextProperty = DependencyProperty.Register("OptionS2O5Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O6Property = DependencyProperty.Register("OptionS2O6", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS2O6TextProperty = DependencyProperty.Register("OptionS2O6Text", typeof(String),
+        //    typeof(Page5ViewModel));
 
-        public static readonly DependencyProperty OtherInterventionProperty = DependencyProperty.Register("OtherInterventionText", typeof(String),
-            typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OtherInterventionProperty = DependencyProperty.Register("OtherInterventionText", typeof(String),
+        //    typeof(Page5ViewModel));
 
 
-        public static readonly DependencyProperty OptionS3O1Property = DependencyProperty.Register("OptionS3O1", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O1TextProperty = DependencyProperty.Register("OptionS3O1Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O2Property = DependencyProperty.Register("OptionS3O2", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O2TextProperty = DependencyProperty.Register("OptionS3O2Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O3Property = DependencyProperty.Register("OptionS3O3", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O3TextProperty = DependencyProperty.Register("OptionS3O3Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O4Property = DependencyProperty.Register("OptionS3O4", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O4TextProperty = DependencyProperty.Register("OptionS3O4Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O5Property = DependencyProperty.Register("OptionS3O5", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O5TextProperty = DependencyProperty.Register("OptionS3O5Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O6Property = DependencyProperty.Register("OptionS3O6", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O6TextProperty = DependencyProperty.Register("OptionS3O6Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O7Property = DependencyProperty.Register("OptionS3O7", typeof(Boolean),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS3O7TextProperty = DependencyProperty.Register("OptionS3O7Text", typeof(String),
-            typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O1Property = DependencyProperty.Register("OptionS3O1", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O1TextProperty = DependencyProperty.Register("OptionS3O1Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O2Property = DependencyProperty.Register("OptionS3O2", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O2TextProperty = DependencyProperty.Register("OptionS3O2Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O3Property = DependencyProperty.Register("OptionS3O3", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O3TextProperty = DependencyProperty.Register("OptionS3O3Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O4Property = DependencyProperty.Register("OptionS3O4", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O4TextProperty = DependencyProperty.Register("OptionS3O4Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O5Property = DependencyProperty.Register("OptionS3O5", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O5TextProperty = DependencyProperty.Register("OptionS3O5Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O6Property = DependencyProperty.Register("OptionS3O6", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O6TextProperty = DependencyProperty.Register("OptionS3O6Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O7Property = DependencyProperty.Register("OptionS3O7", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS3O7TextProperty = DependencyProperty.Register("OptionS3O7Text", typeof(String),
+        //    typeof(Page5ViewModel));
 
-        public static readonly DependencyProperty GradutaedTextProperty = DependencyProperty.Register("GraduatedText", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS4O1TextProperty = DependencyProperty.Register("OptionS4O1Text", typeof(String),
-            typeof(Page5ViewModel));
-        public static readonly DependencyProperty OptionS4O1Property = DependencyProperty.Register("OptionS4O1", typeof(Boolean),
-            typeof(Page5ViewModel));
-        #endregion
+        //public static readonly DependencyProperty GradutaedTextProperty = DependencyProperty.Register("GraduatedText", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS4O1TextProperty = DependencyProperty.Register("OptionS4O1Text", typeof(String),
+        //    typeof(Page5ViewModel));
+        //public static readonly DependencyProperty OptionS4O1Property = DependencyProperty.Register("OptionS4O1", typeof(Boolean),
+        //    typeof(Page5ViewModel));
+        //#endregion
         #region Properties
 
         public ObservableCollection<String> FiftySkills => SharedResources.FiftySocialSkills;
         public ObservableCollection<String> BlueRedGuides => SharedResources.RedBlueGuides;
 
-        public String SkillBuildingSkill { get { return (String)GetValue(SkillBuildingProperty); } set { SetValue(SkillBuildingProperty, value); } }
+        //public String SkillBuildingSkill { get { return (String)GetValue(SkillBuildingProperty); } set { SetValue(SkillBuildingProperty, value); } }
 
-        public bool OptionS1O1 { get { return (bool)GetValue(OptionS1O1Property); } set { SetValue(OptionS1O1Property, value); } }
-        public String OptionS1O1Text { get { return (String)GetValue(OptionS1O1TextProperty); } set { SetValue(OptionS1O1TextProperty, value); } }
-        public bool OptionS1O2 { get { return (bool)GetValue(OptionS1O2Property); } set { SetValue(OptionS1O2Property, value); } }
-        public String OptionS1O2Text { get { return (String)GetValue(OptionS1O2TextProperty); } set { SetValue(OptionS1O2TextProperty, value); } }
-        public bool OptionS1O3 { get { return (bool)GetValue(OptionS1O3Property); } set { SetValue(OptionS1O3Property, value); } }
-        public String OptionS1O3Text { get { return (String)GetValue(OptionS1O3TextProperty); } set { SetValue(OptionS1O3TextProperty, value); } }
-        public bool OptionS1O4 { get { return (bool)GetValue(OptionS1O4Property); } set { SetValue(OptionS1O4Property, value); } }
-        public String OptionS1O4Text { get { return (String)GetValue(OptionS1O4TextProperty); } set { SetValue(OptionS1O4TextProperty, value); } }
-        public bool OptionS1O5 { get { return (bool)GetValue(OptionS1O5Property); } set { SetValue(OptionS1O5Property, value); } }
-        public String OptionS1O5Text { get { return (String)GetValue(OptionS1O5TextProperty); } set { SetValue(OptionS1O5TextProperty, value); } }
-        public bool OptionS1O6 { get { return (bool)GetValue(OptionS1O6Property); } set { SetValue(OptionS1O6Property, value); } }
-        public String OptionS1O6Text { get { return (String)GetValue(OptionS1O6TextProperty); } set { SetValue(OptionS1O6TextProperty, value); } }
-        public bool OptionS1O7 { get { return (bool)GetValue(OptionS1O7Property); } set { SetValue(OptionS1O7Property, value); } }
-        public String OptionS1O7Text { get { return (String)GetValue(OptionS1O7TextProperty); } set { SetValue(OptionS1O7TextProperty, value); } }
-        public bool OptionS1O8 { get { return (bool)GetValue(OptionS1O8Property); } set { SetValue(OptionS1O8Property, value); } }
-        public String OptionS1O8Text { get { return (String)GetValue(OptionS1O8TextProperty); } set { SetValue(OptionS1O8TextProperty, value); } }
+        //public bool OptionS1O1 { get { return (bool)GetValue(OptionS1O1Property); } set { SetValue(OptionS1O1Property, value); } }
+        //public String OptionS1O1Text { get { return (String)GetValue(OptionS1O1TextProperty); } set { SetValue(OptionS1O1TextProperty, value); } }
+        //public bool OptionS1O2 { get { return (bool)GetValue(OptionS1O2Property); } set { SetValue(OptionS1O2Property, value); } }
+        //public String OptionS1O2Text { get { return (String)GetValue(OptionS1O2TextProperty); } set { SetValue(OptionS1O2TextProperty, value); } }
+        //public bool OptionS1O3 { get { return (bool)GetValue(OptionS1O3Property); } set { SetValue(OptionS1O3Property, value); } }
+        //public String OptionS1O3Text { get { return (String)GetValue(OptionS1O3TextProperty); } set { SetValue(OptionS1O3TextProperty, value); } }
+        //public bool OptionS1O4 { get { return (bool)GetValue(OptionS1O4Property); } set { SetValue(OptionS1O4Property, value); } }
+        //public String OptionS1O4Text { get { return (String)GetValue(OptionS1O4TextProperty); } set { SetValue(OptionS1O4TextProperty, value); } }
+        //public bool OptionS1O5 { get { return (bool)GetValue(OptionS1O5Property); } set { SetValue(OptionS1O5Property, value); } }
+        //public String OptionS1O5Text { get { return (String)GetValue(OptionS1O5TextProperty); } set { SetValue(OptionS1O5TextProperty, value); } }
+        //public bool OptionS1O6 { get { return (bool)GetValue(OptionS1O6Property); } set { SetValue(OptionS1O6Property, value); } }
+        //public String OptionS1O6Text { get { return (String)GetValue(OptionS1O6TextProperty); } set { SetValue(OptionS1O6TextProperty, value); } }
+        //public bool OptionS1O7 { get { return (bool)GetValue(OptionS1O7Property); } set { SetValue(OptionS1O7Property, value); } }
+        //public String OptionS1O7Text { get { return (String)GetValue(OptionS1O7TextProperty); } set { SetValue(OptionS1O7TextProperty, value); } }
+        //public bool OptionS1O8 { get { return (bool)GetValue(OptionS1O8Property); } set { SetValue(OptionS1O8Property, value); } }
+        //public String OptionS1O8Text { get { return (String)GetValue(OptionS1O8TextProperty); } set { SetValue(OptionS1O8TextProperty, value); } }
 
-        public String CareyText { get { return (String)GetValue(CareyTextProperty); } set { SetValue(CareyTextProperty, value); } }
+        //public String CareyText { get { return (String)GetValue(CareyTextProperty); } set { SetValue(CareyTextProperty, value); } }
 
-        public bool OptionS2O1 { get { return (bool)GetValue(OptionS2O1Property); } set { SetValue(OptionS2O1Property, value); } }
-        public String OptionS2O1Text { get { return (String)GetValue(OptionS2O1TextProperty); } set { SetValue(OptionS2O1TextProperty, value); } }
-        public bool OptionS2O2 { get { return (bool)GetValue(OptionS2O2Property); } set { SetValue(OptionS2O2Property, value); } }
-        public String OptionS2O2Text { get { return (String)GetValue(OptionS2O2TextProperty); } set { SetValue(OptionS2O2TextProperty, value); } }
-        public bool OptionS2O3 { get { return (bool)GetValue(OptionS2O3Property); } set { SetValue(OptionS2O3Property, value); } }
-        public String OptionS2O3Text { get { return (String)GetValue(OptionS2O3TextProperty); } set { SetValue(OptionS2O3TextProperty, value); } }
-        public bool OptionS2O4 { get { return (bool)GetValue(OptionS2O4Property); } set { SetValue(OptionS2O4Property, value); } }
-        public String OptionS2O4Text { get { return (String)GetValue(OptionS2O4TextProperty); } set { SetValue(OptionS2O4TextProperty, value); } }
-        public bool OptionS2O5 { get { return (bool)GetValue(OptionS2O5Property); } set { SetValue(OptionS2O5Property, value); } }
-        public String OptionS2O5Text { get { return (String)GetValue(OptionS2O5TextProperty); } set { SetValue(OptionS2O5TextProperty, value); } }
-        public bool OptionS2O6 { get { return (bool)GetValue(OptionS2O6Property); } set { SetValue(OptionS2O6Property, value); } }
-        public String OptionS2O6Text { get { return (String)GetValue(OptionS2O6TextProperty); } set { SetValue(OptionS2O6TextProperty, value); } }
+        //public bool OptionS2O1 { get { return (bool)GetValue(OptionS2O1Property); } set { SetValue(OptionS2O1Property, value); } }
+        //public String OptionS2O1Text { get { return (String)GetValue(OptionS2O1TextProperty); } set { SetValue(OptionS2O1TextProperty, value); } }
+        //public bool OptionS2O2 { get { return (bool)GetValue(OptionS2O2Property); } set { SetValue(OptionS2O2Property, value); } }
+        //public String OptionS2O2Text { get { return (String)GetValue(OptionS2O2TextProperty); } set { SetValue(OptionS2O2TextProperty, value); } }
+        //public bool OptionS2O3 { get { return (bool)GetValue(OptionS2O3Property); } set { SetValue(OptionS2O3Property, value); } }
+        //public String OptionS2O3Text { get { return (String)GetValue(OptionS2O3TextProperty); } set { SetValue(OptionS2O3TextProperty, value); } }
+        //public bool OptionS2O4 { get { return (bool)GetValue(OptionS2O4Property); } set { SetValue(OptionS2O4Property, value); } }
+        //public String OptionS2O4Text { get { return (String)GetValue(OptionS2O4TextProperty); } set { SetValue(OptionS2O4TextProperty, value); } }
+        //public bool OptionS2O5 { get { return (bool)GetValue(OptionS2O5Property); } set { SetValue(OptionS2O5Property, value); } }
+        //public String OptionS2O5Text { get { return (String)GetValue(OptionS2O5TextProperty); } set { SetValue(OptionS2O5TextProperty, value); } }
+        //public bool OptionS2O6 { get { return (bool)GetValue(OptionS2O6Property); } set { SetValue(OptionS2O6Property, value); } }
+        //public String OptionS2O6Text { get { return (String)GetValue(OptionS2O6TextProperty); } set { SetValue(OptionS2O6TextProperty, value); } }
 
-        public String OtherInterventionText { get { return (String)GetValue(OtherInterventionProperty); } set { SetValue(OtherInterventionProperty, value); } }
+        //public String OtherInterventionText { get { return (String)GetValue(OtherInterventionProperty); } set { SetValue(OtherInterventionProperty, value); } }
 
-        public bool OptionS3O1 { get { return (bool)GetValue(OptionS3O1Property); } set { SetValue(OptionS3O1Property, value); } }
-        public String OptionS3O1Text { get { return (String)GetValue(OptionS3O1TextProperty); } set { SetValue(OptionS3O1TextProperty, value); } }
-        public bool OptionS3O2 { get { return (bool)GetValue(OptionS3O2Property); } set { SetValue(OptionS3O2Property, value); } }
-        public String OptionS3O2Text { get { return (String)GetValue(OptionS3O2TextProperty); } set { SetValue(OptionS3O2TextProperty, value); } }
-        public bool OptionS3O3 { get { return (bool)GetValue(OptionS3O3Property); } set { SetValue(OptionS3O3Property, value); } }
-        public String OptionS3O3Text { get { return (String)GetValue(OptionS3O3TextProperty); } set { SetValue(OptionS3O3TextProperty, value); } }
-        public bool OptionS3O4 { get { return (bool)GetValue(OptionS3O4Property); } set { SetValue(OptionS3O4Property, value); } }
-        public String OptionS3O4Text { get { return (String)GetValue(OptionS3O4TextProperty); } set { SetValue(OptionS3O4TextProperty, value); } }
-        public bool OptionS3O5 { get { return (bool)GetValue(OptionS3O5Property); } set { SetValue(OptionS3O5Property, value); } }
-        public String OptionS3O5Text { get { return (String)GetValue(OptionS3O5TextProperty); } set { SetValue(OptionS3O5TextProperty, value); } }
-        public bool OptionS3O6 { get { return (bool)GetValue(OptionS3O6Property); } set { SetValue(OptionS3O6Property, value); } }
-        public String OptionS3O6Text { get { return (String)GetValue(OptionS3O6TextProperty); } set { SetValue(OptionS3O6TextProperty, value); } }
-        public bool OptionS3O7 { get { return (bool)GetValue(OptionS3O7Property); } set { SetValue(OptionS3O7Property, value); } }
-        public String OptionS3O7Text { get { return (String)GetValue(OptionS3O7TextProperty); } set { SetValue(OptionS3O7TextProperty, value); } }
+        //public bool OptionS3O1 { get { return (bool)GetValue(OptionS3O1Property); } set { SetValue(OptionS3O1Property, value); } }
+        //public String OptionS3O1Text { get { return (String)GetValue(OptionS3O1TextProperty); } set { SetValue(OptionS3O1TextProperty, value); } }
+        //public bool OptionS3O2 { get { return (bool)GetValue(OptionS3O2Property); } set { SetValue(OptionS3O2Property, value); } }
+        //public String OptionS3O2Text { get { return (String)GetValue(OptionS3O2TextProperty); } set { SetValue(OptionS3O2TextProperty, value); } }
+        //public bool OptionS3O3 { get { return (bool)GetValue(OptionS3O3Property); } set { SetValue(OptionS3O3Property, value); } }
+        //public String OptionS3O3Text { get { return (String)GetValue(OptionS3O3TextProperty); } set { SetValue(OptionS3O3TextProperty, value); } }
+        //public bool OptionS3O4 { get { return (bool)GetValue(OptionS3O4Property); } set { SetValue(OptionS3O4Property, value); } }
+        //public String OptionS3O4Text { get { return (String)GetValue(OptionS3O4TextProperty); } set { SetValue(OptionS3O4TextProperty, value); } }
+        //public bool OptionS3O5 { get { return (bool)GetValue(OptionS3O5Property); } set { SetValue(OptionS3O5Property, value); } }
+        //public String OptionS3O5Text { get { return (String)GetValue(OptionS3O5TextProperty); } set { SetValue(OptionS3O5TextProperty, value); } }
+        //public bool OptionS3O6 { get { return (bool)GetValue(OptionS3O6Property); } set { SetValue(OptionS3O6Property, value); } }
+        //public String OptionS3O6Text { get { return (String)GetValue(OptionS3O6TextProperty); } set { SetValue(OptionS3O6TextProperty, value); } }
+        //public bool OptionS3O7 { get { return (bool)GetValue(OptionS3O7Property); } set { SetValue(OptionS3O7Property, value); } }
+        //public String OptionS3O7Text { get { return (String)GetValue(OptionS3O7TextProperty); } set { SetValue(OptionS3O7TextProperty, value); } }
 
 
-        public String GraduatedText { get { return (String)GetValue(GradutaedTextProperty); } set { SetValue(GradutaedTextProperty, value); } }
+        //public String GraduatedText { get { return (String)GetValue(GradutaedTextProperty); } set { SetValue(GradutaedTextProperty, value); } }
 
-        public String OptionS4O1Text { get { return (String)GetValue(OptionS4O1TextProperty); } set { SetValue(OptionS4O1TextProperty, value); } }
-        public bool OptionS4O1 { get { return (bool)GetValue(OptionS4O1Property); } set { SetValue(OptionS4O1Property, value); } }
+        //public String OptionS4O1Text { get { return (String)GetValue(OptionS4O1TextProperty); } set { SetValue(OptionS4O1TextProperty, value); } }
+        //public bool OptionS4O1 { get { return (bool)GetValue(OptionS4O1Property); } set { SetValue(OptionS4O1Property, value); } }
+
+
+        public String SkillBuildingSkill
+        {
+            get { return _skillBuildingSkill; }
+            set
+            {
+                _skillBuildingSkill = value;
+                RaisePropertyChangedEvent("SkillBuildingSkill");
+            }
+        }
+
+        public String CareyText
+        {
+            get { return _careyText; }
+            set
+            {
+                _careyText = value;
+                RaisePropertyChangedEvent("CareyText");
+            }
+        }
+
+        public String OtherInterventionText
+        {
+            get { return _otherInterventionText; }
+            set
+            {
+                _otherInterventionText = value;
+                RaisePropertyChangedEvent("OtherInterventionText");
+            }
+        }
+
+        public String GraduatedText
+        {
+            get { return _graduatedText; }
+            set
+            {
+                _graduatedText = value;
+                RaisePropertyChangedEvent("GraduatedText");
+            }
+        }
+
+        public String OptionS1O1Text
+        {
+            get { return _optionS1O1Text; }
+            set { _optionS1O1Text = value; }
+        }
+
+        public String OptionS1O2Text
+        {
+            get { return _optionS1O2Text; }
+            set
+            {
+                _optionS1O2Text = value;
+                RaisePropertyChangedEvent("OptionS1O1Text");
+            }
+        }
+
+        public String OptionS1O3Text { get; set; }
+        public String OptionS1O4Text { get; set; }
+        public String OptionS1O5Text { get; set; }
+        public String OptionS1O6Text { get; set; }
+        public String OptionS1O7Text { get; set; }
+        public String OptionS1O8Text { get; set; }
+        public String OptionS2O1Text { get; set; }
+        public String OptionS2O2Text { get; set; }
+        public String OptionS2O3Text { get; set; }
+        public String OptionS2O4Text { get; set; }
+        public String OptionS2O5Text { get; set; }
+        public String OptionS2O6Text { get; set; }
+        public String OptionS3O1Text { get; set; }
+        public String OptionS3O2Text { get; set; }
+        public String OptionS3O3Text { get; set; }
+        public String OptionS3O4Text { get; set; }
+        public String OptionS3O5Text { get; set; }
+        public String OptionS3O6Text { get; set; }
+        public String OptionS3O7Text { get; set; }
+
+        public String OptionS4O1Text
+        {
+            get { return _optionS4O1Text; }
+            set { _optionS4O1Text = value; }
+        }
+
+        public bool OptionS1O1
+        {
+            get { return _optionS1O1; }
+            set
+            {
+                _optionS1O1 = value;
+                RaisePropertyChangedEvent("OptionS1O1");
+            }
+        }
+
+        public bool OptionS1O2
+        {
+            get { return _optionS1O2; }
+            set
+            {
+                _optionS1O2 = value;
+                RaisePropertyChangedEvent("OptionS1O2");
+            }
+        }
+
+        public bool OptionS1O3 { get; set; }
+        public bool OptionS1O4 { get; set; }
+        public bool OptionS1O5 { get; set; }
+        public bool OptionS1O6 { get; set; }
+        public bool OptionS1O7 { get; set; }
+        public bool OptionS1O8 { get; set; }
+        public bool OptionS2O1 { get; set; }
+        public bool OptionS2O2 { get; set; }
+        public bool OptionS2O3 { get; set; }
+        public bool OptionS2O4 { get; set; }
+        public bool OptionS2O5 { get; set; }
+        public bool OptionS2O6 { get; set; }
+        public bool OptionS3O1 { get; set; }
+        public bool OptionS3O2 { get; set; }
+        public bool OptionS3O3 { get; set; }
+        public bool OptionS3O4 { get; set; }
+        public bool OptionS3O5 { get; set; }
+        public bool OptionS3O6 { get; set; }
+        public bool OptionS3O7 { get; set; }
+        public bool OptionS4O1 { get; set; }
+
+
+
+
+
+
+
 
         public int BarColor = ColorTranslator.ToOle(Color.CornflowerBlue);
+        private string _skillBuildingSkill;
+        private bool _optionS1O1;
+        private string _careyText;
+        private string _otherInterventionText;
+        private string _graduatedText;
+        private string _optionS1O1Text;
+        private string _optionS4O1Text;
+        private string _optionS1O2Text;
+        private bool _optionS1O2;
 
         #endregion
 
@@ -377,7 +516,7 @@ namespace DOC_Forms
 
         public void Connect(IPageInterface page)
         {
-            page.Logic = this;
+            page.ViewModel = this;
             PageInterface = page;
 
 
@@ -591,7 +730,9 @@ namespace DOC_Forms
 
         public static Page5ViewModel Load(FileStream stream, BinaryFormatter formatter)
         {
-            return (Page5ViewModel)formatter.Deserialize(stream);
+            var view = (Page5ViewModel)formatter.Deserialize(stream);
+
+            return view;
         }
     }
 }

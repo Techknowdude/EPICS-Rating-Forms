@@ -5,7 +5,9 @@ namespace DOC_Forms
 {
     public static class SharedResources
     {
+        [NonSerialized]
         private static ObservableCollection<String> _redBlueGuides = null; 
+        [NonSerialized]
         private static ObservableCollection<String> _fiftySocialSkills = null;
 
         public static ObservableCollection<string> FiftySocialSkills

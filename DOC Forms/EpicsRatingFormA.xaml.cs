@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-using System.Windows.Threading;
-using System.Xml.Serialization;
-using Microsoft.Office.Interop.Excel;
 using Microsoft.Win32;
 using Page = System.Windows.Controls.Page;
 using Window = System.Windows.Window;
@@ -94,7 +88,7 @@ namespace DOC_Forms
                     
                     foreach (var pageInterface in PageInterfaces)
                     {
-                        pageInterface.Logic.Save(stream,formatter);
+                        pageInterface.ViewModel.Save(stream,formatter);
                     }
                 }
             }
@@ -118,11 +112,11 @@ namespace DOC_Forms
                 {
                     BinaryFormatter formatter = new BinaryFormatter();
 
-                    ((Page1) Pages[0]).Logic = Page1ViewModel.Load(stream, formatter);
-                    ((Page2) Pages[1]).Logic = Page2ViewModel.Load(stream, formatter);
-                    ((Page3) Pages[2]).Logic = Page3ViewModel.Load(stream, formatter);
-                    ((Page4) Pages[3]).Logic = Page4ViewModel.Load(stream, formatter);
-                    ((Page5) Pages[4]).Logic = Page5ViewModel.Load(stream, formatter);
+                    ((Page1) Pages[0]).SetViewModel(Page1ViewModel.Load(stream, formatter));
+                    ((Page2) Pages[1]).SetLogic(Page2ViewModel.Load(stream, formatter));
+                    ((Page3) Pages[2]).SetLogic(Page3ViewModel.Load(stream, formatter));
+                    ((Page4) Pages[3]).SetLogic(Page4ViewModel.Load(stream, formatter));
+                    ((Page5) Pages[4]).SetLogic(Page5ViewModel.Load(stream, formatter));
                 }
             }
             catch (Exception exception)

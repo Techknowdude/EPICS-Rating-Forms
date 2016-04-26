@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DOC_Forms
 {
@@ -23,12 +11,17 @@ namespace DOC_Forms
     {
         public Page3()
         {
-            Logic = new Page3ViewModel();
-            DataContext = Logic;
+            ViewModel = new Page3ViewModel();
+            DataContext = ViewModel;
 
             InitializeComponent();
         }
 
+        public void SetViewModel(IPageViewModel model)
+        {
+            ViewModel = model;
+            DataContext = ViewModel;
+        }
         public bool IsCompleted()
         {
             throw new NotImplementedException();
@@ -44,6 +37,6 @@ namespace DOC_Forms
             throw new NotImplementedException();
         }
 
-        public IPageViewModel Logic { get; set; }
+        public IPageViewModel ViewModel { get; set; }
     }
 }

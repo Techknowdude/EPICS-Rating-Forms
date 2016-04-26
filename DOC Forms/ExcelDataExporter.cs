@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
 using System.Windows;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Win32;
-using Action = System.Action;
 using Application = Microsoft.Office.Interop.Excel.Application;
 
 namespace DOC_Forms

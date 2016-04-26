@@ -1,18 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DOC_Forms
 {
@@ -21,12 +9,12 @@ namespace DOC_Forms
     /// </summary>
     public partial class Page2 : Page, IPageInterface
     {
-        public IPageViewModel Logic { get; set; }
+        public IPageViewModel ViewModel { get; set; }
 
         public Page2()
         {
-            Logic = new Page2ViewModel();
-            DataContext = Logic;
+            ViewModel = new Page2ViewModel();
+            DataContext = ViewModel;
             InitializeComponent();
         }
 
@@ -40,6 +28,11 @@ namespace DOC_Forms
             throw new NotImplementedException();
         }
 
+        public void SetViewModel(IPageViewModel model)
+        {
+            ViewModel = model;
+            DataContext = ViewModel;
+        }
         public bool Load(BinaryReader reader)
         {
             throw new NotImplementedException();

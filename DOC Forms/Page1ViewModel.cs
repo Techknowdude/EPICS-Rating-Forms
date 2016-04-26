@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Office.Interop.Excel;
 
@@ -11,6 +10,7 @@ namespace DOC_Forms
     public class Page1ViewModel : IPageViewModel
     {
 
+        [NonSerialized]
         private readonly Page1Logic _pageLogic;
 
         #region Fields
@@ -753,18 +753,6 @@ namespace DOC_Forms
         public static Page1ViewModel Load(FileStream stream, BinaryFormatter formatter)
         {
             return (Page1ViewModel)formatter.Deserialize(stream);
-        }
-        public new bool Save(FileStream stream, BinaryFormatter formatter)
-        {
-            try
-            {
-                formatter.Serialize(stream, this);
-            }
-            catch (Exception e)
-            {
-                return false;
-            }
-            return true;
         }
 
     }

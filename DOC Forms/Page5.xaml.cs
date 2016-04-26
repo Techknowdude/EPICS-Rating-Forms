@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using System.Drawing;
-using System.IO;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
-using Color = System.Drawing.Color;
-using OpenFileDialog = Microsoft.Win32.OpenFileDialog;
+﻿using System.Windows.Controls;
 using Page = System.Windows.Controls.Page;
 
 namespace DOC_Forms
@@ -30,20 +21,25 @@ namespace DOC_Forms
         public Page5()
         {
             PageLogic = new Page5ViewModel();
-            Logic = PageLogic;
+            ViewModel = PageLogic;
             DataContext = PageLogic;
             InitializeComponent();
 
             
         }
 
+        public void SetViewModel(IPageViewModel model)
+        {
+            ViewModel = model;
+            DataContext = ViewModel;
+        }
         public bool IsCompleted()
         {
             // TODO: Check all of the fields to see if there is a blank one
             return true;
         }
 
-        public IPageViewModel Logic { get; set; }
+        public IPageViewModel ViewModel { get; set; }
         
         private void CbbSkillBuilding_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {

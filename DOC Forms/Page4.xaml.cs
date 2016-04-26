@@ -11,8 +11,8 @@ namespace DOC_Forms
     {
         public Page4()
         {
-            Logic = new Page4ViewModel();
-            DataContext = Logic;
+            ViewModel = new Page4ViewModel();
+            DataContext = ViewModel;
 
             InitializeComponent();
         }
@@ -27,11 +27,16 @@ namespace DOC_Forms
             throw new NotImplementedException();
         }
 
+        public void SetViewModel(IPageViewModel model)
+        {
+            ViewModel = model;
+            DataContext = ViewModel;
+        }
         public bool Load(BinaryReader reader)
         {
             throw new NotImplementedException();
         }
 
-        public IPageViewModel Logic { get; set; }
+        public IPageViewModel ViewModel { get; set; }
     }
 }
