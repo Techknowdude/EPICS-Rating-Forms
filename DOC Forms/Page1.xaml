@@ -7,10 +7,19 @@
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="800"
       Title="Page1">
-<Page.DataContext>
-    <local:Page1ViewModel x:Name="PageViewModel"/>
-</Page.DataContext>
-    
+    <Page.DataContext>
+        <local:Page1ViewModel x:Name="PageViewModel"/>
+    </Page.DataContext>
+    <Page.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Margin" Value="5,1,1,1"></Setter>
+        </Style>
+        <Style TargetType="DatePicker">
+            <Setter Property="Margin" Value="1,1,1,1"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+        </Style>
+    </Page.Resources>
     <Grid>
         <StackPanel>
             <Label Content="EPICS CODING FORM" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5"/>
@@ -60,22 +69,22 @@
                 <TextBox Text="{Binding ClientSID}" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="3"></TextBox>
 
                 <!--Borders-->
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="3"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="3"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="3"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="3"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="3"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="3"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="3"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="3"></Border>
 
 
             </Grid>
@@ -145,24 +154,24 @@
                 <CheckBox IsChecked="{Binding ClientAgressiveNA}" Grid.Row="4" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
 
                 <!--Borders-->
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="2"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="4"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="5"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="6"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="4"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="5"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="6"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="4"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="5"/>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="6"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="1"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="2"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="4"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="5"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="6"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="4"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="5"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="6"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="4"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="5"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="6"/>
 
             </Grid>
 
@@ -172,7 +181,7 @@
                 <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">RATING QUICK SUMMARY</Label>
             </Grid>
             <Grid>
-                <Border BorderBrush="Black" BorderThickness="1"/>
+                <Border Style="{StaticResource GridBorderStyle}"/>
                 <Label Margin="20,0">Coders, return to this summary table after completing the remainder of the form. Enter section scored into the appropriate boxes below.</Label>
             </Grid>
             <Grid>
@@ -251,36 +260,36 @@
                 <TextBox Text="{Binding AdditionalCommentsText}" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="12" MinLines="4"></TextBox>
                 
                 <!--Borders-->
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="0" Grid.Column="3"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="2" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.RowSpan="2" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="3" Grid.RowSpan="2" Grid.Column="3"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="4" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="5" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="5" Grid.Column="1"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2" Grid.Row="5" Grid.Column="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.RowSpan="2" Grid.Row="5" Grid.Column="3"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="6" Grid.Column="0" ></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="6" Grid.Column="1" ></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="4" Grid.Row="9" Grid.Column="0"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="4"></Border>
-                <Border BorderBrush="Black" BorderThickness="1" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="3"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="3" Grid.RowSpan="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.RowSpan="2" Grid.Column="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.RowSpan="2" Grid.Column="3"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="1"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.RowSpan="2" Grid.Row="5" Grid.Column="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.RowSpan="2" Grid.Row="5" Grid.Column="3"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" ></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="1" ></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="2"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.ColumnSpan="4" Grid.Row="9" Grid.Column="0"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="4"></Border>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4"></Border>
             </Grid>
 
 

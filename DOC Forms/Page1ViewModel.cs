@@ -9,6 +9,8 @@ namespace DOC_Forms
     [Serializable]
     public class Page1ViewModel : IPageViewModel
     {
+        private static Page1ViewModel _instance;
+        public static Page1ViewModel Instance { get { return _instance;} }
 
         [NonSerialized]
         private readonly Page1Logic _pageLogic;
@@ -654,12 +656,10 @@ namespace DOC_Forms
         {
             _pageLogic = new Page1Logic();
             GenderOtherTextEnabled = false;
+            _instance = this;
         }
 
-        public override int ExportToExcel(Worksheet worksheet, int curRow)
-        {
-            return _pageLogic.ExportToExcel(BuildInfo(), worksheet, curRow);
-        }
+
 
         private Page1ViewModel BuildInfo()
         {
@@ -710,6 +710,10 @@ namespace DOC_Forms
         }
 
 
+        public override int ExportToExcel(Worksheet worksheet, int curRow)
+        {
+            return _pageLogic.ExportToExcel(BuildInfo(), worksheet, curRow);
+        }
         protected bool Equals(Page1ViewModel other)
         {
             return Equals(_pageLogic, other._pageLogic) &&
@@ -758,7 +762,9 @@ namespace DOC_Forms
 
         public static Page1ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
-            return (Page1ViewModel)formatter.Deserialize(stream);
+            var loaded = (Page1ViewModel) formatter.Deserialize(stream);
+            _instance = loaded;
+            return _instance;
         }
 
     }
