@@ -8,15 +8,9 @@ namespace DOC_Forms
     /// </summary>
     public partial class Page1 : Page, IPageInterface
     {
-        private bool doneLoading = false;
         public Page1()
         {
-            //Logic = new Page1ViewModel();
-            //Logic.PageInterface = this;
-            //DataContext = Logic;
-
             InitializeComponent();
-            doneLoading = true;
             ViewModel = PageViewModel;
         }
 

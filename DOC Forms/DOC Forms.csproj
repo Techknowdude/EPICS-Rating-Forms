@@ -71,6 +71,7 @@
     <Compile Include="LabeledCheckbox.xaml.cs">
       <DependentUpon>LabeledCheckbox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ObservableBool.cs" />
     <Compile Include="ObservableObject.cs" />
     <Compile Include="Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>

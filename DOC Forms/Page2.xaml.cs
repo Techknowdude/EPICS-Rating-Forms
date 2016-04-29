@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace DOC_Forms
@@ -13,30 +14,32 @@ namespace DOC_Forms
 
         public Page2()
         {
-            ViewModel = new Page2ViewModel();
-            DataContext = ViewModel;
             InitializeComponent();
+            ViewModel = PageViewModel;
         }
 
         public bool IsCompleted()
         {
             throw new NotImplementedException();
         }
-
-        public bool Save(BinaryWriter writer)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public void SetViewModel(IPageViewModel model)
         {
             ViewModel = model;
             DataContext = ViewModel;
-        }
-        public bool Load(BinaryReader reader)
-        {
-            throw new NotImplementedException();
-        }
 
+            ((Page2ViewModel) model).Section1Bools[1].Val = true;
+        }
+        
+
+        static bool toggle = false;
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            ((Page2ViewModel)ViewModel).Section1Bools[1].Val = toggle;
+            toggle = !toggle;
+
+        }
     }
 }
