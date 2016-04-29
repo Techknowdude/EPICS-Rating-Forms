@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DOC_Forms"
-      mc:Ignorable="d" d:DesignHeight="1000" d:DesignWidth="800"
+      mc:Ignorable="d" Width="800"
       Title="Page2">
     <Page.Resources>
         <Style TargetType="CheckBox" >
@@ -13,7 +13,7 @@
             <Setter Property="Margin" Value="4"/>
         </Style>
     </Page.Resources>
-    
+
     <Page.DataContext>
         <local:Page2ViewModel x:Name="PageViewModel"/>
     </Page.DataContext>
@@ -21,6 +21,14 @@
         <!-- Section 1 -->
         <Grid>
             <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
                 <RowDefinition />
@@ -51,55 +59,123 @@
             </Grid.ColumnDefinitions>
 
             <Rectangle Fill="Black" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"/>
-            <Label Style="{StaticResource SubHeadingLabel}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="5,0" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">CASE MANAGEMENT PRACTICES/OMS</Label>
+            <TextBlock Style="{StaticResource BlockHeading2}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  Margin="5,0" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding SectionText[0]}"></TextBlock>
 
             <Rectangle Fill="CornflowerBlue" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5"/>
-            <Label Style="{StaticResource OtherLabel}" FontWeight="Bold" Content="Please select criminogenic needs identified in assessment and" Grid.Row="1" Grid.Column="0"/>
-            <Label Style="{StaticResource OtherLabel}" FontWeight="Bold" Content="targeted in behavior change plans" Grid.Row="2" Grid.Column="0"/>
+            <TextBlock Style="{StaticResource BlockHeading3}" FontWeight="Bold" Text="{Binding SectionText[1]}" Grid.Row="1" Grid.Column="0"/>
+            <TextBlock Style="{StaticResource BlockHeading3}" FontWeight="Bold" Text="{Binding SectionText[2]}" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" ></TextBlock>
+            <TextBlock Style="{StaticResource BlockHeading3}" FontWeight="Bold" Text="{Binding SectionText[3]}" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" ></TextBlock>
 
-            <Label Style="{StaticResource OtherLabel}" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" >Needs Identified in</Label>
-            <Label Style="{StaticResource OtherLabel}" FontWeight="Bold" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" >Assessment</Label>
+            <TextBlock Text="First Plan" Grid.Column="1" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="Second Plan" Grid.Column="2" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="First Plan" Grid.Column="3" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="Second Plan" Grid.Column="4" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>
 
-            <Label Style="{StaticResource OtherLabel}" FontWeight="Bold" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center" >Needs Targeted in Behavior</Label>
-            <Label Style="{StaticResource OtherLabel}" FontWeight="Bold" Grid.Column="3" Grid.ColumnSpan="2" Grid.Row="2" HorizontalAlignment="Center" >Change Plans</Label>
+            <TextBlock Text="{Binding SectionText[4]}" Grid.Column="0" Grid.Row="4" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[5]}" Grid.Column="0" Grid.Row="5" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[6]}" Grid.Column="0" Grid.Row="6" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[7]}" Grid.Column="0" Grid.Row="7" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[8]}" Grid.Column="0" Grid.Row="8" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[9]}" Grid.Column="0" Grid.Row="9" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[10]}" Grid.Column="0" Grid.Row="10" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[11]}" Grid.Column="0" Grid.Row="11" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[12]}" Grid.Column="0" Grid.Row="12" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
 
-            <Label Content="First Plan" Grid.Column="1" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="Second Plan" Grid.Column="2" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="First Plan" Grid.Column="3" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="Second Plan" Grid.Column="4" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            
-            <Label Content="{Binding SectionText[0]}" Grid.Column="0" Grid.Row="4" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[1]}" Grid.Column="0" Grid.Row="5" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[2]}" Grid.Column="0" Grid.Row="6" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[3]}" Grid.Column="0" Grid.Row="7" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[4]}" Grid.Column="0" Grid.Row="8" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[5]}" Grid.Column="0" Grid.Row="9" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[6]}" Grid.Column="0" Grid.Row="10" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[7]}" Grid.Column="0" Grid.Row="11" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[8]}" Grid.Column="0" Grid.Row="12" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            
-            <CheckBox IsChecked="{Binding Section1Bools[0].Val, Mode=TwoWay}" Grid.Column="1" Grid.Row="4"/>
-            <CheckBox IsChecked="{Binding Section1Bools[1].Val, Mode=TwoWay}" Grid.Column="2" Grid.Row="4"/>
-            <CheckBox IsChecked="{Binding Section1Bools[2].Val}" Grid.Column="3" Grid.Row="4"/>
-            <CheckBox IsChecked="{Binding Section1Bools[3].Val}" Grid.Column="4" Grid.Row="4"/>
-            <Button  Grid.Column="4" Grid.Row="5" Click="ButtonBase_OnClick">Change</Button>
+            <CheckBox IsChecked="{Binding Section1Bools[0][0].Val}" Grid.Column="1" Grid.Row="4"/>
+            <CheckBox IsChecked="{Binding Section1Bools[0][1].Val}" Grid.Column="2" Grid.Row="4"/>
+            <CheckBox IsChecked="{Binding Section1Bools[0][2].Val}" Grid.Column="3" Grid.Row="4"/>
+            <CheckBox IsChecked="{Binding Section1Bools[0][3].Val}" Grid.Column="4" Grid.Row="4"/>
+            <CheckBox IsChecked="{Binding Section1Bools[1][0].Val}" Grid.Column="1" Grid.Row="5"/>
+            <CheckBox IsChecked="{Binding Section1Bools[1][1].Val}" Grid.Column="2" Grid.Row="5"/>
+            <CheckBox IsChecked="{Binding Section1Bools[1][2].Val}" Grid.Column="3" Grid.Row="5"/>
+            <CheckBox IsChecked="{Binding Section1Bools[1][3].Val}" Grid.Column="4" Grid.Row="5"/>
+            <CheckBox IsChecked="{Binding Section1Bools[2][0].Val}" Grid.Column="1" Grid.Row="6"/>
+            <CheckBox IsChecked="{Binding Section1Bools[2][1].Val}" Grid.Column="2" Grid.Row="6"/>
+            <CheckBox IsChecked="{Binding Section1Bools[2][2].Val}" Grid.Column="3" Grid.Row="6"/>
+            <CheckBox IsChecked="{Binding Section1Bools[2][3].Val}" Grid.Column="4" Grid.Row="6"/>
+            <CheckBox IsChecked="{Binding Section1Bools[3][0].Val}" Grid.Column="1" Grid.Row="7"/>
+            <CheckBox IsChecked="{Binding Section1Bools[3][1].Val}" Grid.Column="2" Grid.Row="7"/>
+            <CheckBox IsChecked="{Binding Section1Bools[3][2].Val}" Grid.Column="3" Grid.Row="7"/>
+            <CheckBox IsChecked="{Binding Section1Bools[3][3].Val}" Grid.Column="4" Grid.Row="7"/>
+            <CheckBox IsChecked="{Binding Section1Bools[4][0].Val}" Grid.Column="1" Grid.Row="8"/>
+            <CheckBox IsChecked="{Binding Section1Bools[4][1].Val}" Grid.Column="2" Grid.Row="8"/>
+            <CheckBox IsChecked="{Binding Section1Bools[4][2].Val}" Grid.Column="3" Grid.Row="8"/>
+            <CheckBox IsChecked="{Binding Section1Bools[4][3].Val}" Grid.Column="4" Grid.Row="8"/>
+            <CheckBox IsChecked="{Binding Section1Bools[5][0].Val}" Grid.Column="1" Grid.Row="9"/>
+            <CheckBox IsChecked="{Binding Section1Bools[5][1].Val}" Grid.Column="2" Grid.Row="9"/>
+            <CheckBox IsChecked="{Binding Section1Bools[5][2].Val}" Grid.Column="3" Grid.Row="9"/>
+            <CheckBox IsChecked="{Binding Section1Bools[5][3].Val}" Grid.Column="4" Grid.Row="9"/>
+            <CheckBox IsChecked="{Binding Section1Bools[6][0].Val}" Grid.Column="1" Grid.Row="10"/>
+            <CheckBox IsChecked="{Binding Section1Bools[6][1].Val}" Grid.Column="2" Grid.Row="10"/>
+            <CheckBox IsChecked="{Binding Section1Bools[6][2].Val}" Grid.Column="3" Grid.Row="10"/>
+            <CheckBox IsChecked="{Binding Section1Bools[6][3].Val}" Grid.Column="4" Grid.Row="10"/>
+            <CheckBox IsChecked="{Binding Section1Bools[7][0].Val}" Grid.Column="1" Grid.Row="11"/>
+            <CheckBox IsChecked="{Binding Section1Bools[7][1].Val}" Grid.Column="2" Grid.Row="11"/>
+            <CheckBox IsChecked="{Binding Section1Bools[7][2].Val}" Grid.Column="3" Grid.Row="11"/>
+            <CheckBox IsChecked="{Binding Section1Bools[7][3].Val}" Grid.Column="4" Grid.Row="11"/>
+            <CheckBox IsChecked="{Binding Section1Bools[8][0].Val}" Grid.Column="1" Grid.Row="12"/>
+            <CheckBox IsChecked="{Binding Section1Bools[8][1].Val}" Grid.Column="2" Grid.Row="12"/>
+            <CheckBox IsChecked="{Binding Section1Bools[8][2].Val}" Grid.Column="3" Grid.Row="12"/>
+            <CheckBox IsChecked="{Binding Section1Bools[8][3].Val}" Grid.Column="4" Grid.Row="12"/>
 
             <!--Section 2-->
-            <Rectangle Fill="Black" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="5"/>
-            <Rectangle Fill="CornflowerBlue" Grid.Row="14" Grid.RowSpan="2" Grid.Column="0" Grid.ColumnSpan="5"/>
+            <Rectangle Fill="Black" Height="10" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="5"/>
+            <Rectangle Fill="CornflowerBlue" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="5"/>
+            <TextBlock Text="Yes" Grid.Column="2" Grid.Row="14" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="No" Grid.Column="3" Grid.Row="14" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="N/A" Grid.Column="4" Grid.Row="14" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>
+
+            <TextBlock Text="{Binding SectionText[13]}" Grid.Column="0" Grid.Row="15" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[14]}" Grid.Column="0" Grid.Row="16" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[15]}" Grid.Column="0" Grid.Row="17" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[16]}" Grid.Column="0" Grid.Row="18" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[17]}" Grid.Column="0" Grid.Row="19" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[18]}" Grid.Column="0" Grid.Row="20" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[19]}" Grid.Column="0" Grid.Row="21" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[20]}" Grid.Column="0" Grid.Row="22" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[21]}" Grid.Column="0" Grid.Row="23" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[22]}" Grid.Column="0" Grid.Row="24" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+            <TextBlock Text="{Binding SectionText[23]}" Margin="200,0,0,0" Grid.Column="0" Grid.Row="24" FontWeight="Bold"  Style="{StaticResource BlockText}"></TextBlock>
+
+            <RadioButton GroupName="1" IsChecked="{Binding Section2Bools[0][0].Val}" Grid.Column="2" Grid.Row="15"/>
+            <RadioButton GroupName="1" IsChecked="{Binding Section2Bools[0][1].Val}" Grid.Column="3" Grid.Row="15"/>
+            <RadioButton GroupName="1" IsChecked="{Binding Section2Bools[0][2].Val}" Grid.Column="4" Grid.Row="15"/>
+            <RadioButton GroupName="2" IsChecked="{Binding Section2Bools[1][0].Val}" Grid.Column="2" Grid.Row="16"/>
+            <RadioButton GroupName="2" IsChecked="{Binding Section2Bools[1][1].Val}" Grid.Column="3" Grid.Row="16"/>
+            <RadioButton GroupName="2" IsChecked="{Binding Section2Bools[1][2].Val}" Grid.Column="4" Grid.Row="16"/>
+            <RadioButton GroupName="3" IsChecked="{Binding Section2Bools[2][0].Val}" Grid.Column="2" Grid.Row="17"/>
+            <RadioButton GroupName="3" IsChecked="{Binding Section2Bools[2][1].Val}" Grid.Column="3" Grid.Row="17"/>
+            <RadioButton GroupName="3" IsChecked="{Binding Section2Bools[2][2].Val}" Grid.Column="4" Grid.Row="17"/>
+            <RadioButton GroupName="4" IsChecked="{Binding Section2Bools[3][0].Val}" Grid.Column="2" Grid.Row="18"/>
+            <RadioButton GroupName="4" IsChecked="{Binding Section2Bools[3][1].Val}" Grid.Column="3" Grid.Row="18"/>
+            <RadioButton GroupName="4" IsChecked="{Binding Section2Bools[3][2].Val}" Grid.Column="4" Grid.Row="18"/>
+            <RadioButton GroupName="5" IsChecked="{Binding Section2Bools[4][0].Val}" Grid.Column="2" Grid.Row="19"/>
+            <RadioButton GroupName="5" IsChecked="{Binding Section2Bools[4][1].Val}" Grid.Column="3" Grid.Row="19"/>
+            <RadioButton GroupName="5" IsChecked="{Binding Section2Bools[4][2].Val}" Grid.Column="4" Grid.Row="19"/>
+            <RadioButton GroupName="6" IsChecked="{Binding Section2Bools[5][0].Val}" Grid.Column="2" Grid.Row="20"/>
+            <RadioButton GroupName="6" IsChecked="{Binding Section2Bools[5][1].Val}" Grid.Column="3" Grid.Row="20"/>
+            <RadioButton GroupName="6" IsChecked="{Binding Section2Bools[5][2].Val}" Grid.Column="4" Grid.Row="20"/>
+            <RadioButton GroupName="7" IsChecked="{Binding Section2Bools[6][0].Val}" Grid.Column="2" Grid.Row="21"/>
+            <RadioButton GroupName="7" IsChecked="{Binding Section2Bools[6][1].Val}" Grid.Column="3" Grid.Row="21"/>
+            <RadioButton GroupName="7" IsChecked="{Binding Section2Bools[6][2].Val}" Grid.Column="4" Grid.Row="21"/>
+            <RadioButton GroupName="8" IsChecked="{Binding Section2Bools[7][0].Val}" Grid.Column="2" Grid.Row="22"/>
+            <RadioButton GroupName="8" IsChecked="{Binding Section2Bools[7][1].Val}" Grid.Column="3" Grid.Row="22"/>
+            <RadioButton GroupName="8" IsChecked="{Binding Section2Bools[7][2].Val}" Grid.Column="4" Grid.Row="22"/>
+            <RadioButton GroupName="9" IsChecked="{Binding Section2Bools[8][0].Val}" Grid.Column="2" Grid.Row="23"/>
+            <RadioButton GroupName="9" IsChecked="{Binding Section2Bools[8][1].Val}" Grid.Column="3" Grid.Row="23"/>
+            <RadioButton GroupName="9" IsChecked="{Binding Section2Bools[8][2].Val}" Grid.Column="4" Grid.Row="23"/>
+            <RadioButton GroupName="10" IsChecked="{Binding Section2Bools[9][0].Val}" Grid.Column="2" Grid.Row="24"/>
+            <RadioButton GroupName="10" IsChecked="{Binding Section2Bools[9][1].Val}" Grid.Column="3" Grid.Row="24"/>
+            <RadioButton GroupName="10" IsChecked="{Binding Section2Bools[9][2].Val}" Grid.Column="4" Grid.Row="24"/>
+            <CheckBox IsChecked="{Binding Section2Bools[10][0].Val}" HorizontalAlignment="Left" Margin="185,0,0,0" Grid.Column="0" Grid.Row="24"/>
+
+            <Rectangle Grid.Row="25" Grid.Column="0" Grid.ColumnSpan="5" Fill="LimeGreen"></Rectangle>
+            <TextBlock Grid.Row="25" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding SectionText[24]}" Style="{StaticResource BlockHeading3}" Margin="0" Padding="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold"></TextBlock>
+            <TextBox Text="{Binding Section1Comments}" Grid.Row="26" Grid.Column="0" Grid.ColumnSpan="5" MinHeight="60" Style="{StaticResource EssayBoxStyle}" ></TextBox>
 
 
-            <Label Content="{Binding SectionText[9]}" Grid.Column="0" Grid.Row="13" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[10]}" Grid.Column="0" Grid.Row="14" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[11]}" Grid.Column="0" Grid.Row="15" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[12]}" Grid.Column="0" Grid.Row="16" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[13]}" Grid.Column="0" Grid.Row="17" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[14]}" Grid.Column="0" Grid.Row="18" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[15]}" Grid.Column="0" Grid.Row="19" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[16]}" Grid.Column="0" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[17]}" Grid.Column="0" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
-            <Label Content="{Binding SectionText[18]}" Grid.Column="0" Grid.Row="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource OtherLabel}"></Label>
 
+            <!--Borders-->
             <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
             <Border Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
             <Border Grid.Row="1" Grid.Column="3" Grid.RowSpan="2" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
@@ -138,6 +214,110 @@
             <Border Grid.Row="9" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
             <Border Grid.Row="9" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
             <Border Grid.Row="9" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="10" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="10" Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="10" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="10" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="10" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="11" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="11" Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="11" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="11" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="11" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="12" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="12" Grid.Column="1" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="12" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="12" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="12" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="14" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="14" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="14" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="14" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="15" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="15" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="15" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="15" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="16" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="16" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="16" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="16" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="17" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="17" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="17" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="17" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="18" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="18" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="18" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="18" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="19" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="19" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="19" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="19" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="20" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="20" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="20" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="20" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="21" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="21" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="21" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="21" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="22" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="22" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="22" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="22" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="23" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="23" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="23" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="23" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="24" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="2" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="24" Grid.Column="2" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="24" Grid.Column="3" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="24" Grid.Column="4" Grid.RowSpan="1" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="25" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="5" Style="{StaticResource GridBorderStyle}"></Border>
+            <Border Grid.Row="26" Grid.Column="0" Grid.RowSpan="1" Grid.ColumnSpan="5" Style="{StaticResource GridBorderStyle}"></Border>
+
+
+        </Grid>
+
+        <Grid Margin="0,50,0,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Rectangle Fill="Black" Grid.Row="0"/>
+            <TextBlock Grid.Row="0" Text="{Binding SectionText[25]}" Style="{StaticResource BlockHeading2}" Foreground="White"/>
+
+            <TextBox Text="{Binding Quarterlies}" Grid.Row="1" MinHeight="80" Style="{StaticResource EssayBoxStyle}"/>
+
+            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource GridBorderStyle}"/>
+
+        </Grid>
+
+        <Grid Margin="0,50,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="60*" />
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="60*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Rectangle Fill="Black" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="{Binding SectionText[26]}" Style="{StaticResource BlockHeading2}" Foreground="White"/>
+
+            <TextBlock Text="{Binding SectionText[27]}" Style="{StaticResource BlockHeading3}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" ></TextBlock>
+            <TextBlock Text="{Binding SectionText[28]}" Style="{StaticResource BlockHeading3}" Grid.Column="2" Grid.Row="1" ></TextBlock>
+            <TextBox Text="{Binding LastGoals}" Grid.Row="1" Grid.Column="1"/>
+            <TextBox Text="{Binding CurrentGoals}" Grid.Row="1" Grid.Column="3"/>
+
+
+            <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource GridBorderStyle}" Grid.ColumnSpan="4" />
+            <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource GridBorderStyle}" Grid.ColumnSpan="2" />
+            <Border Grid.Row="1" Grid.Column="2" Style="{StaticResource GridBorderStyle}" Grid.ColumnSpan="2" />
 
         </Grid>
     </StackPanel>

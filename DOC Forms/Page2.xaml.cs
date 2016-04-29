@@ -29,17 +29,8 @@ namespace DOC_Forms
             ViewModel = model;
             DataContext = ViewModel;
 
-            ((Page2ViewModel) model).Section1Bools[1].Val = true;
+            ((Page2ViewModel) model).Section1Bools[1][1].Val = true;
         }
         
-
-        static bool toggle = false;
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            ((Page2ViewModel)ViewModel).Section1Bools[1].Val = toggle;
-            toggle = !toggle;
-
-        }
     }
 }

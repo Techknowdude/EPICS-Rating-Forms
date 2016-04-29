@@ -1,5 +1,8 @@
-﻿namespace DOC_Forms
+﻿using System;
+
+namespace DOC_Forms
 {
+    [Serializable]
     class ObservableBool : ObservableObject
     {
         private bool _val;

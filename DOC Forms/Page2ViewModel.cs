@@ -15,19 +15,55 @@ namespace DOC_Forms
         private string _lastGoals;
         private string _currentGoals;
 
-        private ObservableBool[] _section1Bools =
+        private ObservableBool[][] _section1Bools =
         {
-            new ObservableBool(),new ObservableBool(),new ObservableBool(),new ObservableBool(),new ObservableBool(),
-            new ObservableBool(),new ObservableBool(),new ObservableBool(),new ObservableBool(),new ObservableBool(),
-            new ObservableBool(),new ObservableBool(),new ObservableBool(),new ObservableBool(),new ObservableBool(),
-            new ObservableBool(),new ObservableBool(),new ObservableBool(),new ObservableBool(),new ObservableBool(),
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+        };
+
+        private ObservableBool[][] _section2Bools =
+         {
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool(), new ObservableBool(), new ObservableBool(), },
+            new []{ new ObservableBool() },
         };
 
         private static readonly string[] _sectionText =
         {
+            "CASE MANAGEMENT PRACTICES/OMS", "Please select criminogenic needs identified in assessment and targeted in behavior change plans",
+            "Needs Identified in Assessment", "Needs Targeted in Behavior Change Plans",
             "Pro-criminal attitude/orientation", "Companions", "Antisocial pattern",
             "Education/Employment", "Family/Marital", "Alcohol/Drug problem",
-            "Leisure/Recreation", "Criminal History", "Other criminogenic need"
+            "Leisure/Recreation", "Criminal History", "Other criminogenic need",
+            "Risk assessment is current", "LS/CMI checklist is current", "BCP's are entered into OMS",
+            "Road Map of interventions in the BCP's", "Intervention and homework from the session entered in BCP's",
+            "Intervention used targets the criminogenic needs of the client", "Action Plan completed in OMS",
+            "Action Plan focused on behavior change", "Homework assigned is entered into the action plan",
+            "EPICS chrono completed", "EPICS Keyword used in chrono",
+
+            "Please enter additional comments in the space below",
+
+            "DEMONSTRATED SKILLS FOR QUARTERLIES\nQuarterlies",
+
+            "GOALS",
+            "Last Goal(s):",
+            "Current Goal(s):"
+            
         };
 
         #endregion
@@ -96,7 +132,7 @@ namespace DOC_Forms
             }
         }
 
-        public ObservableBool[] Section1Bools
+        public ObservableBool[][] Section1Bools
         {
             get
             {
@@ -110,16 +146,26 @@ namespace DOC_Forms
             }
         }
 
+        public ObservableBool[][] Section2Bools
+        {
+            get { return _section2Bools; }
+            set
+            {
+                _section2Bools = value;
+                RaisePropertyChangedEvent("Section2Bools");
+            }
+        }
 
         #endregion
 
         public Page2ViewModel()
         {
-            PopulateLabelContent();
-        }
 
-        private void PopulateLabelContent()
+        }
+        
+        public static Page2ViewModel Load(FileStream stream, BinaryFormatter formatter)
         {
+            return (Page2ViewModel)formatter.Deserialize(stream);
         }
 
         public override int ExportToExcel(Worksheet worksheet, int curRow)
@@ -127,12 +173,5 @@ namespace DOC_Forms
             //TODO: Fill this in
             return curRow;
         }
-
-        public static Page2ViewModel Load(FileStream stream, BinaryFormatter formatter)
-        {
-            return (Page2ViewModel)formatter.Deserialize(stream);
-        }
-
-        
     }
 }
