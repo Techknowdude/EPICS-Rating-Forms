@@ -11,10 +11,8 @@ namespace DOC_Forms
     {
         public Page3()
         {
-            ViewModel = new Page3ViewModel();
-            DataContext = ViewModel;
-
             InitializeComponent();
+            ViewModel = PageViewModel;
         }
 
         public void SetViewModel(IPageViewModel model)
@@ -23,16 +21,6 @@ namespace DOC_Forms
             DataContext = ViewModel;
         }
         public bool IsCompleted()
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Save(BinaryWriter writer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Load(BinaryReader reader)
         {
             throw new NotImplementedException();
         }

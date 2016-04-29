@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace DOC_Forms
 {
@@ -20,6 +21,16 @@ namespace DOC_Forms
         public ObservableBool(bool val = false)
         {
             Val = val;
+        }
+
+        public ObservableBool(PropertyChangedEventHandler listener, bool val = false) : base(listener)
+        {
+            Val = val;
+        }
+
+        public static implicit operator bool (ObservableBool observableBool) 
+        {
+            return observableBool.Val;
         }
     }
 }

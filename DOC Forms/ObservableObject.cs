@@ -15,5 +15,11 @@ namespace DOC_Forms
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public ObservableObject(PropertyChangedEventHandler listener = null)
+        {
+            if (listener != null)
+                PropertyChanged += listener;
+        }
     }
 }
