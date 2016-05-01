@@ -28,7 +28,7 @@ namespace DOC_Forms
             Val = val;
         }
 
-        public static implicit operator bool (ObservableBool observableBool) 
+        public static implicit operator bool(ObservableBool observableBool) 
         {
             return observableBool.Val;
         }
