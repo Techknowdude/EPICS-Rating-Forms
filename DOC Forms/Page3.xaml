@@ -273,11 +273,44 @@
 
             <TextBlock Text="{Binding TextArray[34]}" Style="{StaticResource BlockText}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" />
             <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[2].Val, StringFormat=N2}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
-            <Rectangle Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="7" Fill="CornflowerBlue" />
-            <TextBlock Style="{StaticResource BlockText}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Center">COMMENTS</TextBlock>
-            <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="7" HorizontalContentAlignment="Center" Text="{Binding Comments[1]}" Style="{StaticResource EssayBoxStyle}"/>
+            <Rectangle Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" Fill="CornflowerBlue" />
+            <TextBlock Style="{StaticResource BlockText}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" HorizontalAlignment="Center">COMMENTS</TextBlock>
+            <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8" HorizontalContentAlignment="Center" Text="{Binding Comments[1]}" Style="{StaticResource EssayBoxStyle}"/>
 
-            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="4"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="5"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="7"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="4"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="5"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="7"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="4"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="5"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="7"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="4"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="5"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="7"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8"/>
 
         </Grid>
 
