@@ -202,10 +202,35 @@ namespace DOC_Forms
 
         }
 
+        private void ResetListeners()
+        {
+            foreach (var observableBool in Section1Bools)
+            {
+                foreach (var b in observableBool)
+                {
+                    b.AddListener(UpdateSection1);
+                }
+            }
+            foreach (var observableBool in Section2Bools)
+            {
+                foreach (var b in observableBool)
+                {
+                    b.AddListener(UpdateSection2);
+                }
+            }
+            foreach (var observableBool in Section3Bools)
+            {
+                foreach (var b in observableBool)
+                {
+                    b.AddListener(UpdateSection3);
+                }
+            }
+        }
 
         public static Page3ViewModel Load(FileStream stream, BinaryFormatter formatter)
         {
             var model = (Page3ViewModel)formatter.Deserialize(stream);
+            model.ResetListeners();
             return model;
         }
 

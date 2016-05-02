@@ -32,5 +32,14 @@ namespace DOC_Forms
         {
             return observableBool.Val;
         }
+
+        public void AddListener(PropertyChangedEventHandler listener)
+        {
+            base.PropertyChanged += listener;
+        }
+        public void RemoveListener(PropertyChangedEventHandler listener)
+        {
+            base.PropertyChanged -= listener;
+        }
     }
 }
