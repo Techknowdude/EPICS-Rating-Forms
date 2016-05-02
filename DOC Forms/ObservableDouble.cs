@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DOC_Forms
 {
+    [Serializable]
     public class ObservableDouble : ObservableObject
     {
         private double _val;

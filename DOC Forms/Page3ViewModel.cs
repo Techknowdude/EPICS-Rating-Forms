@@ -24,6 +24,9 @@ namespace DOC_Forms
 
         private string _comments;
         private string[] _textArray;
+        private string[] _checkInTextInput;
+        private string[] _reviewTextInput;
+        private string[] _interventionTextInput;
 
         #endregion
 
@@ -104,10 +107,49 @@ namespace DOC_Forms
             }
         }
 
+        public String[] CheckInTextInput
+        {
+            get { return _checkInTextInput; }
+            set
+            {
+                _checkInTextInput = value;
+                RaisePropertyChangedEvent("TotalTimeSpent");
+            }
+        }
+
+        public String[] ReviewTextInput
+        {
+            get { return _reviewTextInput; }
+            set
+            {
+                _reviewTextInput = value;
+                RaisePropertyChangedEvent("ReviewTextInput");
+            }
+        }
+
+        public String[] InterventionTextInput
+        {
+            get { return _interventionTextInput; }
+            set
+            {
+                _interventionTextInput = value;
+                RaisePropertyChangedEvent("InterventionTextInput");
+            }
+        }
+
         #endregion
 
         public Page3ViewModel()
         {
+            InitializeViewModel();
+        }
+
+        private void InitializeViewModel()
+        {
+            _checkInTextInput = new string[1];
+            _reviewTextInput = new string[2];
+            _interventionTextInput = new string[5];
+
             _section1Bools = new[]
             {
                 new[] { new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1),new ObservableBool(UpdateSection1),new ObservableBool(UpdateSection1), },
@@ -125,9 +167,9 @@ namespace DOC_Forms
 
             _section3Bools = new[]
             {
-                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
-                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
-                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
+                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
+                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
+                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
             };
 
             _textArray = new[]
@@ -145,15 +187,26 @@ namespace DOC_Forms
                 "R2) Discussed community agency referrals",
                 "R3) Enhanced learning through repetition and feedback",
                 "R4) Reviewed homework from the previous session",
-                "CALCULATED TOTAL REVIEW SCORE = (R1+R2+R3+R4)/(4-#N/A)"
+                "CALCULATED TOTAL REVIEW SCORE = (R1+R2+R3+R4)/(4-#N/A)",
+
+                "INTERVENTION/EVOKE",
+                "Find and review the intervention used in the session and delete unused interventions. Once you have reviewed the intervention, return to this Intervention/Evoke summary and provide a final score.",
+                "Time Stamp:","Total Time Spent:","Intervention Focus:","Time Stamp:",
+                "Potential areas of focus:",
+                "i1) Used an appropriate intervention",
+                "i2) Completed the steps of the intervention",
+                "i3) Used the intervention effectively",
+                "CALCULATE AND WRITE IN TOTAL INTERVENTION SCORE = (i1+i2+i3)/3"
             };
             _totalScores = new ObservableDouble[3] { new ObservableDouble(), new ObservableDouble(), new ObservableDouble(), };
+
         }
 
 
         public static Page3ViewModel Load(FileStream stream, BinaryFormatter formatter)
         {
-            return (Page3ViewModel)formatter.Deserialize(stream);
+            var model = (Page3ViewModel)formatter.Deserialize(stream);
+            return model;
         }
 
 
@@ -220,7 +273,7 @@ namespace DOC_Forms
                 }
             }
 
-            TotalScores[0].Val = selections.Sum() / (double)selections.Count();
+            TotalScores[2].Val = selections.Sum() / (double)selections.Count();
         }
     }
 }
