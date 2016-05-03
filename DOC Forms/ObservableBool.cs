@@ -4,7 +4,7 @@ using System.ComponentModel;
 namespace DOC_Forms
 {
     [Serializable]
-    class ObservableBool : ObservableObject
+    public class ObservableBool : ObservableObject
     {
         private bool _val;
 

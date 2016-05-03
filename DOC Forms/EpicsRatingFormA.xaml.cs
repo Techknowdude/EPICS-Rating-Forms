@@ -44,9 +44,10 @@ namespace DOC_Forms
             var p3 = new Page3();
             var p4 = new Page4();
             var p5 = new Page5();
+            var p6 = new Page6();
 
-            Pages = new List<Page>() {p1,p2,p3,p4,p5};
-            PageInterfaces = new List<IPageInterface>() {p1,p2,p3,p4,p5};
+            Pages = new List<Page>() {p1,p2,p3,p4,p5,p6};
+            PageInterfaces = new List<IPageInterface>() {p1,p2,p3,p4,p5,p6};
 
             logic = EpicsRatingFormLogic.Create(PageInterfaces, this);
             InitializeComponent();
@@ -117,6 +118,7 @@ namespace DOC_Forms
                     ((Page3) Pages[2]).SetViewModel(Page3ViewModel.Load(stream, formatter));
                     ((Page4) Pages[3]).SetViewModel(Page4ViewModel.Load(stream, formatter));
                     ((Page5) Pages[4]).SetViewModel(Page5ViewModel.Load(stream, formatter));
+                    ((Page6) Pages[5]).SetViewModel(Page6ViewModel.Load(stream, formatter));
                 }
 
                 MessageBox.Show("Loading complete.");

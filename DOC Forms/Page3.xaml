@@ -136,6 +136,7 @@
             <TextBlock Text="{Binding TextArray[20]}" Style="{StaticResource BlockText}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
             <TextBlock Text="{Binding TextArray[21]}" Style="{StaticResource BlockText}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
             <TextBlock Text="{Binding TextArray[22]}" Style="{StaticResource BlockText}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+            <TextBlock Text="{Binding TextArray[23]}" Style="{StaticResource BlockText}" Grid.Row="6" Grid.Column="0" ></TextBlock>
 
             
             <RadioButton GroupName="21" Grid.Row="2" Grid.Column="2" IsChecked="{Binding Section2Bools[0][1].Val}"/>
