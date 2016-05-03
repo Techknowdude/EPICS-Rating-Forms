@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Office.Interop.Excel;
 
@@ -163,7 +164,7 @@ namespace DOC_Forms
 
         }
         
-        public static Page2ViewModel Load(FileStream stream, BinaryFormatter formatter)
+        public static Page2ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
             return (Page2ViewModel)formatter.Deserialize(stream);
         }

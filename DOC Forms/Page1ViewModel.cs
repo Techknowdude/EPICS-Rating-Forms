@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Office.Interop.Excel;
 
@@ -660,20 +661,7 @@ namespace DOC_Forms
         }
 
 
-
-        private Page1ViewModel BuildInfo()
-        {
-            Page1ViewModel copy = null;
-            Stream stream = new MemoryStream();
-            BinaryFormatter formatter = new BinaryFormatter();
-            Save(stream, formatter);
-
-            stream.Position = 0; // reset position
-            copy = Load(stream, formatter);
-            stream.Close();
-
-            return copy;
-        }
+        
         
         private void UpdateScores()
         {
@@ -712,7 +700,7 @@ namespace DOC_Forms
 
         public override int ExportToExcel(Worksheet worksheet, int curRow)
         {
-            return _pageLogic.ExportToExcel(BuildInfo(), worksheet, curRow);
+            return _pageLogic.ExportToExcel(this, worksheet, curRow);
         }
         protected bool Equals(Page1ViewModel other)
         {

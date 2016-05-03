@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Drawing;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Office.Interop.Excel;
 
@@ -1125,7 +1126,7 @@ namespace DOC_Forms
             return curRow;
         }
 
-        public static Page5ViewModel Load(FileStream stream, BinaryFormatter formatter)
+        public static Page5ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
             var view = (Page5ViewModel)formatter.Deserialize(stream);
 

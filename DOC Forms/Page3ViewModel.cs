@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Office.Interop.Excel;
 
@@ -227,7 +228,7 @@ namespace DOC_Forms
             }
         }
 
-        public static Page3ViewModel Load(FileStream stream, BinaryFormatter formatter)
+        public static Page3ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
             var model = (Page3ViewModel)formatter.Deserialize(stream);
             model.ResetListeners();

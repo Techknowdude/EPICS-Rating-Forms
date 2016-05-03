@@ -96,6 +96,7 @@
     <Compile Include="Page5.xaml.cs">
       <DependentUpon>Page5.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page6ViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="SharedResources.cs" />
     <Page Include="EpicsRatingFormA.xaml">

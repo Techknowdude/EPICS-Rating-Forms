@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using Microsoft.Office.Interop.Excel;
 
@@ -132,7 +133,7 @@ namespace DOC_Forms
             return curRow;
         }
 
-        public static Page4ViewModel Load(FileStream stream, BinaryFormatter formatter)
+        public static Page4ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
             return (Page4ViewModel)formatter.Deserialize(stream);
         }
