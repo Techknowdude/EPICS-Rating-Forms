@@ -5,10 +5,206 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DOC_Forms"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      Width="800"
       Title="Page4">
 
-    <Grid>
-        
-    </Grid>
+    <Page.DataContext>
+        <local:Page4ViewModel x:Name="PageViewModel"/>
+    </Page.DataContext>
+    
+    <StackPanel>
+        <Grid Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="15*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Fill="CornflowerBlue"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="{Binding TextArray[0]}" Style="{StaticResource BlockHeading2}"/>
+
+            <CheckBox Grid.Row="2" Grid.Column="0" IsChecked="{Binding SectionBools[0][0].Val}" Content="{Binding TextArray[1]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="3" Grid.Column="0" IsChecked="{Binding SectionBools[0][1].Val}" Content="{Binding TextArray[2]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" Grid.Column="0" IsChecked="{Binding SectionBools[0][2].Val}" Content="{Binding TextArray[3]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" Grid.Column="1" IsChecked="{Binding SectionBools[0][3].Val}" Content="{Binding OptionText[0]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="4" Grid.Column="2" IsChecked="{Binding SectionBools[0][4].Val}" Content="{Binding OptionText[1]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="4" Grid.Column="3" IsChecked="{Binding SectionBools[0][5].Val}" Content="{Binding OptionText[2]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="4" Grid.Column="4" IsChecked="{Binding SectionBools[0][6].Val}" Content="{Binding OptionText[3]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="4" Grid.Column="5" IsChecked="{Binding SectionBools[0][7].Val}" Content="{Binding OptionText[4]}" Style="{StaticResource OptionBoxStyle}" />
+
+            <CheckBox Grid.Row="5" Grid.Column="0" IsChecked="{Binding SectionBools[0][8].Val}" Style="{StaticResource OptionBoxStyle}" Content="{Binding TextArray[4]}"/>
+            <CheckBox Grid.Row="6" Grid.Column="0" IsChecked="{Binding SectionBools[0][9].Val}" Grid.ColumnSpan="6" Style="{StaticResource OptionBoxStyle}" Content="{Binding TextArray[5]}"/>
+            <CheckBox Grid.Row="7" Grid.Column="0" IsChecked="{Binding SectionBools[0][10].Val}" Grid.ColumnSpan="6" Style="{StaticResource OptionBoxStyle}" Content="{Binding TextArray[6]}"/>
+            <CheckBox Grid.Row="8" Grid.Column="1" IsChecked="{Binding SectionBools[0][11].Val}" Content="{Binding OptionText[0]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="8" Grid.Column="2" IsChecked="{Binding SectionBools[0][12].Val}" Content="{Binding OptionText[1]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="8" Grid.Column="3" IsChecked="{Binding SectionBools[0][13].Val}" Content="{Binding OptionText[2]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="8" Grid.Column="4" IsChecked="{Binding SectionBools[0][14].Val}" Content="{Binding OptionText[3]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="8" Grid.Column="5" IsChecked="{Binding SectionBools[0][15].Val}" Content="{Binding OptionText[4]}" Style="{StaticResource OptionBoxStyle}" />
+
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="6" />
+
+        </Grid>
+
+        <Grid Margin="0,40,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="15*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Fill="CornflowerBlue"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="{Binding TextArray[12]}" Style="{StaticResource BlockHeading2}"/>
+
+            <CheckBox Grid.Row="2" Grid.Column="0" IsChecked="{Binding SectionBools[1][0].Val}" Grid.ColumnSpan="6" Content="{Binding TextArray[13]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="3" Grid.Column="0" IsChecked="{Binding SectionBools[1][1].Val}" Grid.ColumnSpan="6" Content="{Binding TextArray[14]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" Grid.Column="0" IsChecked="{Binding SectionBools[1][2].Val}" Grid.ColumnSpan="6" Content="{Binding TextArray[15]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="5" Grid.Column="0" IsChecked="{Binding SectionBools[1][3].Val}" Content="{Binding TextArray[16]}" Grid.ColumnSpan="6" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="6" Grid.Column="1" IsChecked="{Binding SectionBools[1][4].Val}" Content="{Binding OptionText[0]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="6" Grid.Column="2" IsChecked="{Binding SectionBools[1][5].Val}" Content="{Binding OptionText[1]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="6" Grid.Column="3" IsChecked="{Binding SectionBools[1][6].Val}" Content="{Binding OptionText[2]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="6" Grid.Column="4" IsChecked="{Binding SectionBools[1][7].Val}" Content="{Binding OptionText[3]}"  Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="6" Grid.Column="5" IsChecked="{Binding SectionBools[1][8].Val}" Content="{Binding OptionText[4]}" Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="7" Grid.Column="0" IsChecked="{Binding SectionBools[1][9].Val}" Grid.ColumnSpan="6" Style="{StaticResource OptionBoxStyle}" Content="{Binding TextArray[17]}"/>
+
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="6" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="6" />
+
+        </Grid>
+
+        <Grid Margin="0,40,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="1" Grid.Column="0" Fill="CornflowerBlue"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TextArray[18]}" Style="{StaticResource BlockHeading2}"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="200,0,0,0" FontWeight="Normal" Text="{Binding TextArray[19]}" Style="{StaticResource BlockHeading2}"/>
+
+            <CheckBox Grid.Row="2" IsChecked="{Binding SectionBools[2][0].Val}" Content="{Binding TextArray[20]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="3" IsChecked="{Binding SectionBools[2][1].Val}" Content="{Binding TextArray[21]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" IsChecked="{Binding SectionBools[2][2].Val}" Content="{Binding TextArray[22]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="5" IsChecked="{Binding SectionBools[2][3].Val}" Content="{Binding TextArray[23]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="6" IsChecked="{Binding SectionBools[2][4].Val}" Content="{Binding TextArray[24]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="7" IsChecked="{Binding SectionBools[2][5].Val}" Content="{Binding TextArray[25]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="8" IsChecked="{Binding SectionBools[2][6].Val}" Content="{Binding TextArray[26]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="9" IsChecked="{Binding SectionBools[2][7].Val}" Content="{Binding TextArray[27]}" Style="{StaticResource OptionBoxStyle}"/>
+
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="0" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="9" Grid.Column="0" />
+
+        </Grid>
+
+        <Grid Margin="0,40,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="15*" />
+                <ColumnDefinition Width="15*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Fill="CornflowerBlue"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding TextArray[28]}" Style="{StaticResource BlockHeading2}"/>
+
+            <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" IsChecked="{Binding SectionBools[3][0].Val}" Content="{Binding TextArray[29]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" IsChecked="{Binding SectionBools[3][1].Val}" Content="{Binding TextArray[30]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" IsChecked="{Binding SectionBools[3][2].Val}" Content="{Binding TextArray[31]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" Grid.Column="1" IsChecked="{Binding SectionBools[3][3].Val}" Content="{Binding OptionText[5]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" Grid.Column="2" IsChecked="{Binding SectionBools[3][4].Val}" Content="{Binding OptionText[6]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" Grid.Column="3" IsChecked="{Binding SectionBools[3][5].Val}" Content="{Binding OptionText[7]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" Grid.Column="4" IsChecked="{Binding SectionBools[3][6].Val}" Content="{Binding OptionText[8]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5" IsChecked="{Binding SectionBools[3][7].Val}" Content="{Binding TextArray[32]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" IsChecked="{Binding SectionBools[3][8].Val}" Content="{Binding TextArray[33]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" IsChecked="{Binding SectionBools[3][9].Val}" Content="{Binding TextArray[34]}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" IsChecked="{Binding SectionBools[3][10].Val}" Content="{Binding TextArray[35]}" Style="{StaticResource OptionBoxStyle}"/>
+
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="5" />
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="5" />
+
+        </Grid>
+    </StackPanel>
 </Page>

@@ -31,7 +31,7 @@ namespace DOC_Forms
                     PageLabel.Content = (value + 1).ToString();
                     PageFrame.Content = Pages[value];
                     _currentPage = value;
-
+                    MainScrollViewer.ScrollToVerticalOffset(0);
                     ToggleButtons();
                 }
             }
