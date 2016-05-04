@@ -32,14 +32,14 @@
                 <TextBlock Style="{StaticResource BlockHeading3}" VerticalAlignment="Top">List:</TextBlock>
                 <ComboBox Margin="0,0,0,0" x:Name="CbbSkillBuilding" Width="300" VerticalContentAlignment="Center" SelectionChanged="CbbSkillBuilding_OnSelectionChanged" SelectedItem="{Binding SkillBuildingSkill}" VerticalAlignment="Center" MinWidth="250" HorizontalAlignment="Left" ItemsSource="{Binding Path=FiftySkills}"/>
             </StackPanel>
-            <CheckBox Grid.Row="3" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O1}" Content="{Binding OptionS1O1Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="4" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O2}" Content="{Binding OptionS1O2Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="5" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O3}" Content="{Binding OptionS1O3Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="6" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O4}" Content="{Binding OptionS1O4Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="7" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O5}" Content="{Binding OptionS1O5Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="8" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O6}" Content="{Binding OptionS1O6Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="9" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O7}" Content="{Binding OptionS1O7Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="10" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O8}" Content="{Binding OptionS1O8Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="3" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O1.Val}" Content="{Binding OptionS1O1Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O2.Val}" Content="{Binding OptionS1O2Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="5" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O3.Val}" Content="{Binding OptionS1O3Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="6" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O4.Val}" Content="{Binding OptionS1O4Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="7" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O5.Val}" Content="{Binding OptionS1O5Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="8" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O6.Val}" Content="{Binding OptionS1O6Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="9" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O7.Val}" Content="{Binding OptionS1O7Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="10" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O8.Val}" Content="{Binding OptionS1O8Text}" Style="{StaticResource OptionBoxStyle}"/>
 
             <Border Grid.Row="0" Grid.Column="0"  Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="1" Grid.Column="0"  Style="{StaticResource GridBorderStyle}"/>
@@ -76,12 +76,12 @@
                 <TextBlock Style="{StaticResource BlockHeading3}" VerticalAlignment="Top">List Carey Guide/BIT intervention:</TextBlock>
                 <ComboBox x:Name="CbbCarey" VerticalAlignment="Center" MinWidth="250" HorizontalAlignment="Stretch" SelectedItem="{Binding CareyText}" ItemsSource="{Binding Path=BlueRedGuides}"/>
             </StackPanel>
-            <CheckBox Grid.Row="3" IsChecked="{Binding OptionS2O1}" Content="{Binding OptionS2O1Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="4" IsChecked="{Binding OptionS2O2}" Content="{Binding OptionS2O2Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="5" IsChecked="{Binding OptionS2O3}" Content="{Binding OptionS2O3Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="6" IsChecked="{Binding OptionS2O4}" Content="{Binding OptionS2O4Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="7" IsChecked="{Binding OptionS2O5}" Content="{Binding OptionS2O5Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="8" IsChecked="{Binding OptionS2O6}" Content="{Binding OptionS2O6Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="3" IsChecked="{Binding OptionS2O1.Val}" Content="{Binding OptionS2O1Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" IsChecked="{Binding OptionS2O2.Val}" Content="{Binding OptionS2O2Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="5" IsChecked="{Binding OptionS2O3.Val}" Content="{Binding OptionS2O3Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="6" IsChecked="{Binding OptionS2O4.Val}" Content="{Binding OptionS2O4Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="7" IsChecked="{Binding OptionS2O5.Val}" Content="{Binding OptionS2O5Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="8" IsChecked="{Binding OptionS2O6.Val}" Content="{Binding OptionS2O6Text}" Style="{StaticResource OptionBoxStyle}"/>
 
             <Border Grid.Row="0" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="1" Style="{StaticResource GridBorderStyle}"/>
@@ -119,13 +119,13 @@
                 <TextBox x:Name="TxbOtherTextbox" VerticalAlignment="Center" Text="{Binding OtherInterventionText}" MinWidth="250" HorizontalAlignment="Stretch" VerticalContentAlignment="Center" Style="{StaticResource EssayBoxStyle}"/>
             </StackPanel>
 
-            <CheckBox Grid.Row="3" IsChecked="{Binding OptionS3O1}" Content="{Binding OptionS3O1Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="4" IsChecked="{Binding OptionS3O2}" Content="{Binding OptionS3O2Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="5" IsChecked="{Binding OptionS3O3}" Content="{Binding OptionS3O3Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="6" IsChecked="{Binding OptionS3O4}" Content="{Binding OptionS3O4Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="7" IsChecked="{Binding OptionS3O5}" Content="{Binding OptionS3O5Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="8" IsChecked="{Binding OptionS3O6}" Content="{Binding OptionS3O6Text}" Style="{StaticResource OptionBoxStyle}"/>
-            <CheckBox Grid.Row="9" IsChecked="{Binding OptionS3O7}" Content="{Binding OptionS3O7Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="3" IsChecked="{Binding OptionS3O1.Val}" Content="{Binding OptionS3O1Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="4" IsChecked="{Binding OptionS3O2.Val}" Content="{Binding OptionS3O2Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="5" IsChecked="{Binding OptionS3O3.Val}" Content="{Binding OptionS3O3Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="6" IsChecked="{Binding OptionS3O4.Val}" Content="{Binding OptionS3O4Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="7" IsChecked="{Binding OptionS3O5.Val}" Content="{Binding OptionS3O5Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="8" IsChecked="{Binding OptionS3O6.Val}" Content="{Binding OptionS3O6Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="9" IsChecked="{Binding OptionS3O7.Val}" Content="{Binding OptionS3O7Text}" Style="{StaticResource OptionBoxStyle}"/>
 
             <Border Grid.Row="0" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="1" Style="{StaticResource GridBorderStyle}"/>
@@ -155,7 +155,7 @@
                 <ComboBox x:Name="CbbGraduated" SelectedItem="{Binding GraduatedText}" ItemsSource="{Binding Path=FiftySkills}" VerticalAlignment="Top" MinWidth="250" Margin="0,4,0,0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
             </StackPanel>
 
-            <CheckBox Grid.Row="3" VerticalAlignment="Center" IsChecked="{Binding OptionS4O1}" Content="{Binding OptionS4O1Text}" Style="{StaticResource OptionBoxStyle}"/>
+            <CheckBox Grid.Row="3" VerticalAlignment="Center" IsChecked="{Binding OptionS4O1.Val}" Content="{Binding OptionS4O1Text}" Style="{StaticResource OptionBoxStyle}"/>
 
             <Border Grid.Row="0" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="1" Style="{StaticResource GridBorderStyle}"/>

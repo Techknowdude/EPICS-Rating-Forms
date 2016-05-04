@@ -121,6 +121,14 @@ namespace DOC_Forms
                     ((Page5) Pages[4]).SetViewModel(Page5ViewModel.Load(stream, formatter));
                     ((Page6) Pages[5]).SetViewModel(Page6ViewModel.Load(stream, formatter));
                     ((Page7) Pages[6]).SetViewModel(Page7ViewModel.Load(stream, formatter));
+
+                    logic.Pages[0] = ((IPageInterface) Pages[0]).ViewModel;
+                    logic.Pages[1] = ((IPageInterface) Pages[1]).ViewModel;
+                    logic.Pages[2] = ((IPageInterface) Pages[2]).ViewModel;
+                    logic.Pages[3] = ((IPageInterface) Pages[3]).ViewModel;
+                    logic.Pages[4] = ((IPageInterface) Pages[4]).ViewModel;
+                    logic.Pages[5] = ((IPageInterface) Pages[5]).ViewModel;
+                    logic.Pages[6] = ((IPageInterface) Pages[6]).ViewModel;
                 }
 
                 MessageBox.Show("Loading complete.");

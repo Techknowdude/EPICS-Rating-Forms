@@ -71,6 +71,8 @@ namespace DOC_Forms
             _curRow++;
 
             rng = _worksheet.Range["A" + _curRow];
+            rng.Interior.Color = XlRgbColor.rgbWhite;//ColorTranslator.ToOle(Color.Black); //bg TODO: Fix this...
+            rng.Font.Color = XlRgbColor.rgbBlack; // text
             rng.Cells.Font.Size = 12;
             rng.Value = "Session date: " + page.SessionDate.ToString("d");
             _curRow++;

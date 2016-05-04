@@ -28,6 +28,7 @@ namespace DOC_Forms
         {
             ViewModel = model;
             DataContext = ViewModel;
+            PageLogic = model as Page5ViewModel;
         }
         public bool IsCompleted()
         {

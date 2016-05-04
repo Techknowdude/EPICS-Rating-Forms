@@ -38,28 +38,28 @@ namespace DOC_Forms
         private string _optionS3O5Text;
         private string _optionS3O6Text;
         private string _optionS3O7Text;
-        private bool _optionS1O1;
-        private bool _optionS1O2;
-        private bool _optionS1O3;
-        private bool _optionS1O4;
-        private bool _optionS1O5;
-        private bool _optionS1O6;
-        private bool _optionS1O7;
-        private bool _optionS1O8;
-        private bool _optionS2O1;
-        private bool _optionS2O2;
-        private bool _optionS2O3;
-        private bool _optionS2O4;
-        private bool _optionS2O5;
-        private bool _optionS2O6;
-        private bool _optionS3O1;
-        private bool _optionS3O2;
-        private bool _optionS3O3;
-        private bool _optionS3O4;
-        private bool _optionS3O5;
-        private bool _optionS3O6;
-        private bool _optionS3O7;
-        private bool _optionS4O1;
+        private ObservableBool _optionS1O1 = new ObservableBool();
+        private ObservableBool _optionS1O2 = new ObservableBool();
+        private ObservableBool _optionS1O3 = new ObservableBool();
+        private ObservableBool _optionS1O4 = new ObservableBool();
+        private ObservableBool _optionS1O5 = new ObservableBool();
+        private ObservableBool _optionS1O6 = new ObservableBool();
+        private ObservableBool _optionS1O7 = new ObservableBool();
+        private ObservableBool _optionS1O8 = new ObservableBool();
+        private ObservableBool _optionS2O1 = new ObservableBool();
+        private ObservableBool _optionS2O2 = new ObservableBool();
+        private ObservableBool _optionS2O3 = new ObservableBool();
+        private ObservableBool _optionS2O4 = new ObservableBool();
+        private ObservableBool _optionS2O5 = new ObservableBool();
+        private ObservableBool _optionS2O6 = new ObservableBool();
+        private ObservableBool _optionS3O1 = new ObservableBool();
+        private ObservableBool _optionS3O2 = new ObservableBool();
+        private ObservableBool _optionS3O3 = new ObservableBool();
+        private ObservableBool _optionS3O4 = new ObservableBool();
+        private ObservableBool _optionS3O5 = new ObservableBool();
+        private ObservableBool _optionS3O6 = new ObservableBool();
+        private ObservableBool _optionS3O7 = new ObservableBool();
+        private ObservableBool _optionS4O1 = new ObservableBool();
 
         #endregion
         #region Properties
@@ -329,7 +329,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O1
+        public ObservableBool OptionS1O1
         {
             get { return _optionS1O1; }
             set
@@ -339,7 +339,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O2
+        public ObservableBool OptionS1O2
         {
             get { return _optionS1O2; }
             set
@@ -349,7 +349,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O3
+        public ObservableBool OptionS1O3
         {
             get { return _optionS1O3; }
             set
@@ -359,7 +359,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O4
+        public ObservableBool OptionS1O4
         {
             get { return _optionS1O4; }
             set
@@ -369,7 +369,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O5
+        public ObservableBool OptionS1O5
         {
             get { return _optionS1O5; }
             set
@@ -379,7 +379,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O6
+        public ObservableBool OptionS1O6
         {
             get { return _optionS1O6; }
             set
@@ -389,7 +389,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O7
+        public ObservableBool OptionS1O7
         {
             get { return _optionS1O7; }
             set
@@ -399,7 +399,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS1O8
+        public ObservableBool OptionS1O8
         {
             get { return _optionS1O8; }
             set
@@ -409,7 +409,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS2O1
+        public ObservableBool OptionS2O1
         {
             get { return _optionS2O1; }
             set
@@ -419,7 +419,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS2O2
+        public ObservableBool OptionS2O2
         {
             get { return _optionS2O2; }
             set
@@ -429,7 +429,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS2O3
+        public ObservableBool OptionS2O3
         {
             get { return _optionS2O3; }
             set
@@ -439,7 +439,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS2O4
+        public ObservableBool OptionS2O4
         {
             get { return _optionS2O4; }
             set
@@ -449,7 +449,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS2O5
+        public ObservableBool OptionS2O5
         {
             get { return _optionS2O5; }
             set
@@ -459,7 +459,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS2O6
+        public ObservableBool OptionS2O6
         {
             get { return _optionS2O6; }
             set
@@ -469,7 +469,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS3O1
+        public ObservableBool OptionS3O1
         {
             get { return _optionS3O1; }
             set
@@ -479,7 +479,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS3O2
+        public ObservableBool OptionS3O2
         {
             get { return _optionS3O2; }
             set
@@ -489,7 +489,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS3O3
+        public ObservableBool OptionS3O3
         {
             get { return _optionS3O3; }
             set
@@ -499,7 +499,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS3O4
+        public ObservableBool OptionS3O4
         {
             get { return _optionS3O4; }
             set
@@ -509,7 +509,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS3O5
+        public ObservableBool OptionS3O5
         {
             get { return _optionS3O5; }
             set
@@ -519,7 +519,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS3O6
+        public ObservableBool OptionS3O6
         {
             get { return _optionS3O6; }
             set
@@ -529,7 +529,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS3O7
+        public ObservableBool OptionS3O7
         {
             get { return _optionS3O7; }
             set
@@ -539,7 +539,7 @@ namespace DOC_Forms
             }
         }
 
-        public bool OptionS4O1
+        public ObservableBool OptionS4O1
         {
             get { return _optionS4O1; }
             set
