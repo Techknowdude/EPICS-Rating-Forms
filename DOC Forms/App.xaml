@@ -46,6 +46,7 @@
             <Setter Property="Padding" Value="5,6"></Setter>
             <Setter Property="TextWrapping" Value="Wrap"></Setter>
             <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
         </Style>
 
         <Style x:Key="GridBorderStyle" TargetType="Border">
