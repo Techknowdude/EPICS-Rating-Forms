@@ -236,12 +236,6 @@ namespace DOC_Forms
         }
 
 
-        public override int ExportToExcel(Worksheet worksheet, int curRow)
-        {
-            //TODO: Fill this in
-            return curRow;
-        }
-
         private void UpdateSection1CheckIn(object sender, PropertyChangedEventArgs e)
         {
             if (Section1Bools == null) return;

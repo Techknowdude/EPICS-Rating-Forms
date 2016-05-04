@@ -13,9 +13,6 @@ namespace DOC_Forms
         private static Page1ViewModel _instance;
         public static Page1ViewModel Instance { get { return _instance;} }
 
-        [NonSerialized]
-        private Page1Logic _pageLogic;
-
         #region Fields
 
         private DateTime _sessionDate = DateTime.Today;
@@ -655,7 +652,6 @@ namespace DOC_Forms
 
         public Page1ViewModel()
         {
-            _pageLogic = new Page1Logic();
             GenderOtherTextEnabled = false;
             _instance = this;
         }
@@ -697,15 +693,9 @@ namespace DOC_Forms
             PercentEpicsCompleted = ((double)completed / total).ToString("P");
         }
 
-
-        public override int ExportToExcel(Worksheet worksheet, int curRow)
-        {
-            return _pageLogic.ExportToExcel(this, worksheet, curRow);
-        }
         protected bool Equals(Page1ViewModel other)
         {
-            return Equals(_pageLogic, other._pageLogic) &&
-                   _sessionDate.Equals(other._sessionDate) &&
+            return Equals(_sessionDate.Equals(other._sessionDate) &&
                    _reviewDate.Equals(other._reviewDate) &&
                    _clientDOB.Equals(other._clientDOB) &&
                    _nextTapeDueDate.Equals(other._nextTapeDueDate) &&
@@ -744,7 +734,7 @@ namespace DOC_Forms
                    _clientAgressiveYes == other._clientAgressiveYes &&
                    _clientAgressiveNo == other._clientAgressiveNo &&
                    _clientAgressiveNA == other._clientAgressiveNA &&
-                   _genderOtherTextEnabled == other._genderOtherTextEnabled;
+                   _genderOtherTextEnabled == other._genderOtherTextEnabled);
         }
         
 
@@ -752,7 +742,6 @@ namespace DOC_Forms
         {
             var loaded = (Page1ViewModel) formatter.Deserialize(stream);
             _instance = loaded;
-            loaded._pageLogic = new Page1Logic();
             loaded.GenderOtherTextEnabled = false;
             return _instance;
         }

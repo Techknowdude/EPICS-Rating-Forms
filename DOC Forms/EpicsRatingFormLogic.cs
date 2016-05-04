@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
@@ -40,13 +41,18 @@ namespace DOC_Forms
             }
         }
 
-        public void ExportToExcel(Worksheet worksheet)
+        //public void ExportToExcel(Worksheet worksheet)
+        //{
+        //    int currentRow = 1;
+        //    foreach (var pageLogic in Pages)
+        //    {
+        //        currentRow = pageLogic.ExportToExcel(worksheet, currentRow);
+        //    }
+        //}
+
+        public IEnumerable GetPages()
         {
-            int currentRow = 1;
-            foreach (var pageLogic in Pages)
-            {
-                currentRow = pageLogic.ExportToExcel(worksheet, currentRow);
-            }
+            return Pages;
         }
     }
 }

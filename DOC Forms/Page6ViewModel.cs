@@ -207,11 +207,6 @@ namespace DOC_Forms
             }
         }
 
-        public override int ExportToExcel(Worksheet worksheet, int curRow)
-        {
-            throw new NotImplementedException();
-        }
-
         public static Page6ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
             var model= (Page6ViewModel)formatter.Deserialize(stream);

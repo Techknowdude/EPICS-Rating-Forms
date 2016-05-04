@@ -25,7 +25,5 @@ namespace DOC_Forms
             }
             return true;
         }
-        public abstract int ExportToExcel(Worksheet worksheet, int curRow);
-        
     }
 }

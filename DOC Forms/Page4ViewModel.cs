@@ -127,12 +127,6 @@ namespace DOC_Forms
             return base.Save(stream, formatter);
         }
 
-        public override int ExportToExcel(Worksheet worksheet, int curRow)
-        {
-            //TODO: Fill this in
-            return curRow;
-        }
-
         public static Page4ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
             return (Page4ViewModel)formatter.Deserialize(stream);

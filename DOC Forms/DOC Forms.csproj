@@ -88,7 +88,6 @@
       <DependentUpon>Page4.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page4ViewModel.cs" />
-    <Compile Include="Page1Logic.cs" />
     <Compile Include="Page5ViewModel.cs" />
     <Compile Include="Page5.xaml.cs">
       <DependentUpon>Page5.xaml</DependentUpon>
