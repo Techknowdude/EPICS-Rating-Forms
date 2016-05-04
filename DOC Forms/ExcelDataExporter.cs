@@ -31,7 +31,7 @@ namespace DOC_Forms
 
             _application = new Application();
             _application.DisplayAlerts = false;
-            _application.Visible = true;
+            _application.Visible = false;
             _application.Workbooks.Add();
 
             _workbook = _application.ActiveWorkbook;
@@ -45,6 +45,7 @@ namespace DOC_Forms
 
             _workbook.SaveAs(saveFileDialog.FileName);
             _application.Quit();
+            MessageBox.Show("Export Complete!");
         }
 
         private static void ExportPage(IPageViewModel page)
@@ -71,8 +72,6 @@ namespace DOC_Forms
             _curRow++;
 
             rng = _worksheet.Range["A" + _curRow];
-            rng.Interior.Color = XlRgbColor.rgbWhite;//ColorTranslator.ToOle(Color.Black); //bg TODO: Fix this...
-            rng.Font.Color = XlRgbColor.rgbBlack; // text
             rng.Cells.Font.Size = 12;
             rng.Value = "Session date: " + page.SessionDate.ToString("d");
             _curRow++;
@@ -312,17 +311,14 @@ namespace DOC_Forms
         {
             OutputBlackWhiteHeading(page.TextArray[0]);
             _curRow++;
-            OutputNormalText(page.TextArray[1] + page.CheckInTextInput[0], 1, 2);
+            OutputNormalText(page.TextArray[1] + page.CheckInTextInput[0], 0, 2);
             _curRow++;
         }
 
         private static void OutputNormalText(string text, int startColumn, int columns)
         {
             Range rng = GetRange(_minCol + startColumn, _curRow, _minCol + startColumn + columns, _curRow);
-            rng.Cells.Font.Size = 14;
-            rng.Cells.Font.Bold = true;
-            rng.Interior.Color = XlRgbColor.rgbBlack;//ColorTranslator.ToOle(Color.Black); //bg TODO: Fix this...
-            rng.Font.Color = XlRgbColor.rgbWhite; // text
+            rng.Cells.Font.Size = 12;
             rng.Merge();
             rng.Value = text;
         }
