@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:DOC_Forms"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="800"
+      Width="800"
       Title="Page1">
     <Page.DataContext>
         <local:Page1ViewModel x:Name="PageViewModel"/>
@@ -20,19 +20,15 @@
             <Setter Property="VerticalAlignment" Value="Center"></Setter>
         </Style>
     </Page.Resources>
-    <Grid>
+    <Grid Margin="0,0,0,50">
         <StackPanel>
             <Label Content="EPICS CODING FORM" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5"/>
-            <Grid Height="50">
-                <Label FontSize="16" Content="Instructions:" Margin="5,0"></Label>
-                <Label FontSize="12" Margin="0,4" Content="                            Please complete the coding form below for each recorded EPICS session. Refer to the coding manual as you proceed and note "/>
-                <Label FontSize="12" Margin="5,15,0,0">specific strengths and areas for improvement.</Label>
-            </Grid>
+            <TextBlock FontSize="16" Style="{StaticResource BlockHeading3}" Text="INSTRUCTIONS: Please complete the coding form below for each recorded EPICS session. Refer to the coding manual as you proceed and note specific strengths and areas for improvement"></TextBlock>
 
             <!-- Section 1 -->
             <Grid>
                 <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
-                <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">Session Information</Label>
+                <TextBlock Style="{StaticResource BlockHeading2}" Foreground="White">SESSION INFORMATION</TextBlock>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -48,24 +44,24 @@
                     <ColumnDefinition Width="1.9*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0">Session date:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="0" Grid.Column="0">Session date:</TextBlock>
                 <DatePicker  Grid.Row="0" Grid.Column="1" SelectedDate="{Binding SessionDate}" ></DatePicker>
-                <Label Grid.Row="0" Grid.Column="2">Staff's name:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="0" Grid.Column="2">Staff's name:</TextBlock>
                 <TextBox Text="{Binding StaffName}"  VerticalContentAlignment="Center" Grid.Row="0" Grid.Column="3" ></TextBox>
 
-                <Label Grid.Row="1" Grid.Column="0">Review date:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="1" Grid.Column="0">Review date:</TextBlock>
                 <DatePicker SelectedDate="{Binding ReviewDate}" Grid.Row="1" Grid.Column="1" ></DatePicker>
-                <Label Grid.Row="1" Grid.Column="2">Reviewer's name:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="1" Grid.Column="2">Reviewer's name:</TextBlock>
                 <TextBox Text="{Binding ReviewName}" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="3"></TextBox>
 
-                <Label Grid.Row="2" Grid.Column="0">Caseload number:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="2" Grid.Column="0">Caseload number:</TextBlock>
                 <TextBox Text="{Binding CaseloadNumber}" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" ></TextBox>
-                <Label Grid.Row="2" Grid.Column="2">Client's name:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="2" Grid.Column="2">Client's name:</TextBlock>
                 <TextBox Text="{Binding ClientName}" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="3"></TextBox>
 
-                <Label Grid.Row="3" Grid.Column="0">Session length (mins):</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="3" Grid.Column="0">Session length (mins):</TextBlock>
                 <TextBox Text="{Binding SessionLength}" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="1" ></TextBox>
-                <Label Grid.Row="3" Grid.Column="2">Client SID#:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="3" Grid.Column="2">Client SID#:</TextBlock>
                 <TextBox Text="{Binding ClientSID}" VerticalContentAlignment="Center" Grid.Row="3" Grid.Column="3"></TextBox>
 
                 <!--Borders-->
@@ -93,7 +89,7 @@
 
             <Grid Margin="0,10,0,0">
                 <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
-                <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">ADDITIONAL INFORMATION</Label>
+                <TextBlock Style="{StaticResource BlockHeading2}"  Foreground="White" HorizontalAlignment="Left" >ADDITIONAL INFORMATION</TextBlock>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -113,51 +109,38 @@
                     <ColumnDefinition Width=".533333*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0">Client DOB:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="0" Grid.Column="0">Client DOB:</TextBlock>
                 <DatePicker SelectedDate="{Binding ClientDOB}" Grid.Row="0" Grid.Column="1"/>
-                <Label Grid.Row="0" Grid.Column="2">Client gender:</Label>
-                <CheckBox IsChecked="{Binding GenderMale}" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="5,0,0,0"/>
-                <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="20,0,0,0">Male</Label>
-                <CheckBox IsChecked="{Binding GenderFemale}" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="65,0,0,0"/>
-                <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="79,0,0,0">Female</Label>
-                <CheckBox IsChecked="{Binding GenderOther}" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" VerticalAlignment="Center" Margin="135,0,0,0"/>
-                <Label Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4" Margin="152,0,0,0">Other</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="0" Grid.Column="2">Client gender:</TextBlock>
+                <RadioButton GroupName="gender" IsChecked="{Binding GenderMale}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="95,0,0,0">Male</RadioButton>
+                <RadioButton GroupName="gender" IsChecked="{Binding GenderFemale}" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="-35,0,0,0">Female</RadioButton>
+                <RadioButton GroupName="gender" IsChecked="{Binding GenderOther}" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="5,0,0,0">Other</RadioButton>
                 <TextBox Text="{Binding GenderOtherText}" Grid.Row="0" VerticalContentAlignment="Center" Grid.Column="3" Grid.ColumnSpan="4" Margin="198,0,0,0" IsEnabled="{Binding GenderOtherTextEnabled}"></TextBox>
 
-                <Label Grid.Column="0" Grid.Row="1">Client Race:</Label>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Column="0" Grid.Row="1">Client Race:</TextBlock>
                 <TextBox Text="{Binding Race}" Grid.Row="1" VerticalContentAlignment="Center" Grid.Column="1" Grid.ColumnSpan="6"/>
 
-                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">Was this the client's first meeting with this staff person?</Label>
-                <Label Content="Yes" Grid.Row="2" Grid.Column="4" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding FirstMeetingYes}" Grid.Row="2" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <Label Content="No" Grid.Row="2" Grid.Column="5" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding FirstMeetingNo}" Grid.Row="2" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <Label Content="NA" Grid.Row="2" Grid.Column="6" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding FirstMeetingNA}" Grid.Row="2" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">Was this the client's first meeting with this staff person?</TextBlock>
+                <RadioButton GroupName="first" IsChecked="{Binding FirstMeetingYes}" Grid.Row="2" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center">Yes</RadioButton>
+                <RadioButton GroupName="first" IsChecked="{Binding FirstMeetingNo}" Grid.Row="2" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center">No</RadioButton>
+                <RadioButton GroupName="first" IsChecked="{Binding FirstMeetingNA}" Grid.Row="2" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center">N/A</RadioButton>
 
 
-                <Label Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">Was the client homeless at the time of the session?</Label>
-                <Label Content="Yes" Grid.Row="3" Grid.Column="4" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding ClientHomelessYes}" Grid.Row="3" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <Label Content="No" Grid.Row="3" Grid.Column="5" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding ClientHomelessNo}" Grid.Row="3" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <Label Content="NA" Grid.Row="3" Grid.Column="6" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding ClientHomelessNA}" Grid.Row="3" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">Was the client homeless at the time of the session?</TextBlock>
+                <RadioButton GroupName="homeless" IsChecked="{Binding ClientHomelessYes}" Grid.Row="3" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center">Yes</RadioButton>
+                <RadioButton GroupName="homeless" IsChecked="{Binding ClientHomelessNo}" Grid.Row="3" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center">No</RadioButton>
+                <RadioButton GroupName="homeless" IsChecked="{Binding ClientHomelessNA}" Grid.Row="3" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center">N/A</RadioButton>
 
 
-                <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">Did the client seem to be in a state of agitation, crisis, or acute need?</Label>
-                <Label Content="Yes" Grid.Row="4" Grid.Column="4" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding ClientAgressiveYes}" Grid.Row="4" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <Label Content="No" Grid.Row="4" Grid.Column="5" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding ClientAgressiveNo}" Grid.Row="4" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                <Label Content="NA" Grid.Row="4" Grid.Column="6" Margin="20,0,0,0" VerticalAlignment="Center"/>
-                <CheckBox IsChecked="{Binding ClientAgressiveNA}" Grid.Row="4" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource BlockText}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">Did the client seem to be in a state of agitation, crisis, or acute need?</TextBlock>
+                <RadioButton GroupName="agitated" IsChecked="{Binding ClientAgressiveYes}" Grid.Row="4" Grid.Column="4" Margin="5,0,0,0" VerticalAlignment="Center">Yes</RadioButton>
+                <RadioButton GroupName="agitated" IsChecked="{Binding ClientAgressiveNo}" Grid.Row="4" Grid.Column="5" Margin="5,0,0,0" VerticalAlignment="Center">No</RadioButton>
+                <RadioButton GroupName="agitated" IsChecked="{Binding ClientAgressiveNA}" Grid.Row="4" Grid.Column="6" Margin="5,0,0,0" VerticalAlignment="Center">N/A</RadioButton>
 
                 <!--Borders-->
                 <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0"/>
                 <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="1"/>
-                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="2"/>
-                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="4"/>
+                <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="5"/>
                 <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0"/>
                 <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="6"/>
                 <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
@@ -178,11 +161,11 @@
             <!-- Section 3 -->
             <Grid>
                 <Rectangle Fill="Black" Height="28" Stroke="Black" VerticalAlignment="Top"/>
-                <Label Margin="5,0" Width="260" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top">RATING QUICK SUMMARY</Label>
+                <TextBlock Style="{StaticResource BlockHeading2}" Foreground="White" >RATING QUICK SUMMARY</TextBlock>
             </Grid>
             <Grid>
                 <Border Style="{StaticResource GridBorderStyle}"/>
-                <Label Margin="20,0">Coders, return to this summary table after completing the remainder of the form. Enter section scored into the appropriate boxes below.</Label>
+                <TextBlock Margin="20,0"  Style="{StaticResource BlockHeading3}" FontWeight="Bold">Coders, return to this summary table after completing the remainder of the form. Enter section scored into the appropriate boxes below.</TextBlock>
             </Grid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -207,57 +190,55 @@
                     <ColumnDefinition Width="0.6*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center">Section</Label>
-                <Label Grid.Row="0" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center">Score</Label>
-                <Label Grid.Row="0" Grid.Column="2" FontWeight="Bold" HorizontalAlignment="Center">Summaries</Label>
-                <Label Grid.Row="0" Grid.Column="3" FontWeight="Bold" HorizontalAlignment="Center">Score</Label>
+                <TextBlock Grid.Row="0" Grid.Column="0" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockHeading3}">Section</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="1" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockHeading3}">Score</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="2" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockHeading3}">Summaries</TextBlock>
+                <TextBlock Grid.Row="0" Grid.Column="3" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockHeading3}">Score</TextBlock>
 
-                <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">CHECK IN (C)</Label>
-                <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center">REVIEW (R)</Label>
-                <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center">INTERVENTION (I)</Label>
-                <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center">HOMEWORK (H)</Label>
-                <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center">BEHAVIORAL PRACTICES</Label>
-                <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center">GLOBAL PRACTICES</Label>
-                <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2">In bullet points list the top staff strengths</Label>
-                <Label Grid.Row="7" Grid.ColumnSpan="2" Grid.Column="0" Margin="0,20,0,0" HorizontalAlignment="Center">based on the session:</Label>
-                <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2">In bullet points list the top staff strengths</Label>
-                <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="0,20,0,0">for staff improvement based on the session:</Label>
-                <TextBox Text="{Binding TopStaffStrengths}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2"></TextBox>
-                <TextBox Text="{Binding TopStaffImprovements}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2"></TextBox>
+                <TextBlock Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Style="{StaticResource BlockText}">CHECK IN (C)</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" Style="{StaticResource BlockText}">REVIEW (R)</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="0" HorizontalAlignment="Center" Style="{StaticResource BlockText}">INTERVENTION (I)</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="0" HorizontalAlignment="Center" Style="{StaticResource BlockText}">HOMEWORK (H)</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="0" HorizontalAlignment="Center" Style="{StaticResource BlockText}">BEHAVIORAL PRACTICES</TextBlock>
+                <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" Style="{StaticResource BlockText}">GLOBAL PRACTICES</TextBlock>
+                <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Style="{StaticResource BlockText}">In bullet points list the top staff strengths based on the session:</TextBlock>
+                <TextBlock Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Style="{StaticResource BlockText}">In bullet points list the top staff strengths for staff improvement based on the session:</TextBlock>
+                <TextBox Text="{Binding TopStaffStrengths}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource EssayBoxStyle}"></TextBox>
+                <TextBox Text="{Binding TopStaffImprovements}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2"  Style="{StaticResource EssayBoxStyle}"></TextBox>
 
-                <TextBox Text="{Binding CheckInScore}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1"/>
-                <TextBox Text="{Binding ReviewScore}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2"/>
-                <TextBox Text="{Binding InterventionScore}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="3"/>
-                <TextBox Text="{Binding HomeworkScore}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="4"/>
-                <TextBox Text="{Binding BehavioralScore}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="5"/>
-                <TextBox Text="{Binding GlobalScore}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="6"/>
+                <TextBox Text="{Binding CheckInScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Style="{StaticResource DisplayBoxStyle}"/>
+                <TextBox Text="{Binding ReviewScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Style="{StaticResource DisplayBoxStyle}"/>
+                <TextBox Text="{Binding InterventionScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="3" Style="{StaticResource DisplayBoxStyle}"/>
+                <TextBox Text="{Binding HomeworkScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="4" Style="{StaticResource DisplayBoxStyle}"/>
+                <TextBox Text="{Binding BehavioralScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="5" Style="{StaticResource DisplayBoxStyle}"/>
+                <TextBox Text="{Binding GlobalScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="6" Style="{StaticResource DisplayBoxStyle}"/>
 
-                <Label Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center">OVERALL SESSION SCORE = (Sum of all section scored)/6</Label>
-                <Label Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center">*Overall score ranges from 0 to 4*</Label>
-                <Label Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center">Number of EPICS components with score >= 2.0 (C, R, I, H only)</Label>
-                <Label Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center">*This is only including Check in, Review, Intervention, and Homework*</Label>
-                <Label Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center">% of EPICS components with score >= 2.0 (C, R, I, H only)</Label>
-                <Label Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center">*This is only including Check in, Review, Intervention, and Homework*</Label>
+                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">OVERALL SESSION SCORE = (Sum of all section scored)/6</TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">*Overall score ranges from 0 to 4*</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">Number of EPICS components with score >= 2.0 (C, R, I, H only)</TextBlock>
+                <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">*This is only including Check in, Review, Intervention, and Homework*</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">% of EPICS components with score >= 2.0 (C, R, I, H only)</TextBlock>
+                <TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">*This is only including Check in, Review, Intervention, and Homework*</TextBlock>
 
-                <TextBox Text="{Binding OverallScore}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2"></TextBox>
-                <TextBox Text="{Binding NumberEpicsOver2}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2"></TextBox>
-                <TextBox Text="{Binding PercentEpicsOver2}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2"></TextBox>
+                <TextBox Text="{Binding OverallScore}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource DisplayBoxStyle}"></TextBox>
+                <TextBox Text="{Binding NumberEpicsOver2}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" Style="{StaticResource DisplayBoxStyle}"></TextBox>
+                <TextBox Text="{Binding PercentEpicsOver2}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2" Style="{StaticResource DisplayBoxStyle}"></TextBox>
 
                 <Rectangle Grid.Row="9" Grid.ColumnSpan="4" Grid.Column="0" Fill="CornflowerBlue"></Rectangle>
                 <Rectangle Grid.Row="11" Grid.ColumnSpan="4" Grid.Column="0" Fill="CornflowerBlue"></Rectangle>
-                <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="58,10,0,10" >Completed</Label>
-                <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="180,10,0,10">EPICS sessions out of</Label>
-                <Label Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="378,10,0,10">office visits in the last 6 months =</Label>
+                <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="58,10,0,10" Style="{StaticResource BlockText}" >Completed</TextBlock>
+                <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="180,10,0,10" Style="{StaticResource BlockText}">EPICS sessions out of</TextBlock>
+                <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" HorizontalAlignment="Left" FontSize="14" FontWeight="Bold" Margin="378,10,0,10" Style="{StaticResource BlockText}">office visits in the last 6 months =</TextBlock>
                 <TextBox Text="{Binding CompletedEpics}" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="40" Margin="139,10,0,10" HorizontalAlignment="Left"/>
                 <TextBox Text="{Binding TotalEpics}" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="40" Margin="332,9.6,0,10.2" HorizontalAlignment="Left"/>
                 <TextBox Text="{Binding PercentEpicsCompleted}" FontSize="14" VerticalAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="4" Width="60" Margin="610,9.6,0,10.2" HorizontalAlignment="Left" IsEnabled="False"/>
 
-                <Label Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="10" FontSize="14" FontWeight="Bold" Margin="250,5,0,5">Your next tape is due</Label>
+                <TextBlock Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="10" FontSize="14" FontWeight="Bold" Margin="250,5,0,5" Style="{StaticResource BlockText}">Your next tape is due</TextBlock>
                 <DatePicker SelectedDate="{Binding NextTapeDueDate}" Grid.ColumnSpan="4" Grid.Row="10" Grid.Column="0" Width="100" HorizontalAlignment="Left" Margin="410,5,0,5"></DatePicker>
-                
-                <Label Grid.ColumnSpan="4" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,5">Please enter additional comments in the space below</Label>
 
-                <TextBox Text="{Binding AdditionalCommentsText}" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="12" MinLines="4"></TextBox>
+                <TextBlock Grid.ColumnSpan="4" Grid.Row="11" Grid.Column="0" HorizontalAlignment="Center" FontWeight="Bold" Margin="0,5" Style="{StaticResource BlockText}">Please enter additional comments in the space below</TextBlock>
+
+                <TextBox Text="{Binding AdditionalCommentsText}" Grid.Column="0" Grid.ColumnSpan="4" Grid.Row="12" Style="{StaticResource EssayBoxStyle}"></TextBox>
                 
                 <!--Borders-->
                 <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0"></Border>

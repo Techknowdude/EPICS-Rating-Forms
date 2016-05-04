@@ -69,9 +69,6 @@
     <Compile Include="ExcelDataExporter.cs" />
     <Compile Include="IPageInterface.cs" />
     <Compile Include="IPageViewModel.cs" />
-    <Compile Include="LabeledCheckbox.xaml.cs">
-      <DependentUpon>LabeledCheckbox.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ObservableBool.cs" />
     <Compile Include="ObservableObject.cs" />
     <Compile Include="Page1.xaml.cs">
@@ -107,10 +104,6 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="SharedResources.cs" />
     <Page Include="EpicsRatingFormA.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="LabeledCheckbox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

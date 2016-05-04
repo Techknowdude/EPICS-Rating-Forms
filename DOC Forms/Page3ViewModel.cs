@@ -153,24 +153,24 @@ namespace DOC_Forms
 
             _section1Bools = new[]
             {
-                new[] { new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1),new ObservableBool(UpdateSection1),new ObservableBool(UpdateSection1), },
-                new[] { new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1),new ObservableBool(UpdateSection1),new ObservableBool(UpdateSection1), },
-                new[] { new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1), new ObservableBool(UpdateSection1), }
+                new[] { new ObservableBool(UpdateSection1CheckIn), new ObservableBool(UpdateSection1CheckIn), new ObservableBool(UpdateSection1CheckIn),new ObservableBool(UpdateSection1CheckIn),new ObservableBool(UpdateSection1CheckIn), },
+                new[] { new ObservableBool(UpdateSection1CheckIn), new ObservableBool(UpdateSection1CheckIn), new ObservableBool(UpdateSection1CheckIn),new ObservableBool(UpdateSection1CheckIn),new ObservableBool(UpdateSection1CheckIn), },
+                new[] { new ObservableBool(UpdateSection1CheckIn), new ObservableBool(UpdateSection1CheckIn), new ObservableBool(UpdateSection1CheckIn), new ObservableBool(UpdateSection1CheckIn), new ObservableBool(UpdateSection1CheckIn), }
             };
 
             _section2Bools = new[]
             {
-                new[] { new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2),new ObservableBool(UpdateSection2),new ObservableBool(UpdateSection2), },
-                new[] { new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2),new ObservableBool(UpdateSection2),new ObservableBool(UpdateSection2), },
-                new[] { new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2),new ObservableBool(UpdateSection2),new ObservableBool(UpdateSection2), },
-                new[] { new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2), new ObservableBool(UpdateSection2),new ObservableBool(UpdateSection2),new ObservableBool(UpdateSection2), },
+                new[] { new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review),new ObservableBool(UpdateSection2Review),new ObservableBool(UpdateSection2Review), },
+                new[] { new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review),new ObservableBool(UpdateSection2Review),new ObservableBool(UpdateSection2Review), },
+                new[] { new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review),new ObservableBool(UpdateSection2Review),new ObservableBool(UpdateSection2Review), },
+                new[] { new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review), new ObservableBool(UpdateSection2Review),new ObservableBool(UpdateSection2Review),new ObservableBool(UpdateSection2Review), },
             };
 
             _section3Bools = new[]
             {
-                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
-                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
-                new[] { new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3), new ObservableBool(UpdateSection3),},
+                new[] { new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention),},
+                new[] { new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention),},
+                new[] { new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention), new ObservableBool(UpdateSection3Intervention),},
             };
 
             _textArray = new[]
@@ -209,21 +209,21 @@ namespace DOC_Forms
             {
                 foreach (var b in observableBool)
                 {
-                    b.AddListener(UpdateSection1);
+                    b.AddListener(UpdateSection1CheckIn);
                 }
             }
             foreach (var observableBool in Section2Bools)
             {
                 foreach (var b in observableBool)
                 {
-                    b.AddListener(UpdateSection2);
+                    b.AddListener(UpdateSection2Review);
                 }
             }
             foreach (var observableBool in Section3Bools)
             {
                 foreach (var b in observableBool)
                 {
-                    b.AddListener(UpdateSection3);
+                    b.AddListener(UpdateSection3Intervention);
                 }
             }
         }
@@ -242,7 +242,7 @@ namespace DOC_Forms
             return curRow;
         }
 
-        private void UpdateSection1(object sender, PropertyChangedEventArgs e)
+        private void UpdateSection1CheckIn(object sender, PropertyChangedEventArgs e)
         {
             if (Section1Bools == null) return;
             int[] selections = new int[Section1Bools.Length];
@@ -258,9 +258,10 @@ namespace DOC_Forms
             }
 
             TotalScores[0].Val = selections.Sum()/(double)selections.Length;
+            Page1ViewModel.Instance.CheckInScore = TotalScores[0].Val.ToString("N2");
         }
 
-        private void UpdateSection2(object sender, PropertyChangedEventArgs e)
+        private void UpdateSection2Review(object sender, PropertyChangedEventArgs e)
         {
             if (Section2Bools == null) return;
 
@@ -281,9 +282,10 @@ namespace DOC_Forms
             }
 
             TotalScores[1].Val = selections.Sum() / count;
+            Page1ViewModel.Instance.ReviewScore = TotalScores[1].Val.ToString("N2");
         }
 
-        private void UpdateSection3(object sender, PropertyChangedEventArgs e)
+        private void UpdateSection3Intervention(object sender, PropertyChangedEventArgs e)
         {
             if (Section3Bools == null) return;
 
@@ -300,6 +302,7 @@ namespace DOC_Forms
             }
 
             TotalScores[2].Val = selections.Sum() / (double)selections.Count();
+            Page1ViewModel.Instance.InterventionScore = TotalScores[2].Val.ToString("N2");
         }
     }
 }

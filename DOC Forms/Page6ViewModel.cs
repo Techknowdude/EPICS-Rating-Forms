@@ -235,6 +235,7 @@ namespace DOC_Forms
             }
 
             TotalScores[0].Val = selections.Sum() / (double)selections.Length;
+            Page1ViewModel.Instance.HomeworkScore = TotalScores[0].Val.ToString("N2");
         }
 
         private void UpdateTotalScore2(object sender, PropertyChangedEventArgs e)
@@ -253,6 +254,7 @@ namespace DOC_Forms
             }
 
             TotalScores[1].Val = selections.Sum() / (double)selections.Length;
+            Page1ViewModel.Instance.BehavioralScore = TotalScores[1].Val.ToString("N2");
         }
     }
 }

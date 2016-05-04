@@ -8,8 +8,6 @@ namespace DOC_Forms
     /// </summary>
     public partial class Page5 : Page, IPageInterface
     {
-        private bool saving = false;
-        private bool loading = false;
         private Page5ViewModel _pageLogic;
 
         public Page5ViewModel PageLogic
@@ -20,12 +18,10 @@ namespace DOC_Forms
 
         public Page5()
         {
-            PageLogic = new Page5ViewModel();
-            ViewModel = PageLogic;
-            DataContext = PageLogic;
             InitializeComponent();
 
-            
+            PageLogic = Page5ViewModel;
+            ViewModel = Page5ViewModel;
         }
 
         public void SetViewModel(IPageViewModel model)

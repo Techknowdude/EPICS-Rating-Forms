@@ -196,9 +196,10 @@ namespace DOC_Forms
             }
 
             TotalScores[0].Val = selections.Sum() / (double)numNotNA;
+            Page1ViewModel.Instance.GlobalScore = TotalScores[0].Val.ToString("N2");
 
         }
-        
+
         public override int ExportToExcel(Worksheet worksheet, int curRow)
         {
             throw new NotImplementedException();

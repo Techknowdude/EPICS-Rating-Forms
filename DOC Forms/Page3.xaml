@@ -11,7 +11,7 @@
     <Page.DataContext>
         <local:Page3ViewModel x:Name="PageViewModel"/>
     </Page.DataContext>
-    <StackPanel>
+    <StackPanel Margin="0,0,0,50">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition />

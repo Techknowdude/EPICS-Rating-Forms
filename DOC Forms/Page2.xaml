@@ -11,7 +11,7 @@
     <Page.DataContext>
         <local:Page2ViewModel x:Name="PageViewModel"/>
     </Page.DataContext>
-    <StackPanel>
+    <StackPanel Margin="0,0,0,50">
         <!-- Section 1 -->
         <Grid>
             <Grid.RowDefinitions>
@@ -113,7 +113,7 @@
             <CheckBox IsChecked="{Binding Section1Bools[8][3].Val}" Grid.Column="4" Grid.Row="12"/>
 
             <!--Section 2-->
-            <Rectangle Fill="Black" Height="10" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="5"/>
+            <Rectangle Fill="Black" Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="5" Style="{StaticResource DividerBar}"/>
             <Rectangle Fill="CornflowerBlue" Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="5"/>
             <TextBlock Text="Yes" Grid.Column="2" Grid.Row="14" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>
             <TextBlock Text="No" Grid.Column="3" Grid.Row="14" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource BlockText}"></TextBlock>

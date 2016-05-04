@@ -20,6 +20,7 @@ namespace DOC_Forms
             }
             catch (Exception e )
             {
+                Console.WriteLine(e);
                 return false;
             }
             return true;

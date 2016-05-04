@@ -10,7 +10,7 @@
 <Page.DataContext>
     <local:Page6ViewModel x:Name="Page6ViewModel"/>
 </Page.DataContext>
-    <StackPanel>
+    <StackPanel Margin="0,0,0,50">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -201,7 +201,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Rectangle Grid.Row="0" Grid.Column="0" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="0" Fill="Black" Style="{StaticResource DividerBar}"/>
             <Rectangle Grid.Row="1" Grid.Column="0" Fill="CornflowerBlue"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TextArray[2][0]}" Style="{StaticResource BlockHeading2}"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TextArray[2][1]}" Style="{StaticResource BlockText}" Margin="10,0" HorizontalAlignment="Right"/>
@@ -243,7 +243,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Rectangle Grid.Row="0" Grid.Column="0" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="0" Fill="Black" Style="{StaticResource DividerBar}"/>
             <Rectangle Grid.Row="1" Grid.Column="0" Fill="CornflowerBlue"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TextArray[3][0]}" Style="{StaticResource BlockHeading2}"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TextArray[3][1]}" Style="{StaticResource BlockText}" Margin="10,0" HorizontalAlignment="Right"/>
@@ -287,7 +287,7 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Rectangle Grid.Row="0" Grid.Column="0" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="0" Fill="Black" Style="{StaticResource DividerBar}"/>
             <Rectangle Grid.Row="1" Grid.Column="0" Fill="CornflowerBlue"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TextArray[4][0]}" Style="{StaticResource BlockHeading2}"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TextArray[4][1]}" Style="{StaticResource BlockText}" Margin="10,0" HorizontalAlignment="Right"/>

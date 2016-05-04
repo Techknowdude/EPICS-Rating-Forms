@@ -11,8 +11,8 @@
     <Page.DataContext>
         <local:Page4ViewModel x:Name="PageViewModel"/>
     </Page.DataContext>
-    
-    <StackPanel>
+
+    <StackPanel Margin="0,0,0,50">
         <Grid Margin="0,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -34,7 +34,7 @@
                 <ColumnDefinition Width="15*" />
             </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Fill="Black" Style="{StaticResource DividerBar}"/>
             <Rectangle Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Fill="CornflowerBlue"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="{Binding TextArray[0]}" Style="{StaticResource BlockHeading2}"/>
 
@@ -88,7 +88,7 @@
                 <ColumnDefinition Width="15*" />
             </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6" Fill="Black" Style="{StaticResource DividerBar}"/>
             <Rectangle Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Fill="CornflowerBlue"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6" Text="{Binding TextArray[12]}" Style="{StaticResource BlockHeading2}"/>
 
@@ -131,7 +131,7 @@
                 <ColumnDefinition Width="40*" />
             </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Row="0" Grid.Column="0" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="1" Fill="Black" Style="{StaticResource DividerBar}"/>
             <Rectangle Grid.Row="1" Grid.Column="0" Fill="CornflowerBlue"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding TextArray[18]}" Style="{StaticResource BlockHeading2}"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Margin="200,0,0,0" FontWeight="Normal" Text="{Binding TextArray[19]}" Style="{StaticResource BlockHeading2}"/>
@@ -179,7 +179,7 @@
                 <ColumnDefinition Width="10*"/>
             </Grid.ColumnDefinitions>
 
-            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Height="20" Fill="Black"/>
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5" Fill="Black" Style="{StaticResource DividerBar}"/>
             <Rectangle Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Fill="CornflowerBlue"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding TextArray[28]}" Style="{StaticResource BlockHeading2}"/>
 

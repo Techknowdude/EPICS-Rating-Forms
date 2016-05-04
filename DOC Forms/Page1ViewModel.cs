@@ -14,7 +14,7 @@ namespace DOC_Forms
         public static Page1ViewModel Instance { get { return _instance;} }
 
         [NonSerialized]
-        private readonly Page1Logic _pageLogic;
+        private Page1Logic _pageLogic;
 
         #region Fields
 
@@ -752,6 +752,8 @@ namespace DOC_Forms
         {
             var loaded = (Page1ViewModel) formatter.Deserialize(stream);
             _instance = loaded;
+            loaded._pageLogic = new Page1Logic();
+            loaded.GenderOtherTextEnabled = false;
             return _instance;
         }
 
