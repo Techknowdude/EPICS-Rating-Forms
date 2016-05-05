@@ -69,7 +69,7 @@ namespace DOC_Forms
 
         #region Properties
 
-        public static String[] SectionText
+        public String[] SectionText
         {
             get { return _sectionText; }
         }

@@ -160,6 +160,101 @@ namespace DOC_Forms
             ++_curRow;
         }
 
+        static void ExportPage(Page2ViewModel page)
+        {
+            OutputBlackWhiteHeading(page.SectionText[0]);
+            OutputBlueHeading3(page.SectionText[1],0,6);
+            OutputBlueHeading3(page.SectionText[2],6,2);
+            OutputBlueHeading3(page.SectionText[3],8,2);
+            SetHeight(40);
+            ++_curRow;
+
+            for (int i = 4; i <= 12; ++i)
+            {
+                OutputNormalText(page.SectionText[i],0,6); // needs
+
+                if (page.Section1Bools[i - 4][0])
+                {
+                    OutputNormalText("First Plan", 6, 1);
+                }
+                if (page.Section1Bools[i - 4][1])
+                {
+                    OutputNormalText("Second Plan", 7, 1);
+                }
+                if (page.Section1Bools[i - 4][2])
+                {
+                    OutputNormalText("First Plan", 8, 1);
+                }
+                if (page.Section1Bools[i - 4][3])
+                {
+                    OutputNormalText("Second Plan", 9, 1);
+                }
+                ++_curRow;
+            }
+            ++_curRow;
+            OutputBlackBlueHeading("");
+            --_curRow;
+            OutputBlueHeading3("Yes",7,1);
+            OutputBlueHeading3("No",8,1);
+            OutputBlueHeading3("N/A",9,1);
+            ++_curRow;
+
+            for (int i = 13; i <= 21; ++i)
+            {
+                OutputNormalText(page.SectionText[i], 0, 6); // needs
+
+                if (page.Section2Bools[i - 13][0])
+                {
+                    OutputNormalText("Yes", 6, 1);
+                }
+                else if (page.Section2Bools[i - 13][1])
+                {
+                    OutputNormalText("No", 6, 1);
+                }
+                else if (page.Section2Bools[i - 13][2])
+                {
+                    OutputNormalText("N/A", 6, 1);
+                }
+                ++_curRow;
+            }
+            OutputNormalText(page.SectionText[22],0,4);
+            if (page.Section2Bools[10][0])
+            {
+                OutputNormalText(page.SectionText[23],4,2);
+            }
+            if (page.Section2Bools[9][0])
+            {
+                OutputNormalText("Yes", 6, 1);
+            }
+            else if (page.Section2Bools[9][1])
+            {
+                OutputNormalText("No", 6, 1);
+            }
+            else if (page.Section2Bools[9][2])
+            {
+                OutputNormalText("N/A", 6, 1);
+            }
+            ++_curRow;
+            ++_curRow;
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, page.SectionText[24],0,_maxCol-_minCol);
+            ++_curRow;
+            OutputNormalText(page.Section1Comments);
+
+            // Section2
+
+            OutputBlackWhiteHeading(page.SectionText[25]);
+            OutputNormalText(page.Quarterlies);
+            _curRow++;
+            _curRow++;
+
+            OutputBlackWhiteHeading(page.SectionText[26]);
+            OutputNormalText(page.SectionText[27] + " " + page.LastGoals);
+            ++_curRow;
+            OutputNormalText(page.SectionText[28] + " " + page.CurrentGoals);
+            ++_curRow;
+            ++_curRow;
+        }
+
         /// <summary>
         /// Page 3
         /// </summary>
@@ -496,6 +591,7 @@ namespace DOC_Forms
         }
 
 
+        //TODO: Clean up these helper functions. There is a lot of duplicated code...
 
         /// <summary>
         /// Writes the text into the given range. Does not add a row.
@@ -520,8 +616,8 @@ namespace DOC_Forms
             rng.Cells.Font.Size = TextFontSize;
             rng.Merge();
             rng.WrapText = true;
-            rng.Rows.AutoFit();
             rng.Value = text;
+
         }
 
         /// <summary>
@@ -634,11 +730,44 @@ namespace DOC_Forms
 
 
         /// <summary>
-        /// Writes the heading out to the current row. Adds two rows. A black one, and a blue one with headings.
+        /// Writes out black text with blue BG. Does not add a row.
         /// </summary>
-        private static async void OutputBlueSubHeading(string text)
+        /// <param name="text">Text to write</param>
+        /// <param name="startColumn">Zero indexed starting column</param>
+        /// <param name="numColumns">Number of columns the text occupies</param>
+        private static void OutputBlueHeading3(string text, int startColumn, int numColumns)
         {
-            // black bar above
+            OutputColoredHeading3(XlRgbColor.rgbCornflowerBlue,text,startColumn,numColumns);
+        }
+
+        /// <summary>
+        /// Writes out black text with blue BG. Does not add a row.
+        /// </summary>
+        /// <param name="bgColor">Background color</param>
+        /// <param name="text">Text to write</param>
+        /// <param name="startColumn">Zero indexed starting column</param>
+        /// <param name="numColumns">Number of columns the text occupies</param>
+        /// <param name="fontColor">Text color. Default is black</param>
+        private static void OutputColoredHeading3(XlRgbColor bgColor,string text, int startColumn, int numColumns, XlRgbColor fontColor = XlRgbColor.rgbBlack)
+        {
+            Range rng = GetRange(_minCol + startColumn, _curRow, _minCol + startColumn + numColumns - 1, _curRow);
+            rng.UnMerge();
+            rng.Cells.Font.Size = Heading3FontSize;
+            rng.Cells.Font.Bold = true;
+            rng.Interior.Color = bgColor; //bg
+            rng.Font.Color = fontColor; // text
+            rng.Merge();
+            rng.WrapText = true;
+            rng.Value = text;
+            rng.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+        }
+
+
+        /// <summary>
+        /// Writes the heading out to the current row. Adds a row.
+        /// </summary>
+        private static void OutputBlueSubHeading(string text)
+        {
             Range rng = GetRange(_minCol, _curRow, _maxCol, _curRow);
             rng.Cells.Font.Size = SubHeadingFontSize;
             rng.Cells.Font.Bold = true;
@@ -668,5 +797,23 @@ namespace DOC_Forms
             rng.Merge();
             return rng;
         }
+
+        /// <summary>
+        /// Sets the height of the current row. 
+        /// </summary>
+        /// <param name="height">Not in pixels. Dependent on height of font. </param>
+        private static void SetHeight(int height)
+        {
+            Range rng;
+
+                rng = GetRange(_minCol, _curRow, _minCol, _curRow);
+                rng.RowHeight = height;
+            //for (int col = _minCol; col < _maxCol; col++)
+            //{
+            //    rng = GetRange(col, _curRow, col, _curRow);
+            //    rng.RowHeight = height;
+            //}
+        }
+
     }
 }
