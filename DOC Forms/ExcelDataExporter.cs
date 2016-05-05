@@ -76,6 +76,7 @@ namespace DOC_Forms
             rng.Cells.Font.Bold = true;
             rng.Merge();
             rng.Value = "EPICS CODING FORM";
+            rng.HorizontalAlignment = XlHAlign.xlHAlignCenter;
             _curRow++;
 
             // Session Info
@@ -117,29 +118,42 @@ namespace DOC_Forms
             OutputHeading3Text("Summary", 3, 3);
             OutputHeading3Text("Score", 6, 2);
             _curRow++;
-            OutputNormalText("CHECK IN (C)",0,2);
+            OutputHeading3Text("CHECK IN (C)",0,2);
             OutputNormalText(page.CheckInScore,2,1);
-            OutputNormalText("OVERALL SESSION SCORE (Sum of all section scores)", 3, 3);
+            OutputHeading3Text("OVERALL SESSION SCORE (Sum of all section scores)", 3, 3);
             OutputNormalText(page.OverallScore, 6, 2);
             _curRow++;
-            OutputNormalText("REVIEW (R)", 0, 2);
+            OutputHeading3Text("REVIEW (R)", 0, 2);
             OutputNormalText(page.ReviewScore, 2, 1);
             _curRow++;
-            OutputNormalText("INTERVENTION (I)", 0, 2);
+            OutputHeading3Text("INTERVENTION (I)", 0, 2);
             OutputNormalText(page.InterventionScore, 2, 1);
-            OutputNormalText("SUM OF SCORES >= 2", 3, 3);
+            OutputHeading3Text("SUM OF SCORES >= 2", 3, 3);
             OutputNormalText(page.NumberEpicsOver2, 6, 2);
             _curRow++;
-            OutputNormalText("HOMEWORK (H)", 0, 2);
+            OutputHeading3Text("HOMEWORK (H)", 0, 2);
             OutputNormalText(page.HomeworkScore, 2, 1);
             _curRow++;
-            OutputNormalText("BEHAVIORAL PRACTICES", 0, 2);
+            OutputHeading3Text("BEHAVIORAL PRACTICES", 0, 2);
             OutputNormalText(page.BehavioralScore, 2, 1);
-            OutputNormalText("SUM OF SCORES < 2", 3, 3);
+            OutputHeading3Text("SUM OF SCORES < 2", 3, 3);
             OutputNormalText(page.PercentEpicsOver2, 6, 2);
             _curRow++;
-            OutputNormalText("GLOBAL PRACTICES", 0, 2);
+            OutputHeading3Text("GLOBAL PRACTICES", 0, 2);
             OutputNormalText(page.GlobalScore, 2, 1);
+            _curRow++;
+            OutputHeading3Text("Top staff strengths: ", 0, 1);
+            OutputNormalText(page.TopStaffStrengths, 1, _maxCol);
+            _curRow++;
+            OutputHeading3Text("Top staff strength improvements: ", 0, 1);
+            OutputNormalText(page.TopStaffImprovements, 1, _maxCol);
+            _curRow++;
+            OutputBlueSubHeading($"Completed {page.CompletedEpics} EPICS sessions out of {page.PercentEpicsCompleted} office visits in last 6 months = {page.PercentEpicsCompleted}");
+            OutputHeading3Text("Next tape is due: ", 0, 1);
+            OutputNormalText(page.NextTapeDueDate.ToString("d"), 1, 1);
+            _curRow++;
+            OutputBlueSubHeading("Additional comments:");
+            OutputNormalText(page.AdditionalCommentsText);
             _curRow++;
 
             //TODO: Finish this
@@ -202,10 +216,10 @@ namespace DOC_Forms
             }
             if (page.SectionBools[0][10])
             {
-                OutputNormalText(page.TextArray[6], 0, _maxCol);
+                int col = 5;
+                OutputNormalText(page.TextArray[6], 0, col);
                 _curRow++;
                 // extra stuff here
-                int col = 5;
                 for (int i = 0; i < 5; ++i)
                 {
                     if (page.SectionBools[0][11 + i])
@@ -235,10 +249,10 @@ namespace DOC_Forms
             }
             if (page.SectionBools[0][3])
             {
-                OutputNormalText(page.TextArray[16], 0, _maxCol);
+                int col = 5;
+                OutputNormalText(page.TextArray[16], 0, col);
                 _curRow++;
                 // extra stuff here
-                int col = 5;
                 for (int i = 0; i < 5; ++i)
                 {
                     if (page.SectionBools[0][4 + i])
@@ -284,8 +298,8 @@ namespace DOC_Forms
 
             if (page.SectionBools[3][2])
             {
-                OutputNormalText(page.TextArray[31]);
                 int col = 5;
+                OutputNormalText(page.TextArray[31],_minCol,col);
                 for (int i = 0; i < 4; ++i)
                 {
                     if (page.SectionBools[3][3 + i])
@@ -481,6 +495,8 @@ namespace DOC_Forms
 
         }
 
+
+
         /// <summary>
         /// Writes the text into the given range. Does not add a row.
         /// </summary>
@@ -503,6 +519,8 @@ namespace DOC_Forms
             rng.UnMerge();
             rng.Cells.Font.Size = TextFontSize;
             rng.Merge();
+            rng.WrapText = true;
+            rng.Rows.AutoFit();
             rng.Value = text;
         }
 
@@ -519,7 +537,10 @@ namespace DOC_Forms
             rng.UnMerge();
             rng.Cells.Font.Size = Heading3FontSize;
             rng.Merge();
+            rng.WrapText = true;
+            rng.Rows.AutoFit();
             rng.Value = text;
+            rng.Cells.Font.Bold = true;
         }
 
         /// <summary>
@@ -610,6 +631,26 @@ namespace DOC_Forms
             rng.Value = text;
             ++_curRow;
         }
+
+
+        /// <summary>
+        /// Writes the heading out to the current row. Adds two rows. A black one, and a blue one with headings.
+        /// </summary>
+        private static async void OutputBlueSubHeading(string text)
+        {
+            // black bar above
+            Range rng = GetRange(_minCol, _curRow, _maxCol, _curRow);
+            rng.Cells.Font.Size = SubHeadingFontSize;
+            rng.Cells.Font.Bold = true;
+            rng.Interior.Color = XlRgbColor.rgbCornflowerBlue; //bg
+            rng.Font.Color = XlRgbColor.rgbBlack; // text
+            rng.Merge();
+            rng.Value = text;
+            rng.HorizontalAlignment = XlHAlign.xlHAlignCenter;
+            ++_curRow;
+        }
+
+
 
         /// <summary>
         /// Returns a Range for the given area
