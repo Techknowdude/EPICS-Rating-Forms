@@ -28,12 +28,11 @@ namespace DOC_Forms
 
         public static void ExportData(IEpicForm form)
         {
-
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Title = "Save excel export";
             saveFileDialog.DefaultExt = ".xlsx";
             saveFileDialog.OverwritePrompt = true;
-            saveFileDialog.AddExtension = false;
+            saveFileDialog.AddExtension = true;
 
             if ((saveFileDialog.ShowDialog() != true)) return;
 
@@ -62,6 +61,7 @@ namespace DOC_Forms
 
         private static void ExportPage(IPageViewModel page)
         {
+            //TODO: Finish all pages
             Console.WriteLine("No export function for page....");
         }
 
@@ -78,11 +78,71 @@ namespace DOC_Forms
             rng.Value = "EPICS CODING FORM";
             _curRow++;
 
+            // Session Info
             OutputBlackWhiteHeading("Session Information");
 
             OutputNormalText("Session date: " + page.SessionDate.ToString("d"),0,2);
+            OutputNormalText("Staff name: " + page.StaffName,2,3);
+            _curRow++;
+            OutputNormalText("Review date: " + page.ReviewDate.ToString("d"), 0, 2);
+            OutputNormalText("Reviewer's name: " + page.ReviewName, 2, 3);
+            _curRow++;
+            OutputNormalText("Caseload number: " + page.CaseloadNumber, 0, 2);
+            OutputNormalText("Client's name: " + page.ClientName, 2, 3);
+            _curRow++;
+            OutputNormalText("Session Length: " + page.SessionLength, 0, 2);
+            OutputNormalText("Client SID#: " + page.ClientSID, 2, 3);
             _curRow++;
 
+            // Additional info
+            OutputNormalText("Client DOB: " + page.ClientDOB.ToString("d"), 0, 2);
+            string temp = page.GenderMale ? "Male" : page.GenderFemale ? "Female" : page.GenderOtherText;
+            OutputNormalText("Client gender: " + temp, 2, 3);
+            _curRow++;
+            OutputNormalText("Client race: " + page.Race);
+            _curRow++;
+            temp = page.FirstMeetingYes ? "Yes" : page.FirstMeetingNo ? "No" : "N/A";
+            OutputNormalText("Was the client's first meeting with this staff person? " + temp);
+            ++_curRow;
+            temp = page.ClientHomelessYes ? "Yes" : page.ClientHomelessNo ? "No" : "N/A";
+            OutputNormalText("Was the client homeless at the time of the session? " + temp);
+            ++_curRow;
+            temp = page.ClientAgressiveYes ? "Yes" : page.ClientAgressiveNo ? "No" : "N/A";
+            OutputNormalText("Did the client seem to be in a state of agitation, crisis, or acute need? " + temp);
+            ++_curRow;
+            // Rating summary
+            OutputBlackWhiteHeading("RATING QUICK SUMMARY");
+            OutputHeading3Text("Section", 0, 2);
+            OutputHeading3Text("Score", 2, 1);
+            OutputHeading3Text("Summary", 3, 3);
+            OutputHeading3Text("Score", 6, 2);
+            _curRow++;
+            OutputNormalText("CHECK IN (C)",0,2);
+            OutputNormalText(page.CheckInScore,2,1);
+            OutputNormalText("OVERALL SESSION SCORE (Sum of all section scores)", 3, 3);
+            OutputNormalText(page.OverallScore, 6, 2);
+            _curRow++;
+            OutputNormalText("REVIEW (R)", 0, 2);
+            OutputNormalText(page.ReviewScore, 2, 1);
+            _curRow++;
+            OutputNormalText("INTERVENTION (I)", 0, 2);
+            OutputNormalText(page.InterventionScore, 2, 1);
+            OutputNormalText("SUM OF SCORES >= 2", 3, 3);
+            OutputNormalText(page.NumberEpicsOver2, 6, 2);
+            _curRow++;
+            OutputNormalText("HOMEWORK (H)", 0, 2);
+            OutputNormalText(page.HomeworkScore, 2, 1);
+            _curRow++;
+            OutputNormalText("BEHAVIORAL PRACTICES", 0, 2);
+            OutputNormalText(page.BehavioralScore, 2, 1);
+            OutputNormalText("SUM OF SCORES < 2", 3, 3);
+            OutputNormalText(page.PercentEpicsOver2, 6, 2);
+            _curRow++;
+            OutputNormalText("GLOBAL PRACTICES", 0, 2);
+            OutputNormalText(page.GlobalScore, 2, 1);
+            _curRow++;
+
+            //TODO: Finish this
             ++_curRow;
         }
 
@@ -93,8 +153,10 @@ namespace DOC_Forms
         private static void ExportPage(Page3ViewModel page)
         {
             OutputBlackWhiteHeading(page.TextArray[0]);
-            _curRow++;
             OutputNormalText(page.TextArray[1] + page.CheckInTextInput[0], 0, 2);
+            _curRow++;
+
+            //TODO: finish
             _curRow++;
         }
 
