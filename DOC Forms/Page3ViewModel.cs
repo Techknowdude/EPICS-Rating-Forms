@@ -23,7 +23,7 @@ namespace DOC_Forms
 
         private ObservableDouble[] _totalScores;
 
-        private string _comments;
+        private string[] _comments;
         private string[] _textArray;
         private string[] _checkInTextInput;
         private string[] _reviewTextInput;
@@ -84,10 +84,12 @@ namespace DOC_Forms
             }
         }
 
-        public string Comments
+        public string[] Comments
         {
             get
             {
+                if(_comments == null)
+                    _comments = new string[3];
                 return _comments;
             }
 
@@ -200,7 +202,7 @@ namespace DOC_Forms
                 "CALCULATE AND WRITE IN TOTAL INTERVENTION SCORE = (i1+i2+i3)/3"
             };
             _totalScores = new ObservableDouble[3] { new ObservableDouble(), new ObservableDouble(), new ObservableDouble(), };
-
+            _comments = new string[3];
         }
 
         private void ResetListeners()

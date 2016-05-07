@@ -276,7 +276,7 @@
             <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[2].Val, StringFormat=N2}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
             <Rectangle Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" Fill="CornflowerBlue" />
             <TextBlock Style="{StaticResource BlockText}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" HorizontalAlignment="Center">COMMENTS</TextBlock>
-            <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8" HorizontalContentAlignment="Center" Text="{Binding Comments[1]}" Style="{StaticResource EssayBoxStyle}"/>
+            <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8" HorizontalContentAlignment="Center" Text="{Binding Comments[2]}" Style="{StaticResource EssayBoxStyle}"/>
 
             <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8"/>
             <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8"/>

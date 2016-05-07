@@ -58,8 +58,9 @@
             <CheckBox Content="{Binding TextArray[0][7]}"  IsChecked="{Binding BoolArray[0][1][2].Val}" Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="4" Style="{StaticResource OptionBoxStyle}" />
             <CheckBox Content="{Binding TextArray[0][8]}"  IsChecked="{Binding BoolArray[0][2][0].Val}" Grid.Row="4" Grid.Column="0" Style="{StaticResource OptionBoxStyle}" />
             <CheckBox Content="{Binding TextArray[0][9]}"  IsChecked="{Binding BoolArray[0][2][1].Val}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource OptionBoxStyle}" />
-            <CheckBox Content="{Binding TextArray[0][10]}" IsChecked="{Binding BoolArray[0][2][2].Val}" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="4" Style="{StaticResource OptionBoxStyle}" />
-
+            <CheckBox Content="Other" IsChecked="{Binding BoolArray[0][2][2].Val}" Grid.Row="4" Grid.Column="4" Grid.ColumnSpan="4" Style="{StaticResource OptionBoxStyle}" />
+            <TextBox Text="{Binding TextArray[0][10]}" Grid.Row="4" Grid.Column="6" Grid.ColumnSpan="2"/>
+            
             <Rectangle Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="8" Fill="Black" Style="{StaticResource DividerBar}"/>
 
             <TextBlock Style="{StaticResource BlockText}" Text="{Binding TextArray[0][11]}" Grid.Row="6" Grid.Column="3"/>
@@ -138,7 +139,7 @@
             <RadioButton GroupName="S1R10" Grid.Row="16" Grid.Column="7" IsChecked="{Binding BoolArray[0][12][5].Val}"/>
 
             <Rectangle Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="8" Fill="CornflowerBlue"/>
-            <TextBlock Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="8" Text="{Binding TextArray[0][28]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="8" Text="{Binding TextArray[0][27]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center"/>
             
             <TextBox Grid.Row="19" Grid.Column="0" Grid.ColumnSpan="8" Text="{Binding Comments[0]}" Style="{StaticResource EssayBoxStyle}"/>
             
@@ -274,7 +275,7 @@
 
             <TextBlock Text="{Binding TextArray[1][9]}" Margin="-65,0,0,0" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource BlockText}"/>
             <CheckBox Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="95,0,0,0" Content="{Binding TextArray[1][10]}"  IsChecked="{Binding BoolArray[1][1][0].Val}" Style="{StaticResource OptionBoxStyle}" />
-            <CheckBox Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Margin="105,0,0,0" Content="{Binding TextArray[1][11]}"  IsChecked="{Binding BoolArray[1][1][1].Val}" Style="{StaticResource OptionBoxStyle}" />
+            <CheckBox Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3" Margin="135,0,0,0" Content="{Binding TextArray[1][11]}"  IsChecked="{Binding BoolArray[1][1][1].Val}" Style="{StaticResource OptionBoxStyle}" />
 
             <TextBlock Grid.Row="5" Grid.Column="0" Text="{Binding TextArray[1][12]}" Style="{StaticResource BlockText}"/>
             <TextBox Grid.Row="5" Grid.Column="0" Margin="40,0,0,0" Text="{Binding InputText[4]}" Style="{StaticResource EssayBoxStyle}" />
@@ -362,7 +363,7 @@
 
             <Rectangle Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="9" Fill="LimeGreen"/>
             <TextBlock Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="9" Text="{Binding TextArray[1][45]}" Style="{StaticResource BlockText}" FontWeight="Bold" HorizontalAlignment="Center"/>
-            <TextBox Grid.Row="21" Grid.Column="0" Grid.ColumnSpan="9" Text="{Binding InputText[11]}" Style="{StaticResource EssayBoxStyle}"/>
+            <TextBox Grid.Row="21" Grid.Column="0" Grid.ColumnSpan="9" Text="{Binding Comments[1]}" Style="{StaticResource EssayBoxStyle}"/>
 
             <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
