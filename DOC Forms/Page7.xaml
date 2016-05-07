@@ -373,9 +373,60 @@
             <Border Grid.Row="3" Grid.Column="3" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="3" Grid.Column="4" Grid.ColumnSpan="5" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="5" Grid.Column="4" Grid.ColumnSpan="5" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="1" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="7" Grid.Column="4" Grid.ColumnSpan="5" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
             <Border Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="1" Grid.RowSpan="2" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="11" Grid.Column="3" Grid.ColumnSpan="1" Grid.RowSpan="2" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="11" Grid.Column="4" Grid.ColumnSpan="5" Grid.RowSpan="2" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="14" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="14" Grid.Column="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="14" Grid.Column="5" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="14" Grid.Column="6" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="14" Grid.Column="7" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="14" Grid.Column="8" Style="{StaticResource GridBorderStyle}"/>
+
+            <Border Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="15" Grid.Column="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="15" Grid.Column="5" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="15" Grid.Column="6" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="15" Grid.Column="7" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="15" Grid.Column="8" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="16" Grid.Column="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="16" Grid.Column="5" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="16" Grid.Column="6" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="16" Grid.Column="7" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="16" Grid.Column="8" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="17" Grid.Column="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="17" Grid.Column="5" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="17" Grid.Column="6" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="17" Grid.Column="7" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="17" Grid.Column="8" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="18" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="18" Grid.Column="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="18" Grid.Column="5" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="18" Grid.Column="6" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="18" Grid.Column="7" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="18" Grid.Column="8" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="19" Grid.Column="0" Grid.ColumnSpan="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="19" Grid.Column="4" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="19" Grid.Column="5" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="19" Grid.Column="6" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="19" Grid.Column="7" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="19" Grid.Column="8" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
+            <Border Grid.Row="21" Grid.Column="0" Grid.ColumnSpan="9" Style="{StaticResource GridBorderStyle}"/>
         </Grid>
     </StackPanel>
 </Page>
