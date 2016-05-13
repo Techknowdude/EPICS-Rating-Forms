@@ -61,7 +61,7 @@
             <RadioButton GroupName="G1R2" Grid.Row="4" Grid.Column="6" IsChecked="{Binding BoolArray[0][1][3].Val}"/>
             <RadioButton GroupName="G1R2" Grid.Row="4" Grid.Column="7" IsChecked="{Binding BoolArray[0][1][4].Val}"/>
 
-            <TextBox Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[0].Val, StringFormat=N2}" IsEnabled="False" Style="{StaticResource DisplayBoxStyle}"/>
+            <TextBox Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[0].Val, StringFormat=N0}" IsEnabled="False" Style="{StaticResource DisplayBoxStyle}"/>
 
             <Rectangle Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="8" Fill="CornflowerBlue"/>
             <TextBlock Text="{Binding TextArray[0][7]}" HorizontalAlignment="Center" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="8" Style="{StaticResource BlockHeading3}"/>
@@ -149,7 +149,7 @@
             <RadioButton GroupName="G2R3" Grid.Row="5" Grid.Column="6" IsChecked="{Binding BoolArray[1][2][3].Val}"/>
             <RadioButton GroupName="G2R3" Grid.Row="5" Grid.Column="7" IsChecked="{Binding BoolArray[1][2][4].Val}"/>
 
-            <TextBox Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[1].Val, StringFormat=N2}" IsEnabled="False" Style="{StaticResource DisplayBoxStyle}"/>
+            <TextBox Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[1].Val, StringFormat=N0}" IsEnabled="False" Style="{StaticResource DisplayBoxStyle}"/>
 
             <Rectangle Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="8" Fill="CornflowerBlue"/>
             <TextBlock Text="{Binding TextArray[0][7]}" HorizontalAlignment="Center" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="8" Style="{StaticResource BlockHeading3}"/>

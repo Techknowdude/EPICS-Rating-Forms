@@ -82,7 +82,7 @@
             <TextBlock Style="{StaticResource BlockText}" Text="{Binding TextArray[0][24]}" Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="3"/>
             <TextBlock Style="{StaticResource BlockText}" Text="{Binding TextArray[0][25]}" Grid.Row="16" Grid.Column="0" Grid.ColumnSpan="3"/>
             <TextBlock Style="{StaticResource BlockText}" Text="{Binding TextArray[0][26]}" Grid.Row="17" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <TextBox Style="{StaticResource DisplayBoxStyle}" Text="{Binding TotalScores[0].Val, StringFormat=N2}" Grid.Row="17" Grid.Column="2" Grid.ColumnSpan="6" IsEnabled="False"/>
+            <TextBox Style="{StaticResource DisplayBoxStyle}" Text="{Binding TotalScores[0].Val, StringFormat=N0}" Grid.Row="17" Grid.Column="2" Grid.ColumnSpan="6" IsEnabled="False"/>
 
             <RadioButton GroupName="S1R1" Grid.Row="7" Grid.Column="3" IsChecked="{Binding BoolArray[0][3][1].Val}"/>
             <RadioButton GroupName="S1R1" Grid.Row="7" Grid.Column="4" IsChecked="{Binding BoolArray[0][3][2].Val}"/>

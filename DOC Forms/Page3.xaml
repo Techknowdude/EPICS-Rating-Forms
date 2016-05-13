@@ -64,7 +64,7 @@
             <RadioButton GroupName="13" Grid.Row="4" Grid.Column="5" IsChecked="{Binding Section1Bools[2][3].Val}"/>
             <RadioButton GroupName="13" Grid.Row="4" Grid.Column="6" IsChecked="{Binding Section1Bools[2][4].Val}"/>
 
-            <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" Text="{Binding TotalScores[0].Val, StringFormat=N2}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" Text="{Binding TotalScores[0].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
             <Rectangle Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" Fill="CornflowerBlue" />
             <TextBlock Style="{StaticResource BlockText}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Center">COMMENTS</TextBlock>
             <TextBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" HorizontalContentAlignment="Center" Text="{Binding Comments[0]}" Style="{StaticResource EssayBoxStyle}"/>
@@ -163,7 +163,7 @@
             <RadioButton GroupName="24" Grid.Row="5" Grid.Column="5" IsChecked="{Binding Section2Bools[3][4].Val}"/>
             <RadioButton GroupName="24" Grid.Row="5" Grid.Column="6" IsChecked="{Binding Section2Bools[3][5].Val}"/>
 
-            <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6" Text="{Binding TotalScores[1].Val, StringFormat=N2}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6" Text="{Binding TotalScores[1].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
             <Rectangle Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" Fill="CornflowerBlue" />
             <TextBlock Style="{StaticResource BlockText}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Center">COMMENTS</TextBlock>
             <TextBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" HorizontalContentAlignment="Center" Text="{Binding Comments[1]}" Style="{StaticResource EssayBoxStyle}"/>
@@ -273,7 +273,7 @@
             <RadioButton GroupName="33" Grid.Row="7" Grid.Column="7" IsChecked="{Binding Section3Bools[2][4].Val}"/>
 
             <TextBlock Text="{Binding TextArray[34]}" Style="{StaticResource BlockText}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" />
-            <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[2].Val, StringFormat=N2}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
+            <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[2].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
             <Rectangle Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" Fill="CornflowerBlue" />
             <TextBlock Style="{StaticResource BlockText}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" HorizontalAlignment="Center">COMMENTS</TextBlock>
             <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8" HorizontalContentAlignment="Center" Text="{Binding Comments[2]}" Style="{StaticResource EssayBoxStyle}"/>

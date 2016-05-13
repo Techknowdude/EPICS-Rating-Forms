@@ -213,16 +213,15 @@
                 <TextBox Text="{Binding BehavioralScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="5" Style="{StaticResource DisplayBoxStyle}"/>
                 <TextBox Text="{Binding GlobalScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="6" Style="{StaticResource DisplayBoxStyle}"/>
 
-                <TextBlock Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">OVERALL SESSION SCORE = (Sum of all section scored)/6</TextBlock>
-                <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">*Overall score ranges from 0 to 4*</TextBlock>
-                <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">Number of EPICS components with score >= 2.0 (C, R, I, H only)</TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">OVERALL SESSION SCORE = Sum of all section scores</TextBlock>
+                <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">Percentage of EPICS scores >= 2.0 (C, R, I, H only)</TextBlock>
                 <TextBlock Grid.Row="4" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">*This is only including Check in, Review, Intervention, and Homework*</TextBlock>
-                <TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">% of EPICS components with score >= 2.0 (C, R, I, H only)</TextBlock>
+                <TextBlock Grid.Row="5" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}" Text="Percentage of EPICS scores &lt; 2.0 (C, R, I, H only)"></TextBlock>
                 <TextBlock Grid.Row="6" Grid.Column="2" HorizontalAlignment="Center" Style="{StaticResource BlockText}">*This is only including Check in, Review, Intervention, and Homework*</TextBlock>
 
                 <TextBox Text="{Binding OverallScore}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="1" Grid.RowSpan="2" Style="{StaticResource DisplayBoxStyle}"></TextBox>
-                <TextBox Text="{Binding NumberEpicsOver2}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" Style="{StaticResource DisplayBoxStyle}"></TextBox>
-                <TextBox Text="{Binding PercentEpicsOver2}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2" Style="{StaticResource DisplayBoxStyle}"></TextBox>
+                <TextBox Text="{Binding PercentHighEPICS}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" Style="{StaticResource DisplayBoxStyle}"></TextBox>
+                <TextBox Text="{Binding PercentLowEPICS}" IsEnabled="False" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="3" Grid.Row="5" Grid.RowSpan="2" Style="{StaticResource DisplayBoxStyle}"></TextBox>
 
                 <Rectangle Grid.Row="9" Grid.ColumnSpan="4" Grid.Column="0" Fill="CornflowerBlue"></Rectangle>
                 <Rectangle Grid.Row="11" Grid.ColumnSpan="4" Grid.Column="0" Fill="CornflowerBlue"></Rectangle>

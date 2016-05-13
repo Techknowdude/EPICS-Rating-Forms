@@ -115,7 +115,7 @@ namespace DOC_Forms
                 "G8) Communicated information to the client in a clear and concise manner",
                 "G9) Elicited and gave appropriate feedback",
                 "G10) Utilized role clarification",
-                "CALCULATED TOTAL INTERVENTION SCORE = (G1 + G2 + G3 + G4 + G5 + G6 + G7 + G8 + G9 + G10) / (10 - #N/A)",
+                "CALCULATED TOTAL INTERVENTION SCORE = (G1 + G2 + G3 + G4 + G5 + G6 + G7 + G8 + G9 + G10)",
                 "Please enter additional comments in the space below",
 },
                 new[] {
@@ -181,7 +181,10 @@ namespace DOC_Forms
         {
             if (BoolArray == null) return;
             int numNotNA = 0;
-            int[] selections = new int[BoolArray[0].Length - 3];
+
+            int low = 0, high = 0;
+
+            int numLow = 0;
 
             for (int row = 3; row < BoolArray[0]?.Length; row++)
             {
@@ -191,13 +194,22 @@ namespace DOC_Forms
                 for (int col = 1; col < boolRow?.Length; col++)
                 {
                     if (boolRow[col])
-                        selections[row-3] = col - 1;
+                    {
+                        if (col - 1 < 2)
+                        {
+                            low += col - 1;
+                            ++numLow;
+                        }
+                        else
+                            high += col - 1;
+                    }
                 }
             }
 
-            TotalScores[0].Val = selections.Sum() / (double)numNotNA;
-            Page1ViewModel.Instance.GlobalScore = TotalScores[0].Val.ToString("N2");
-
+            TotalScores[0].Val = low + high;
+            Page1ViewModel.Instance.GlobalLowScore = numLow;
+            Page1ViewModel.Instance.GlobalHighScore = 10 - numLow;
+            Page1ViewModel.Instance.GlobalScore = TotalScores[0].Val.ToString("N0");
         }
 
         public static Page7ViewModel Load(Stream stream, BinaryFormatter formatter)

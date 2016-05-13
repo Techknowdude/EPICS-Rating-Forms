@@ -20,6 +20,19 @@ namespace DOC_Forms
         private DateTime _clientDOB = DateTime.Today;
         private DateTime _nextTapeDueDate = DateTime.Today;
 
+        private int _checkinLowScore;
+        private int _checkinHighScore;
+        private int _reviewLowScore;
+        private int _reviewHighScore;
+        private int _interventionLowScore;
+        private int _interventionHighScore;
+        private int _homeworkLowScore;
+        private int _homeworkHighScore;
+        private int _behavioralLowScore;
+        private int _behavioralHighScore;
+        private int _globalLowScore;
+        private int _globalHighScore;
+
         private string _staffName;
         private string _reviewName;
         private string _caseloadNumber;
@@ -37,8 +50,8 @@ namespace DOC_Forms
         private string _overallScore;
         private string _topStaffStrengths;
         private string _topStaffImprovements;
-        private string _numberEpicsOver2;
-        private string _percentEpicsOver2;
+        private string _percentHighEpics;
+        private string _percentLowEpics;
         private string _completedEpics;
         private string _totalEpics;
         private string _percentEpicsCompleted;
@@ -575,23 +588,23 @@ namespace DOC_Forms
             }
         }
 
-        public string NumberEpicsOver2
+        public string PercentHighEPICS
         {
-            get { return _numberEpicsOver2; }
+            get { return _percentHighEpics; }
             set
             {
-                _numberEpicsOver2 = value;
-                RaisePropertyChangedEvent("NumberEpicsOver2");
+                _percentHighEpics = value;
+                RaisePropertyChangedEvent("PercentHighEPICS");
             }
         }
 
-        public string PercentEpicsOver2
+        public string PercentLowEPICS
         {
-            get { return _percentEpicsOver2; }
+            get { return _percentLowEpics; }
             set
             {
-                _percentEpicsOver2 = value;
-                RaisePropertyChangedEvent("PercentEpicsOver2");
+                _percentLowEpics = value;
+                RaisePropertyChangedEvent("PercentLowEPICS");
             }
         }
 
@@ -648,6 +661,186 @@ namespace DOC_Forms
             }
         }
 
+        public int CheckinLowScore
+        {
+            get
+            {
+                return _checkinLowScore;
+            }
+
+            set
+            {
+                _checkinLowScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("CheckinLowScore");
+            }
+        }
+
+        public int CheckinHighScore
+        {
+            get
+            {
+                return _checkinHighScore;
+            }
+
+            set
+            {
+                _checkinHighScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("CheckinHighScore");
+            }
+        }
+
+        public int ReviewLowScore
+        {
+            get
+            {
+                return _reviewLowScore;
+            }
+
+            set
+            {
+                _reviewLowScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("ReviewLowScore");
+            }
+        }
+
+        public int ReviewHighScore
+        {
+            get
+            {
+                return _reviewHighScore;
+            }
+
+            set
+            {
+                _reviewHighScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("ReviewHighScore");
+            }
+        }
+
+        public int InterventionLowScore
+        {
+            get
+            {
+                return _interventionLowScore;
+            }
+
+            set
+            {
+                _interventionLowScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("InterventionLowScore");
+            }
+        }
+
+        public int InterventionHighScore
+        {
+            get
+            {
+                return _interventionHighScore;
+            }
+
+            set
+            {
+                _interventionHighScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("InterventionHighScore");
+            }
+        }
+
+        public int HomeworkLowScore
+        {
+            get
+            {
+                return _homeworkLowScore;
+            }
+
+            set
+            {
+                _homeworkLowScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("HomeworkLowScore");
+            }
+        }
+
+        public int HomeworkHighScore
+        {
+            get
+            {
+                return _homeworkHighScore;
+            }
+
+            set
+            {
+                _homeworkHighScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("HomeworkHighScore");
+            }
+        }
+
+        public int BehavioralLowScore
+        {
+            get
+            {
+                return _behavioralLowScore;
+            }
+
+            set
+            {
+                _behavioralLowScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("BehavioralLowScore");
+            }
+        }
+
+        public int BehavioralHighScore
+        {
+            get
+            {
+                return _behavioralHighScore;
+            }
+
+            set
+            {
+                _behavioralHighScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("BehavioralHighScore");
+            }
+        }
+
+        public int GlobalLowScore
+        {
+            get
+            {
+                return _globalLowScore;
+            }
+
+            set
+            {
+                _globalLowScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("GlobalLowScore");
+            }
+        }
+
+        public int GlobalHighScore
+        {
+            get
+            {
+                return _globalHighScore;
+            }
+
+            set
+            {
+                _globalHighScore = value;
+                UpdateScores();
+                RaisePropertyChangedEvent("GlobalHighScore");
+            }
+        }
+
         #endregion
 
         public Page1ViewModel()
@@ -673,13 +866,11 @@ namespace DOC_Forms
             double.TryParse(BehavioralScore, out behavior);
             double.TryParse(GlobalScore, out global);
 
-            double overallScore = (scores.Sum() + behavior + global) / 6;
-            double numHighScore = scores.Count(x => x >= 2.0);
-            double percentageHighScore = numHighScore / 4;
+            double overallScore = (scores.Sum() + behavior + global);
 
-            OverallScore = overallScore.ToString("N");
-            NumberEpicsOver2 = numHighScore.ToString("N");
-            PercentEpicsOver2 = percentageHighScore.ToString("P");
+            OverallScore = overallScore.ToString("N0");
+            PercentHighEPICS = ((CheckinHighScore + ReviewHighScore + InterventionHighScore + HomeworkHighScore)/(double)12).ToString("P2");
+            PercentLowEPICS = ((CheckinLowScore + ReviewLowScore + InterventionLowScore + HomeworkLowScore)/(double)12).ToString("P2");
         }
 
         private void UpdatePercentCompleted()
@@ -716,8 +907,8 @@ namespace DOC_Forms
                    string.Equals(_overallScore, other._overallScore) &&
                    string.Equals(_topStaffStrengths, other._topStaffStrengths) &&
                    string.Equals(_topStaffImprovements, other._topStaffImprovements) &&
-                   string.Equals(_numberEpicsOver2, other._numberEpicsOver2) &&
-                   string.Equals(_percentEpicsOver2, other._percentEpicsOver2) &&
+                   string.Equals(_percentHighEpics, other._percentHighEpics) &&
+                   string.Equals(_percentLowEpics, other._percentLowEpics) &&
                    string.Equals(_completedEpics, other._completedEpics) &&
                    string.Equals(_totalEpics, other._totalEpics) &&
                    string.Equals(_percentEpicsCompleted, other._percentEpicsCompleted) &&

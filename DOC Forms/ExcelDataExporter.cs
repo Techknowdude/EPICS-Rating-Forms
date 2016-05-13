@@ -40,7 +40,7 @@ namespace DOC_Forms
 
             _application = new ExcelApplication();
             _application.DisplayAlerts = false;
-            _application.Visible = true;
+            _application.Visible = false;
             _application.Workbooks.Add();
 
             _workbook = _application.ActiveWorkbook;
@@ -131,7 +131,7 @@ namespace DOC_Forms
             OutputHeading3Text("INTERVENTION (I)", 0, 2);
             OutputNormalText(page.InterventionScore, 2, 1);
             OutputHeading3Text("SUM OF SCORES >= 2", 3, 3);
-            OutputNormalText(page.NumberEpicsOver2, 6, 1);
+            OutputNormalText(page.PercentHighEPICS, 6, 1);
             ++_curRow;
             OutputHeading3Text("HOMEWORK (H)", 0, 2);
             OutputNormalText(page.HomeworkScore, 2, 1);
@@ -139,7 +139,7 @@ namespace DOC_Forms
             OutputHeading3Text("BEHAVIORAL PRACTICES", 0, 2);
             OutputNormalText(page.BehavioralScore, 2, 1);
             OutputHeading3Text("SUM OF SCORES < 2", 3, 3);
-            OutputNormalText(page.PercentEpicsOver2, 6, 1);
+            OutputNormalText(page.PercentLowEPICS, 6, 1);
             ++_curRow;
             OutputHeading3Text("GLOBAL PRACTICES", 0, 2);
             OutputNormalText(page.GlobalScore, 2, 1);

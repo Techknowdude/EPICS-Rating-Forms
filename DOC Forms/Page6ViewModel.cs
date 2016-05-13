@@ -120,7 +120,7 @@ namespace DOC_Forms
                     "HOMEWORK/PLAN", "Time Stamp:","Total Time Spent:",
                     "Homework Assigned:",
                     "H1) Generalized the skill learned",
-                    "H2) Assigned appropriate homework","CALCULATED TOTAL HOMEWORK SCORE = (H1+H2)/2",
+                    "H2) Assigned appropriate homework","CALCULATED TOTAL HOMEWORK SCORE = (H1+H2)",
                     "COMMENTS"
                 },
                 new[]
@@ -131,7 +131,7 @@ namespace DOC_Forms
                     "B1) Used appropriate behavioral practices",
                     "B2) Completed the components of the behavioral practice",
                     "B3) Used behavioral practices effectively",
-                    "CALCULATED TOTAL BEHAVIORAL PRACTICES SCORE = (B1 + B2 + B3) / 3"
+                    "CALCULATED TOTAL BEHAVIORAL PRACTICES SCORE = (B1 + B2 + B3)"
                 },
                 new[]
                 {
@@ -217,39 +217,58 @@ namespace DOC_Forms
         private void UpdateTotalScore1(object sender, PropertyChangedEventArgs e)
         {
             if (BoolArray == null) return;
-            int[] selections = new int[BoolArray[0].Length];
-
+            int low = 0, high = 0, numLow =0;
             for (int row = 0; row < BoolArray[0]?.Length; row++)
             {
                 var boolRow = BoolArray[0][row];
                 for (int col = 0; col < boolRow?.Length; col++)
                 {
                     if (boolRow[col])
-                        selections[row] = col;
+                    {
+                        if (col < 2)
+                        {
+                            low += col;
+                            ++numLow;
+                        }
+                        else
+                            high += col;
+                    }
                 }
             }
 
-            TotalScores[0].Val = selections.Sum() / (double)selections.Length;
-            Page1ViewModel.Instance.HomeworkScore = TotalScores[0].Val.ToString("N2");
+            TotalScores[0].Val = low + high;
+            Page1ViewModel.Instance.HomeworkLowScore = numLow;
+            Page1ViewModel.Instance.HomeworkHighScore = 2 - numLow;
+
+            Page1ViewModel.Instance.HomeworkScore = TotalScores[0].Val.ToString("N0");
         }
 
         private void UpdateTotalScore2(object sender, PropertyChangedEventArgs e)
         {
             if (BoolArray == null) return;
-            int[] selections = new int[BoolArray[1].Length];
-
+            int low = 0, high = 0, numLow = 0;
             for (int row = 0; row < BoolArray[1]?.Length; row++)
             {
                 var boolRow = BoolArray[1][row];
                 for (int col = 0; col < boolRow?.Length; col++)
                 {
                     if (boolRow[col])
-                        selections[row] = col;
+                    {
+                        if (col < 2)
+                        {
+                            low += col;
+                            ++numLow;
+                        }
+                        else
+                            high += col;
+                    }
                 }
             }
 
-            TotalScores[1].Val = selections.Sum() / (double)selections.Length;
-            Page1ViewModel.Instance.BehavioralScore = TotalScores[1].Val.ToString("N2");
+            TotalScores[1].Val = low + high;
+            Page1ViewModel.Instance.BehavioralLowScore = numLow;
+            Page1ViewModel.Instance.BehavioralHighScore = 3 - numLow;
+            Page1ViewModel.Instance.BehavioralScore = TotalScores[1].Val.ToString("N0");
         }
     }
 }

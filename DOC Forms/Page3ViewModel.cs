@@ -182,7 +182,7 @@ namespace DOC_Forms
                 "C1) Promoted a collaborative relationship/rapport with client",
                 "C2) Assessed crisis/acute needs",
                 "C3) Assessed for compliance with conditions",
-                "CALCULATED TOTAL CHECK IN SCORE = (C1+C2+C3)/3",
+                "CALCULATED TOTAL CHECK IN SCORE = (C1+C2+C3)",
 
                 "REVIEW/FOCUS", "Time Stamp:", "Total Time Spent:",
                 "Missed\nOpportunity\n(0)","(1)","(2)","(3)","Most\nProficient\n(4)",
@@ -190,7 +190,7 @@ namespace DOC_Forms
                 "R2) Discussed community agency referrals",
                 "R3) Enhanced learning through repetition and feedback",
                 "R4) Reviewed homework from the previous session",
-                "CALCULATED TOTAL REVIEW SCORE = (R1+R2+R3+R4)/(4-#N/A)",
+                "CALCULATED TOTAL REVIEW SCORE = (R1+R2+R3+R4)",
 
                 "INTERVENTION/EVOKE",
                 "Find and review the intervention used in the session and delete unused interventions. Once you have reviewed the intervention, return to this Intervention/Evoke summary and provide a final score.",
@@ -199,7 +199,7 @@ namespace DOC_Forms
                 "i1) Used an appropriate intervention",
                 "i2) Completed the steps of the intervention",
                 "i3) Used the intervention effectively",
-                "CALCULATE AND WRITE IN TOTAL INTERVENTION SCORE = (i1+i2+i3)/3"
+                "CALCULATE AND WRITE IN TOTAL INTERVENTION SCORE = (i1+i2+i3)"
             };
             _totalScores = new ObservableDouble[3] { new ObservableDouble(), new ObservableDouble(), new ObservableDouble(), };
             _comments = new string[3];
@@ -241,7 +241,7 @@ namespace DOC_Forms
         private void UpdateSection1CheckIn(object sender, PropertyChangedEventArgs e)
         {
             if (Section1Bools == null) return;
-            int[] selections = new int[Section1Bools.Length];
+            int low = 0, high = 0, numLow = 0;
 
             for (int row = 0; row < Section1Bools?.Length; row++)
             {
@@ -249,20 +249,30 @@ namespace DOC_Forms
                 for (int col = 0; col < boolRow?.Length; col++)
                 {
                     if (boolRow[col])
-                        selections[row] = col;
+                    {
+                        if (col < 2)
+                        {
+                            low += col;
+                            ++numLow;
+                        }
+                        else
+                            high += col;
+                    }
                 }
             }
 
-            TotalScores[0].Val = selections.Sum()/(double)selections.Length;
-            Page1ViewModel.Instance.CheckInScore = TotalScores[0].Val.ToString("N2");
+            TotalScores[0].Val = low + high;
+            Page1ViewModel.Instance.CheckinLowScore = numLow;
+            Page1ViewModel.Instance.CheckinHighScore = 3 - numLow;
+            Page1ViewModel.Instance.CheckInScore = TotalScores[0].Val.ToString("N0");
         }
 
         private void UpdateSection2Review(object sender, PropertyChangedEventArgs e)
         {
             if (Section2Bools == null) return;
 
-            int[] selections = new int[Section2Bools.Length];
             double count = 0;
+            int low = 0, high = 0, numLow = 0;
 
             for (int row = 0; row < Section2Bools?.Length; row++)
             {
@@ -273,19 +283,30 @@ namespace DOC_Forms
                 for (int col = 1; col < boolRow?.Length; col++)
                 {
                     if (boolRow[col])
-                        selections[row] = col - 1;
+                    {
+                        if (col - 1 < 2)
+                        {
+                            low += col - 1;
+                            ++numLow;
+                        }
+                        else
+                            high += col - 1;
+                    }
                 }
             }
 
-            TotalScores[1].Val = selections.Sum() / count;
-            Page1ViewModel.Instance.ReviewScore = TotalScores[1].Val.ToString("N2");
+            TotalScores[1].Val = low + high;
+            Page1ViewModel.Instance.ReviewLowScore = numLow;
+            Page1ViewModel.Instance.ReviewHighScore = 4 - numLow;
+
+            Page1ViewModel.Instance.ReviewScore = TotalScores[1].Val.ToString("N0");
         }
 
         private void UpdateSection3Intervention(object sender, PropertyChangedEventArgs e)
         {
             if (Section3Bools == null) return;
 
-            int[] selections = new int[Section3Bools.Length];
+            int low = 0, high = 0, numLow = 0;
 
             for (int row = 0; row < Section3Bools?.Length; row++)
             {
@@ -293,12 +314,22 @@ namespace DOC_Forms
                 for (int col = 0; col < boolRow?.Length; col++)
                 {
                     if (boolRow[col])
-                        selections[row] = col;
+                    {
+                        if (col < 2)
+                        {
+                            low += col;
+                            ++numLow;
+                        }
+                        else
+                            high += col;
+                    }
                 }
             }
 
-            TotalScores[2].Val = selections.Sum() / (double)selections.Count();
-            Page1ViewModel.Instance.InterventionScore = TotalScores[2].Val.ToString("N2");
+            Page1ViewModel.Instance.InterventionLowScore = numLow;
+            Page1ViewModel.Instance.InterventionHighScore = 3-numLow;
+            TotalScores[2].Val = low + high;
+            Page1ViewModel.Instance.InterventionScore = TotalScores[2].Val.ToString("N0");
         }
     }
 }
