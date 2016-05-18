@@ -1,4 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.Security;
+using System.Text;
+using System.Windows;
 using System.Windows.Input;
 
 namespace DOC_Forms
@@ -8,6 +13,7 @@ namespace DOC_Forms
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         private const int maxFailedLogins = 10;
 
         private int failedLogins = 0;
@@ -24,7 +30,7 @@ namespace DOC_Forms
 
         private void TryLogin()
         {
-            if (LoginAccepted())
+            if (LoginHandler.TryLogin(TbUsername.Text ,PwbPassword.SecurePassword))
             {
                 EpicsRatingFormA epicsRatingFormA = new EpicsRatingFormA();
                 epicsRatingFormA.Show();
@@ -39,9 +45,6 @@ namespace DOC_Forms
             }
         }
 
-        private bool LoginAccepted()
-        {
-            return true;
-        }
+
     }
 }

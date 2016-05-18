@@ -1,0 +1,14 @@
+﻿<Window x:Class="DOC_Forms.UserAdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DOC_Forms"
+        mc:Ignorable="d"
+        Title="UserAdminWindow" Height="300" Width="300">
+    <Grid>
+        <!--Add user-->
+        <Button Grid.Row="0" Grid.Column="0" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Add User" Padding="4" Command="{Binding AddUserCommand}"/>
+        
+    </Grid>
+</Window>

@@ -63,6 +63,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>DOC_Forms.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -70,8 +73,10 @@
       <HintPath>C:\Program Files\Microsoft Office 15\root\office15\DCF\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -91,6 +96,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Authenticator.cs" />
+    <Compile Include="FormSelectionWindow.xaml.cs">
+      <DependentUpon>FormSelectionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginHandler.cs" />
     <Compile Include="ObservableDouble.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="EPICForm.cs" />
@@ -131,9 +141,16 @@
     <Compile Include="Page7ViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="SharedResources.cs" />
+    <Compile Include="UserAdminWindow.xaml.cs">
+      <DependentUpon>UserAdminWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="EpicsRatingFormA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FormSelectionWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +192,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserAdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
