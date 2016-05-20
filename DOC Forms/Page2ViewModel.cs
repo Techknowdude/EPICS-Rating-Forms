@@ -84,7 +84,7 @@ namespace DOC_Forms
             set
             {
                 _section1Comments = value;
-                RaisePropertyChangedEvent("Section1Comments");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -98,7 +98,7 @@ namespace DOC_Forms
             set
             {
                 _quarterlies = value;
-                RaisePropertyChangedEvent("Quarterlies");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -112,7 +112,7 @@ namespace DOC_Forms
             set
             {
                 _lastGoals = value;
-                RaisePropertyChangedEvent("LastGoals");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -126,7 +126,7 @@ namespace DOC_Forms
             set
             {
                 _currentGoals = value;
-                RaisePropertyChangedEvent("CurrentGoals");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -140,7 +140,7 @@ namespace DOC_Forms
             set
             {
                 _section1Bools = value;
-                RaisePropertyChangedEvent("Section1Bools");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -150,7 +150,7 @@ namespace DOC_Forms
             set
             {
                 _section2Bools = value;
-                RaisePropertyChangedEvent("Section2Bools");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -163,7 +163,8 @@ namespace DOC_Forms
         
         public static Page2ViewModel Load(Stream stream, BinaryFormatter formatter)
         {
-            return (Page2ViewModel)formatter.Deserialize(stream);
+            var loaded = (Page2ViewModel)formatter.Deserialize(stream);
+            return loaded;
         }
     }
 }

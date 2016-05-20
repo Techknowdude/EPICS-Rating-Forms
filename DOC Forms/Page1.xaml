@@ -203,8 +203,8 @@
                 <TextBlock Grid.Row="6" Grid.Column="0" HorizontalAlignment="Center" Style="{StaticResource BlockText}">GLOBAL PRACTICES</TextBlock>
                 <TextBlock Grid.Row="7" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Style="{StaticResource BlockText}">In bullet points list the top staff strengths based on the session:</TextBlock>
                 <TextBlock Grid.Row="8" Grid.Column="0" HorizontalAlignment="Center" Grid.ColumnSpan="2" Style="{StaticResource BlockText}">In bullet points list the top staff strengths for staff improvement based on the session:</TextBlock>
-                <TextBox Text="{Binding TopStaffStrengths}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource EssayBoxStyle}"></TextBox>
-                <TextBox Text="{Binding TopStaffImprovements}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2"  Style="{StaticResource EssayBoxStyle}"></TextBox>
+                <TextBox Text="{Binding TopStaffStrengths}" VerticalContentAlignment="Center" Grid.Column="2" Grid.Row="7" Grid.ColumnSpan="2" Style="{StaticResource EssayBoxStyle}"></TextBox>
+                <TextBox Text="{Binding TopStaffImprovements}" VerticalContentAlignment="Center" Grid.Column="2" Grid.Row="8" Grid.ColumnSpan="2"  Style="{StaticResource EssayBoxStyle}"></TextBox>
 
                 <TextBox Text="{Binding CheckInScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="1" Style="{StaticResource DisplayBoxStyle}"/>
                 <TextBox Text="{Binding ReviewScore}" IsEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" Grid.Row="2" Style="{StaticResource DisplayBoxStyle}"/>

@@ -67,7 +67,7 @@
             <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" Text="{Binding TotalScores[0].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
             <Rectangle Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" Fill="CornflowerBlue" />
             <TextBlock Style="{StaticResource BlockText}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Center">COMMENTS</TextBlock>
-            <TextBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" HorizontalContentAlignment="Center" Text="{Binding Comments[0]}" Style="{StaticResource EssayBoxStyle}"/>
+            <TextBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" Text="{Binding Comments[0]}" Style="{StaticResource EssayBoxStyle}"/>
 
             <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"></Border>
             <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></Border>
@@ -166,7 +166,7 @@
             <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6" Text="{Binding TotalScores[1].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
             <Rectangle Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" Fill="CornflowerBlue" />
             <TextBlock Style="{StaticResource BlockText}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Center">COMMENTS</TextBlock>
-            <TextBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" HorizontalContentAlignment="Center" Text="{Binding Comments[1]}" Style="{StaticResource EssayBoxStyle}"/>
+            <TextBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7"  Text="{Binding Comments[1]}" Style="{StaticResource EssayBoxStyle}"/>
 
             <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"></Border>
             <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0"></Border>
@@ -276,7 +276,7 @@
             <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[2].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
             <Rectangle Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" Fill="CornflowerBlue" />
             <TextBlock Style="{StaticResource BlockText}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" HorizontalAlignment="Center">COMMENTS</TextBlock>
-            <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8" HorizontalContentAlignment="Center" Text="{Binding Comments[2]}" Style="{StaticResource EssayBoxStyle}"/>
+            <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8" Text="{Binding Comments[2]}" Style="{StaticResource EssayBoxStyle}"/>
 
             <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8"/>
             <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8"/>

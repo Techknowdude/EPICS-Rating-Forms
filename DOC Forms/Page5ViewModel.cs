@@ -74,7 +74,7 @@ namespace DOC_Forms
             set
             {
                 _skillBuildingSkill = value;
-                RaisePropertyChangedEvent("SkillBuildingSkill");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -84,7 +84,7 @@ namespace DOC_Forms
             set
             {
                 _careyText = value;
-                RaisePropertyChangedEvent("CareyText");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -94,7 +94,7 @@ namespace DOC_Forms
             set
             {
                 _otherInterventionText = value;
-                RaisePropertyChangedEvent("OtherInterventionText");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -104,7 +104,7 @@ namespace DOC_Forms
             set
             {
                 _graduatedText = value;
-                RaisePropertyChangedEvent("GraduatedText");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -114,7 +114,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O1Text = value;
-                RaisePropertyChangedEvent("OptionS1O1Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -124,7 +124,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O2Text = value;
-                RaisePropertyChangedEvent("OptionS1O2Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -134,7 +134,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O3Text = value;
-                RaisePropertyChangedEvent("OptionS1O3Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -144,7 +144,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O4Text = value;
-                RaisePropertyChangedEvent("OptionS1O4Text");
+                RaisePropertyChangedEvent();
             }
 
         }
@@ -155,7 +155,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O5Text = value;
-                RaisePropertyChangedEvent("OptionS1O5Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -165,7 +165,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O6Text = value;
-                RaisePropertyChangedEvent("OptionS1O6Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -175,7 +175,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O7Text = value;
-                RaisePropertyChangedEvent("OptionS1O7Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -185,7 +185,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O8Text = value;
-                RaisePropertyChangedEvent("OptionS1O8Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -195,7 +195,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O1Text = value;
-                RaisePropertyChangedEvent("OptionS2O1Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -205,7 +205,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O2Text = value;
-                RaisePropertyChangedEvent("OptionS2O2Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -215,7 +215,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O3Text = value;
-                RaisePropertyChangedEvent("OptionS2O3Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -225,7 +225,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O4Text = value;
-                RaisePropertyChangedEvent("OptionS2O4Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -235,7 +235,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O5Text = value;
-                RaisePropertyChangedEvent("OptionS2O5Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -245,7 +245,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O6Text = value;
-                RaisePropertyChangedEvent("OptionS2O6Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -255,7 +255,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O1Text = value;
-                RaisePropertyChangedEvent("OptionS3O1Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -265,7 +265,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O2Text = value;
-                RaisePropertyChangedEvent("OptionS3O2Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -275,7 +275,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O3Text = value;
-                RaisePropertyChangedEvent("OptionS3O3Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -285,7 +285,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O4Text = value;
-                RaisePropertyChangedEvent("OptionS3O4Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -295,7 +295,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O5Text = value;
-                RaisePropertyChangedEvent("OptionS3O5Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -305,7 +305,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O6Text = value;
-                RaisePropertyChangedEvent("OptionS3O6Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -315,7 +315,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O7Text = value;
-                RaisePropertyChangedEvent("OptionS3O7Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -325,7 +325,7 @@ namespace DOC_Forms
             set
             {
                 _optionS4O1Text = value;
-                RaisePropertyChangedEvent("OptionS4O1Text");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -335,7 +335,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O1 = value;
-                RaisePropertyChangedEvent("OptionS1O1");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -345,7 +345,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O2 = value;
-                RaisePropertyChangedEvent("OptionS1O2");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -355,7 +355,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O3 = value;
-                RaisePropertyChangedEvent("OptionS1O3");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -365,7 +365,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O4 = value;
-                RaisePropertyChangedEvent("OptionS1O4");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -375,7 +375,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O5 = value;
-                RaisePropertyChangedEvent("OptionS1O5");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -385,7 +385,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O6 = value;
-                RaisePropertyChangedEvent("OptionS1O6");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -395,7 +395,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O7 = value;
-                RaisePropertyChangedEvent("OptionS1O7");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -405,7 +405,7 @@ namespace DOC_Forms
             set
             {
                 _optionS1O8 = value;
-                RaisePropertyChangedEvent("OptionS1O8");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -415,7 +415,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O1 = value;
-                RaisePropertyChangedEvent("OptionS2O1");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -425,7 +425,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O2 = value;
-                RaisePropertyChangedEvent("OptionS2O2");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -435,7 +435,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O3 = value;
-                RaisePropertyChangedEvent("OptionS2O3");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -445,7 +445,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O4 = value;
-                RaisePropertyChangedEvent("OptionS2O4");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -455,7 +455,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O5 = value;
-                RaisePropertyChangedEvent("OptionS2O5");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -465,7 +465,7 @@ namespace DOC_Forms
             set
             {
                 _optionS2O6 = value;
-                RaisePropertyChangedEvent("OptionS2O6");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -475,7 +475,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O1 = value;
-                RaisePropertyChangedEvent("OptionS3O1");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -485,7 +485,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O2 = value;
-                RaisePropertyChangedEvent("OptionS3O2");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -495,7 +495,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O3 = value;
-                RaisePropertyChangedEvent("OptionS3O3");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -505,7 +505,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O4 = value;
-                RaisePropertyChangedEvent("OptionS3O4");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -515,7 +515,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O5 = value;
-                RaisePropertyChangedEvent("OptionS3O5");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -525,7 +525,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O6 = value;
-                RaisePropertyChangedEvent("OptionS3O6");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -535,7 +535,7 @@ namespace DOC_Forms
             set
             {
                 _optionS3O7 = value;
-                RaisePropertyChangedEvent("OptionS3O7");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -545,7 +545,7 @@ namespace DOC_Forms
             set
             {
                 _optionS4O1 = value;
-                RaisePropertyChangedEvent("OptionS4O1");
+                RaisePropertyChangedEvent();
             }
         }
 

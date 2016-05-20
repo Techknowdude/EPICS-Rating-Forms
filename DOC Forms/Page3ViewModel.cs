@@ -42,7 +42,7 @@ namespace DOC_Forms
             set
             {
                 _section1Bools = value;
-                RaisePropertyChangedEvent("Section1Bools");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -56,7 +56,7 @@ namespace DOC_Forms
             set
             {
                 _section2Bools = value;
-                RaisePropertyChangedEvent("Section2Bools");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -66,7 +66,7 @@ namespace DOC_Forms
             set
             {
                 _section3Bools = value;
-                RaisePropertyChangedEvent("Section3Bools");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -80,7 +80,7 @@ namespace DOC_Forms
             set
             {
                 _totalScores = value;
-                RaisePropertyChangedEvent("TotalScores");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -96,7 +96,7 @@ namespace DOC_Forms
             set
             {
                 _comments = value;
-                RaisePropertyChangedEvent("Comments");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -106,7 +106,7 @@ namespace DOC_Forms
             set
             {
                 _textArray = value;
-                RaisePropertyChangedEvent("TextArray");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -126,7 +126,7 @@ namespace DOC_Forms
             set
             {
                 _reviewTextInput = value;
-                RaisePropertyChangedEvent("ReviewTextInput");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -136,7 +136,7 @@ namespace DOC_Forms
             set
             {
                 _interventionTextInput = value;
-                RaisePropertyChangedEvent("InterventionTextInput");
+                RaisePropertyChangedEvent();
             }
         }
 

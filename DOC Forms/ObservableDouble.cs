@@ -18,7 +18,7 @@ namespace DOC_Forms
             set
             {
                 _val = value;
-                RaisePropertyChangedEvent("Val");
+                RaisePropertyChangedEvent();
             }
         }
 

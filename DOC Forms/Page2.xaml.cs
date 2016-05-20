@@ -28,8 +28,6 @@ namespace DOC_Forms
         {
             ViewModel = model;
             DataContext = ViewModel;
-
-            ((Page2ViewModel) model).Section1Bools[1][1].Val = true;
         }
         
     }

@@ -28,7 +28,7 @@ namespace DOC_Forms
             set
             {
                 _textArray = value;
-                RaisePropertyChangedEvent("TextArray");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -42,7 +42,7 @@ namespace DOC_Forms
             set
             {
                 _sectionBools = value;
-                RaisePropertyChangedEvent("SectionBools");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -52,7 +52,7 @@ namespace DOC_Forms
             set
             {
                 _optionText = value;
-                RaisePropertyChangedEvent("OptionText");
+                RaisePropertyChangedEvent();
             }
         }
 

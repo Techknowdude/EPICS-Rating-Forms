@@ -31,7 +31,7 @@ namespace DOC_Forms
             set
             {
                 _textArray = value;
-                RaisePropertyChangedEvent("TextArray");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -45,7 +45,7 @@ namespace DOC_Forms
             set
             {
                 _boolArray = value;
-                RaisePropertyChangedEvent("BoolArray");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -59,7 +59,7 @@ namespace DOC_Forms
             set
             {
                 _totalScores = value;
-                RaisePropertyChangedEvent("TotalScores");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -73,7 +73,7 @@ namespace DOC_Forms
             set
             {
                 _inputText = value;
-                RaisePropertyChangedEvent("InputText");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -83,7 +83,7 @@ namespace DOC_Forms
             set
             {
                 _comments = value;
-                RaisePropertyChangedEvent("Comments");
+                RaisePropertyChangedEvent();
             }
         }
 
