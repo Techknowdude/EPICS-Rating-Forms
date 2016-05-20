@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace DOC_Forms
 {
@@ -20,20 +7,20 @@ namespace DOC_Forms
     /// </summary>
     public partial class UserAdminWindow : Window
     {
-        public ICommand AddUserCommand
-        {
-            get { return new DelegateCommand(AddUser); }
-        }
-
-        private void AddUser()
-        {
-            
-        }
-
         public UserAdminWindow()
         {
             InitializeComponent();
         }
 
-            }
+        private void AddUser_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void SetPass_Click(object sender, RoutedEventArgs e)
+        {
+            UserHandler.SetPassword("admin",TxbNewPass.SecurePassword);
+            MessageBox.Show("Password set!");
+            TxbNewPass.Password = ""; // clear
+        }
+    }
 }

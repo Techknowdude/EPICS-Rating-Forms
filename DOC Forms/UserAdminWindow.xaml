@@ -5,10 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DOC_Forms"
         mc:Ignorable="d"
-        Title="UserAdminWindow" Height="300" Width="300">
+        Title="Users" Height="300" Width="574.898">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Padding" Value="5,0"/>
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+        <Style TargetType="PasswordBox" >
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Padding" Value="5,0"/>
+            <Setter Property="Margin" Value="5,0"/>
+        </Style>
+        <Style TargetType="TextBlock" >
+            <Setter Property="Height" Value="24"/>
+            <Setter Property="Margin" Value="5,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:UserList/>
+    </Window.DataContext>
     <Grid>
         <!--Add user-->
-        <Button Grid.Row="0" Grid.Column="0" Margin="10" VerticalAlignment="Top" HorizontalAlignment="Left" Content="Add User" Padding="4" Command="{Binding AddUserCommand}"/>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="36"/>
+            <RowDefinition Height="36"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="160"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" >New User:</TextBlock>
+        <TextBox x:Name="TxbNewUsername" Grid.Row="0" Grid.Column="1" Text="{Binding NewUsername}" />
+        <Button Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Add User" Padding="4" Command="{Binding AddUserCommand}" Click="AddUser_Click"/>
+        <TextBlock Grid.Row="1" Grid.Column="0">New password:</TextBlock>
+        <PasswordBox x:Name="TxbNewPass" Grid.Row="1" Grid.Column="1"  Height="24" Padding="5,0"/>
+        <Button Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Set admin password" Padding="4" Command="{Binding SetPasswordCommand}" Click="SetPass_Click"/>
+        <ListView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" ItemsSource="{Binding Users}" x:Name="UserView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="{Binding Username}" Margin="10,4" Width="200"></TextBlock>
+                        <Button Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorLevel=1, AncestorType=ListView}, Path=DataContext.DeleteCommand }" CommandParameter="{Binding Username}" Margin="0,4">Delete</Button>
+                        <Button Command="{Binding ResetCommand}" Margin="10,4">Reset password</Button>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

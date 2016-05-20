@@ -83,7 +83,7 @@ namespace DOC_Forms
             set
             {
                 _sessionDate = value;
-                RaisePropertyChangedEvent("SessionDate");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -97,23 +97,14 @@ namespace DOC_Forms
             set
             {
                 _staffName = value;
-                RaisePropertyChangedEvent("StaffName");
+                RaisePropertyChangedEvent();
             }
         }
 
 
         public string ReviewName
         {
-            get
-            {
-                return _reviewName;
-            }
-
-            set
-            {
-                _reviewName = value;
-                RaisePropertyChangedEvent("ReviewName");
-            }
+            get { return LoginHandler.CurrentUser; }
         }
 
         public string CaseloadNumber
@@ -126,7 +117,7 @@ namespace DOC_Forms
             set
             {
                 _caseloadNumber = value;
-                RaisePropertyChangedEvent("CaseloadNumber");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -140,7 +131,7 @@ namespace DOC_Forms
             set
             {
                 _clientName = value;
-                RaisePropertyChangedEvent("ClientName");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -154,7 +145,7 @@ namespace DOC_Forms
             set
             {
                 _sessionLength = value;
-                RaisePropertyChangedEvent("SessionLength");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -168,7 +159,7 @@ namespace DOC_Forms
             set
             {
                 _clientSID = value;
-                RaisePropertyChangedEvent("ClientSID");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -178,7 +169,7 @@ namespace DOC_Forms
             set
             {
                 _reviewDate = value;
-                RaisePropertyChangedEvent("ReviewDate");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -193,7 +184,7 @@ namespace DOC_Forms
             set
             {
                 _clientDOB = value;
-                RaisePropertyChangedEvent("ClientDOB");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -212,7 +203,7 @@ namespace DOC_Forms
                     GenderFemale = false;
                     GenderOther = false;
                 }
-                RaisePropertyChangedEvent("GenderMale");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -231,7 +222,7 @@ namespace DOC_Forms
                     GenderMale = false;
                     GenderOther = false;
                 }
-                RaisePropertyChangedEvent("GenderFemale");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -251,7 +242,7 @@ namespace DOC_Forms
                     GenderMale = false;
                 }
                 GenderOtherTextEnabled = value;
-                RaisePropertyChangedEvent("GenderOther");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -261,7 +252,7 @@ namespace DOC_Forms
             set
             {
                 _genderOtherTextEnabled = value;
-                RaisePropertyChangedEvent("GenderOtherTextEnabled");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -275,7 +266,7 @@ namespace DOC_Forms
             set
             {
                 _genderOtherText = value;
-                RaisePropertyChangedEvent("GenderOtherText");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -289,7 +280,7 @@ namespace DOC_Forms
             set
             {
                 _race = value;
-                RaisePropertyChangedEvent("Race");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -308,7 +299,7 @@ namespace DOC_Forms
                     FirstMeetingNo = false;
                     FirstMeetingNA = false;
                 }
-                RaisePropertyChangedEvent("FirstMeetingYes");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -327,7 +318,7 @@ namespace DOC_Forms
                     FirstMeetingYes = false;
                     FirstMeetingNA = false;
                 }
-                RaisePropertyChangedEvent("FirstMeetingNo");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -346,7 +337,7 @@ namespace DOC_Forms
                     FirstMeetingNo = false;
                     FirstMeetingYes = false;
                 }
-                RaisePropertyChangedEvent("FirstMeetingNA");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -365,7 +356,7 @@ namespace DOC_Forms
                     ClientHomelessNo = false;
                     ClientHomelessNA = false;
                 }
-                RaisePropertyChangedEvent("ClientHomelessYes");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -384,7 +375,7 @@ namespace DOC_Forms
                     ClientHomelessYes = false;
                     ClientHomelessNA = false;
                 }
-                RaisePropertyChangedEvent("ClientHomelessNo");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -403,7 +394,7 @@ namespace DOC_Forms
                     ClientHomelessNo = false;
                     ClientHomelessYes = false;
                 }
-                RaisePropertyChangedEvent("ClientHomelessNA");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -422,7 +413,7 @@ namespace DOC_Forms
                     ClientAgressiveNo = false;
                     ClientAgressiveNA = false;
                 }
-                RaisePropertyChangedEvent("ClientAgressiveYes");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -441,7 +432,7 @@ namespace DOC_Forms
                     ClientAgressiveYes = false;
                     ClientAgressiveNA = false;
                 }
-                RaisePropertyChangedEvent("ClientAgressiveNo");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -460,7 +451,7 @@ namespace DOC_Forms
                     ClientAgressiveNo = false;
                     ClientAgressiveYes = false;
                 }
-                RaisePropertyChangedEvent("ClientAgressiveNA");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -475,7 +466,7 @@ namespace DOC_Forms
             {
                 _checkInScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("CheckInScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -490,7 +481,7 @@ namespace DOC_Forms
             {
                 _reviewScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("ReviewScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -505,7 +496,7 @@ namespace DOC_Forms
             {
                 _interventionScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("InterventionScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -520,7 +511,7 @@ namespace DOC_Forms
             {
                 _homeworkScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("HomeworkScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -535,7 +526,7 @@ namespace DOC_Forms
             {
                 _behavioralScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("BehavioralScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -550,7 +541,7 @@ namespace DOC_Forms
             {
                 _globalScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("GlobalScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -564,7 +555,7 @@ namespace DOC_Forms
             set
             {
                 _overallScore = value;
-                RaisePropertyChangedEvent("OverallScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -574,7 +565,7 @@ namespace DOC_Forms
             set
             {
                 _topStaffStrengths = value;
-                RaisePropertyChangedEvent("TopStaffStrengths");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -584,7 +575,7 @@ namespace DOC_Forms
             set
             {
                 _topStaffImprovements = value;
-                RaisePropertyChangedEvent("TopStaffImprovements");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -594,7 +585,7 @@ namespace DOC_Forms
             set
             {
                 _percentHighEpics = value;
-                RaisePropertyChangedEvent("PercentHighEPICS");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -604,7 +595,7 @@ namespace DOC_Forms
             set
             {
                 _percentLowEpics = value;
-                RaisePropertyChangedEvent("PercentLowEPICS");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -615,7 +606,7 @@ namespace DOC_Forms
             {
                 _completedEpics = value;
                 UpdatePercentCompleted();
-                RaisePropertyChangedEvent("CompletedEpics");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -627,7 +618,7 @@ namespace DOC_Forms
             {
                 _totalEpics = value;
                 UpdatePercentCompleted();
-                RaisePropertyChangedEvent("TotalEpics");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -637,7 +628,7 @@ namespace DOC_Forms
             set
             {
                 _percentEpicsCompleted = value;
-                RaisePropertyChangedEvent("PercentEpicsCompleted");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -647,7 +638,7 @@ namespace DOC_Forms
             set
             {
                 _nextTapeDueDate = value;
-                RaisePropertyChangedEvent("NextTapeDueDate");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -657,7 +648,7 @@ namespace DOC_Forms
             set
             {
                 _additionalCommentsText = value;
-                RaisePropertyChangedEvent("AdditionalCommentsText");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -672,7 +663,7 @@ namespace DOC_Forms
             {
                 _checkinLowScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("CheckinLowScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -687,7 +678,7 @@ namespace DOC_Forms
             {
                 _checkinHighScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("CheckinHighScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -702,7 +693,7 @@ namespace DOC_Forms
             {
                 _reviewLowScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("ReviewLowScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -717,7 +708,7 @@ namespace DOC_Forms
             {
                 _reviewHighScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("ReviewHighScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -732,7 +723,7 @@ namespace DOC_Forms
             {
                 _interventionLowScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("InterventionLowScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -747,7 +738,7 @@ namespace DOC_Forms
             {
                 _interventionHighScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("InterventionHighScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -762,7 +753,7 @@ namespace DOC_Forms
             {
                 _homeworkLowScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("HomeworkLowScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -777,7 +768,7 @@ namespace DOC_Forms
             {
                 _homeworkHighScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("HomeworkHighScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -792,7 +783,7 @@ namespace DOC_Forms
             {
                 _behavioralLowScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("BehavioralLowScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -807,7 +798,7 @@ namespace DOC_Forms
             {
                 _behavioralHighScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("BehavioralHighScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -822,7 +813,7 @@ namespace DOC_Forms
             {
                 _globalLowScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("GlobalLowScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -837,7 +828,7 @@ namespace DOC_Forms
             {
                 _globalHighScore = value;
                 UpdateScores();
-                RaisePropertyChangedEvent("GlobalHighScore");
+                RaisePropertyChangedEvent();
             }
         }
 
@@ -849,9 +840,6 @@ namespace DOC_Forms
             _instance = this;
         }
 
-
-        
-        
         private void UpdateScores()
         {
             double[] scores = new double[4];

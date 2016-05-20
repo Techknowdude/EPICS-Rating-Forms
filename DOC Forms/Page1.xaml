@@ -52,7 +52,7 @@
                 <TextBlock Style="{StaticResource BlockText}" Grid.Row="1" Grid.Column="0">Review date:</TextBlock>
                 <DatePicker SelectedDate="{Binding ReviewDate}" Grid.Row="1" Grid.Column="1" ></DatePicker>
                 <TextBlock Style="{StaticResource BlockText}" Grid.Row="1" Grid.Column="2">Reviewer's name:</TextBlock>
-                <TextBox Text="{Binding ReviewName}" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="3"></TextBox>
+                <TextBox Text="{Binding ReviewName, Mode=OneWay}" VerticalContentAlignment="Center" Grid.Row="1" Grid.Column="3" IsEnabled="False" ></TextBox>
 
                 <TextBlock Style="{StaticResource BlockText}" Grid.Row="2" Grid.Column="0">Caseload number:</TextBlock>
                 <TextBox Text="{Binding CaseloadNumber}" VerticalContentAlignment="Center" Grid.Row="2" Grid.Column="1" ></TextBox>

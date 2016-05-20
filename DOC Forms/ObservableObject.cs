@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace DOC_Forms
 {
@@ -9,7 +10,7 @@ namespace DOC_Forms
         [field: NonSerialized]
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void RaisePropertyChangedEvent(string propertyName)
+        protected void RaisePropertyChangedEvent([CallerMemberName] string propertyName = null)
         {
             var handler = PropertyChanged;
             if (handler != null)

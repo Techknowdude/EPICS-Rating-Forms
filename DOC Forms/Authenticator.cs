@@ -63,5 +63,10 @@ namespace DOC_Forms
             return returnValue;
         }
 
+        public static bool MatchPasswords(SecureString pass1, SecureString pass2)
+        {
+            // TODO: Refactor to remove the vulnerability of passwords as strings in memory
+            return ToInsecureString(pass1) == ToInsecureString(pass2);
+        }
     }
 }

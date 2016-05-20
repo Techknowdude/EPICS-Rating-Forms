@@ -141,9 +141,13 @@
     <Compile Include="Page7ViewModel.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="SharedResources.cs" />
+    <Compile Include="UpdatePasswordWindow.xaml.cs">
+      <DependentUpon>UpdatePasswordWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserAdminWindow.xaml.cs">
       <DependentUpon>UserAdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserHandler.cs" />
     <Page Include="EpicsRatingFormA.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +199,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UpdatePasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserAdminWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,7 +234,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="InteropExtensionLib">

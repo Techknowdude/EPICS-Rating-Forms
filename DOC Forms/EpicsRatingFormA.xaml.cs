@@ -15,6 +15,9 @@ namespace DOC_Forms
     /// </summary>
     public partial class EpicsRatingFormA : Window
     {
+        public ICommand SetPasswordCommand { get { return new DelegateCommand(SetPassword);} }
+
+
         private List<Page> Pages { get; set; }
         private List<IPageInterface> PageInterfaces { get; set; }
         private int _currentPage = -1;
@@ -64,8 +67,25 @@ namespace DOC_Forms
         {
             get { return new DelegateCommand(() => --CurrentPage); }
         }
+        public ICommand LogoutCommand
+        {
+            get { return new DelegateCommand(() =>
+            {
+                // TODO: ensure only one login window is ever opened.
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                LoginHandler.Logout();
+                Close();
+            }); }
+        }
 
 
+        private void SetPassword()
+        {
+            UpdatePasswordWindow window = new UpdatePasswordWindow();
+            window.ShowDialog();
+
+        }
 
         private void ToggleButtons()
         {

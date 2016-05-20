@@ -32,9 +32,22 @@ namespace DOC_Forms
         {
             if (LoginHandler.TryLogin(TbUsername.Text ,PwbPassword.SecurePassword))
             {
-                EpicsRatingFormA epicsRatingFormA = new EpicsRatingFormA();
-                epicsRatingFormA.Show();
-                Close();
+                if (LoginHandler.IsAdmin)
+                {
+                    UserAdminWindow adminWindow = new UserAdminWindow();
+                    adminWindow.Show();
+
+                    // clear login info
+                    TbUsername.Text = "";
+                    PwbPassword.Password = "";
+                }
+                else
+                {
+
+                    EpicsRatingFormA epicsRatingFormA = new EpicsRatingFormA();
+                    epicsRatingFormA.Show();
+                    Close();
+                }
             }
             else
             {
