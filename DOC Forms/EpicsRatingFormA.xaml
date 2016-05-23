@@ -5,26 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Epics Coding Form" Height="650" Width="900"
-        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        >
     <Window.InputBindings>
         <KeyBinding Gesture="Right" Command="{Binding NextPageCommand}"></KeyBinding>
         <KeyBinding Gesture="Left" Command="{Binding PrevPageCommand}"></KeyBinding>
         <KeyBinding Key="P" Modifiers="Control" Command="{Binding PrintCommand}"></KeyBinding>
     </Window.InputBindings>
     <Grid>
-        <Menu Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
-            <MenuItem x:Name="SaveMenuItem" Height="20" Width="50" Header="_Save" Click="SaveMenuItem_Click"/>
-            <MenuItem x:Name="LoadMenuItem" Width="50" Header="_Load" Click="LoadMenuItem_OnClick"/>
-            <MenuItem x:Name="ExcelMenuItem" Width="50" Header="_Export" Click="ExcelMenuItem_OnClick"/>
-            <MenuItem x:Name="SetPassMenuItem" Header="Set _Password" Command="{Binding SetPasswordCommand}"/>
-            <MenuItem x:Name="LogoutMenuItem" Header="L_ogout" Command="{Binding LogoutCommand}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <MenuItem x:Name="FileMenuItem" Height="20" Width="50" Header="_File" >
+                <MenuItem x:Name="NewMenuFolder" Header="_New form">
+                    <MenuItem x:Name="OpenNormalFormMenuItem" Header="_Regular staff form" Command="{Binding OpenRegularFormCommand}"/>
+                    <MenuItem x:Name="OpenNewFormMenuItem" Header="N_ew staff form" Command="{Binding OpenNewFormCommand}"/>
+                </MenuItem>
+                <MenuItem x:Name="SaveMenuItem"  Header="_Save" Click="SaveMenuItem_Click"/>
+                <MenuItem x:Name="LoadMenuItem" Header="_Load" Click="LoadMenuItem_OnClick"/>
+                <MenuItem x:Name="ExcelMenuItem" Header="_Export" Click="ExcelMenuItem_OnClick"/>
+            </MenuItem>
+            <MenuItem x:Name="UserMenuItem" Header="_User">
+                <MenuItem x:Name="SetPassMenuItem" Header="Set _Password" Command="{Binding SetPasswordCommand}"/>
+                <MenuItem x:Name="LogoutMenuItem" Header="L_ogout" Command="{Binding LogoutCommand}"/>
+            </MenuItem>
+
         </Menu>
-        <ScrollViewer Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,20,0,30">
+        <ScrollViewer Grid.Row="1" Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,0,0">
             <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden"></Frame>
         </ScrollViewer>
-        <Button x:Name="PrevPageButton" Command="{Binding PrevPageCommand}" Margin="10,1,1,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" >Prev</Button>
-        <Label HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,1,1,5">Page</Label>
-        <Label x:Name="PageLabel" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="35,1,1,5">1</Label>
-        <Button x:Name="NextPageButton" Command="{Binding NextPageCommand}" Margin="1,1,10,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Right">Next</Button>
+        <Button Grid.Row="2" x:Name="PrevPageButton" Command="{Binding PrevPageCommand}" Margin="10,1,1,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" >Prev</Button>
+        <Label Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,1,1,5">Page</Label>
+        <Label Grid.Row="2" x:Name="PageLabel" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="35,1,1,5">1</Label>
+        <Button Grid.Row="2" x:Name="NextPageButton" Command="{Binding NextPageCommand}" Margin="1,1,10,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Right">Next</Button>
     </Grid>
 </Window>

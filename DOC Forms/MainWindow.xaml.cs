@@ -43,8 +43,8 @@ namespace DOC_Forms
                 }
                 else
                 {
-                    FormSelectionWindow selectionWindow = new FormSelectionWindow();
-                    selectionWindow.Show();
+                    EpicsRatingFormA form = new EpicsRatingFormA();
+                    form.Show();
                     Close();
                 }
             }

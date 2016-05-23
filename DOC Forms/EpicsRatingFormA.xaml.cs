@@ -126,6 +126,78 @@ namespace DOC_Forms
         {
             get { return new DelegateCommand(() => --CurrentPage); }
         }
+
+        public ICommand OpenRegularFormCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    LoadPages(true);
+                });
+            }
+        }
+        public ICommand OpenNewFormCommand
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    LoadPages(false);
+                });
+            }
+        }
+
+        private void LoadPages(bool regular)
+        {
+            // check before loading.
+            if (MessageBox.Show("Discard any changes?", "", MessageBoxButton.YesNo) != MessageBoxResult.Yes) return;
+
+            _isAlternate = !regular;
+
+            List<IPageInterface> pageInterfaces;
+            if (regular)
+            {
+                var p1 = new Page1();
+                var p2 = new Page2();
+                var p3 = new Page3();
+                var p4 = new Page4();
+                var p5 = new Page5();
+                var p6 = new Page6();
+                var p7 = new Page7();
+
+
+                Pages = new List<Page>() {p1, p2, p3, p4, p5, p6, p7};
+                pageInterfaces = new List<IPageInterface>() {p1, p2, p3, p4, p5, p6, p7};
+
+            }
+            else
+            {
+                var p1 = new Page1();
+                var p2 = new Page2();
+                var p3 = new Page3Alternate();
+                var p4 = new Page4();
+                var p5 = new Page5();
+                var p6 = new Page6Alternate();
+                var p7 = new Page7();
+
+                Pages = new List<Page>() { p1, p2, p3, p4, p5, p6, p7 };
+                pageInterfaces = new List<IPageInterface>() { p1, p2, p3, p4, p5, p6, p7 };
+            }
+
+            if (logic == null)
+                logic = EpicsRatingFormLogic.Create(pageInterfaces, this);
+            else
+            {
+                logic.Pages.Clear();
+                foreach (var pageInterface in pageInterfaces)
+                {
+                    logic.Pages.Add(pageInterface.ViewModel);
+                }
+            }
+            CurrentPage = 0;
+        }
+
         public ICommand LogoutCommand
         {
             get { return new DelegateCommand(() =>
