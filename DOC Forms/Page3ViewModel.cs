@@ -116,7 +116,7 @@ namespace DOC_Forms
             set
             {
                 _checkInTextInput = value;
-                RaisePropertyChangedEvent("TotalTimeSpent");
+                RaisePropertyChangedEvent();
             }
         }
 

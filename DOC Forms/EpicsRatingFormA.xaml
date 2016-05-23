@@ -9,6 +9,7 @@
     <Window.InputBindings>
         <KeyBinding Gesture="Right" Command="{Binding NextPageCommand}"></KeyBinding>
         <KeyBinding Gesture="Left" Command="{Binding PrevPageCommand}"></KeyBinding>
+        <KeyBinding Key="P" Modifiers="Control" Command="{Binding PrintCommand}"></KeyBinding>
     </Window.InputBindings>
     <Grid>
         <Menu Height="20" HorizontalAlignment="Left" VerticalAlignment="Top">

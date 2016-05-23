@@ -122,7 +122,11 @@
     <Compile Include="Page3.xaml.cs">
       <DependentUpon>Page3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page3Alternate.xaml.cs">
+      <DependentUpon>Page3Alternate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page3ViewModel.cs" />
+    <Compile Include="Page3ViewModelAlternate.cs" />
     <Compile Include="Page4.xaml.cs">
       <DependentUpon>Page4.xaml</DependentUpon>
     </Compile>
@@ -134,7 +138,11 @@
     <Compile Include="Page6.xaml.cs">
       <DependentUpon>Page6.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page6Alternate.xaml.cs">
+      <DependentUpon>Page6Alternate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page6ViewModel.cs" />
+    <Compile Include="Page6ViewModelAlternate.cs" />
     <Compile Include="Page7.xaml.cs">
       <DependentUpon>Page7.xaml</DependentUpon>
     </Compile>
@@ -183,6 +191,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Page3Alternate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -192,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page6Alternate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

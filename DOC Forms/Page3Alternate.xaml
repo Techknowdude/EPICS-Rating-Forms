@@ -1,0 +1,360 @@
+﻿<Page x:Class="DOC_Forms.Page3Alternate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DOC_Forms"
+      mc:Ignorable="d" 
+      Width="800"
+      Title="Page3">
+
+    <Page.DataContext>
+        <local:Page3ViewModelAlternate x:Name="PageViewModel"/>
+    </Page.DataContext>
+    <StackPanel Margin="0,0,0,50">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="10*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Fill="Black"/>
+            <TextBlock Text="{Binding TextArray[0]}" Style="{StaticResource BlockHeading2}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Foreground="White" />
+            <TextBox Style="{StaticResource EssayBoxStyle}" Text="{Binding CheckInTextInput[0]}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="120,0,0,0"/>
+            <TextBlock Text="{Binding TextArray[1]}" Style="{StaticResource BlockHeading3}" Grid.Row="1" Grid.Column="0" />
+            <TextBlock Text="{Binding TextArray[2]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" />
+            <TextBlock Text="{Binding TextArray[3]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" />
+            <TextBlock Text="{Binding TextArray[4]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="4" />
+            <TextBlock Text="{Binding TextArray[5]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="5" />
+            <TextBlock Text="{Binding TextArray[6]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" />
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Text="{Binding TextArray[7]}" Style="{StaticResource BlockHeading3}"></TextBlock>
+                <CheckBox Content="{Binding AlternateText[0][0][0]}" IsChecked="{Binding AlternateOptionBools[0][0][0].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[0][0][1]}" IsChecked="{Binding AlternateOptionBools[0][0][1].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[0][0][2]}" IsChecked="{Binding AlternateOptionBools[0][0][2].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[0][0][3]}" IsChecked="{Binding AlternateOptionBools[0][0][3].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[0][0][4]}" IsChecked="{Binding AlternateOptionBools[0][0][4].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[0][0][5]}" IsChecked="{Binding AlternateOptionBools[0][0][5].Val}" HorizontalAlignment="Left"></CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Text="{Binding TextArray[8]}" Style="{StaticResource BlockHeading3}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+                <CheckBox Content="{Binding AlternateText[0][1][0]}" IsChecked="{Binding AlternateOptionBools[0][1][0].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[0][1][1]}" IsChecked="{Binding AlternateOptionBools[0][1][1].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[0][1][2]}" IsChecked="{Binding AlternateOptionBools[0][1][2].Val}" HorizontalAlignment="Left"></CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Text="{Binding TextArray[9]}" Style="{StaticResource BlockHeading3}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+                <CheckBox Content="{Binding AlternateText[0][2][0]}" IsChecked="{Binding AlternateOptionBools[0][2][0].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[0][2][1]}" IsChecked="{Binding AlternateOptionBools[0][2][1].Val}" HorizontalAlignment="Left"></CheckBox>
+            </StackPanel>
+                <TextBlock Text="{Binding TextArray[10]}" Style="{StaticResource BlockText}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+
+
+            <RadioButton GroupName="11" Grid.Row="2" Grid.Column="2" IsChecked="{Binding Section1Bools[0][0].Val}"/>
+            <RadioButton GroupName="11" Grid.Row="2" Grid.Column="3" IsChecked="{Binding Section1Bools[0][1].Val}"/>
+            <RadioButton GroupName="11" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Section1Bools[0][2].Val}"/>
+            <RadioButton GroupName="11" Grid.Row="2" Grid.Column="5" IsChecked="{Binding Section1Bools[0][3].Val}"/>
+            <RadioButton GroupName="11" Grid.Row="2" Grid.Column="6" IsChecked="{Binding Section1Bools[0][4].Val}"/>
+            <RadioButton GroupName="12" Grid.Row="3" Grid.Column="2" IsChecked="{Binding Section1Bools[1][0].Val}"/>
+            <RadioButton GroupName="12" Grid.Row="3" Grid.Column="3" IsChecked="{Binding Section1Bools[1][1].Val}"/>
+            <RadioButton GroupName="12" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Section1Bools[1][2].Val}"/>
+            <RadioButton GroupName="12" Grid.Row="3" Grid.Column="5" IsChecked="{Binding Section1Bools[1][3].Val}"/>
+            <RadioButton GroupName="12" Grid.Row="3" Grid.Column="6" IsChecked="{Binding Section1Bools[1][4].Val}"/>
+            <RadioButton GroupName="13" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Section1Bools[2][0].Val}"/>
+            <RadioButton GroupName="13" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Section1Bools[2][1].Val}"/>
+            <RadioButton GroupName="13" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Section1Bools[2][2].Val}"/>
+            <RadioButton GroupName="13" Grid.Row="4" Grid.Column="5" IsChecked="{Binding Section1Bools[2][3].Val}"/>
+            <RadioButton GroupName="13" Grid.Row="4" Grid.Column="6" IsChecked="{Binding Section1Bools[2][4].Val}"/>
+
+            <TextBox Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" Text="{Binding TotalScores[0].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
+            <Rectangle Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" Fill="CornflowerBlue" />
+            <TextBlock Style="{StaticResource BlockText}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Center">COMMENTS</TextBlock>
+            <TextBox Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" Text="{Binding Comments[0]}" Style="{StaticResource EssayBoxStyle}"/>
+
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="7" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" ></Border>
+        </Grid>
+        <Grid Margin="0,40,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="10*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7" Fill="Black"/>
+            <TextBlock Text="{Binding TextArray[11]}" Style="{StaticResource BlockHeading2}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="7" Foreground="White" />
+            <TextBox Style="{StaticResource EssayBoxStyle}" Grid.Row="1" Grid.Column="0" Text="{Binding ReviewTextInput[0]}" Margin="120,0,0,0"/>
+            <TextBlock Text="{Binding TextArray[12]}" Style="{StaticResource BlockHeading3}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" />
+            <TextBox Style="{StaticResource EssayBoxStyle}" Grid.Row="1" Grid.Column="1" Text="{Binding ReviewTextInput[1]}" Margin="120,0,0,0"/>
+            <TextBlock Text="{Binding TextArray[13]}" Style="{StaticResource BlockHeading3}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" />
+            <TextBlock Text="{Binding TextArray[14]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" />
+            <TextBlock Text="{Binding TextArray[15]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="3" />
+            <TextBlock Text="{Binding TextArray[16]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="4" />
+            <TextBlock Text="{Binding TextArray[17]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="5" />
+            <TextBlock Text="{Binding TextArray[18]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="6" />
+            <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Text="{Binding TextArray[19]}" Style="{StaticResource BlockHeading3}"></TextBlock>
+                <CheckBox Content="{Binding AlternateText[1][0][0]}" IsChecked="{Binding AlternateOptionBools[1][0][0].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][0][1]}" IsChecked="{Binding AlternateOptionBools[1][0][1].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][0][2]}" IsChecked="{Binding AlternateOptionBools[1][0][2].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][0][3]}" IsChecked="{Binding AlternateOptionBools[1][0][3].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][0][4]}" IsChecked="{Binding AlternateOptionBools[1][0][4].Val}" HorizontalAlignment="Left"></CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Text="{Binding TextArray[20]}" Style="{StaticResource BlockHeading3}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+                <CheckBox Content="{Binding AlternateText[1][1][0]}" IsChecked="{Binding AlternateOptionBools[1][1][0].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][1][1]}" IsChecked="{Binding AlternateOptionBools[1][1][1].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][1][2]}" IsChecked="{Binding AlternateOptionBools[1][1][2].Val}" HorizontalAlignment="Left"></CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+
+                <TextBlock Text="{Binding TextArray[21]}" Style="{StaticResource BlockHeading3}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+                <CheckBox Content="{Binding AlternateText[1][2][0]}" IsChecked="{Binding AlternateOptionBools[1][2][0].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][2][1]}" IsChecked="{Binding AlternateOptionBools[1][2][1].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][2][2]}" IsChecked="{Binding AlternateOptionBools[1][2][2].Val}" HorizontalAlignment="Left"></CheckBox>
+            </StackPanel>
+            <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                <TextBlock Text="{Binding TextArray[22]}" Style="{StaticResource BlockHeading3}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+                <CheckBox Content="{Binding AlternateText[1][3][0]}" IsChecked="{Binding AlternateOptionBools[1][3][0].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][3][1]}" IsChecked="{Binding AlternateOptionBools[1][3][1].Val}" HorizontalAlignment="Left"></CheckBox>
+                <CheckBox Content="{Binding AlternateText[1][3][2]}" IsChecked="{Binding AlternateOptionBools[1][3][2].Val}" HorizontalAlignment="Left"></CheckBox>
+
+            </StackPanel>
+            <TextBlock Text="{Binding TextArray[23]}" Style="{StaticResource BlockText}" Grid.Row="6" Grid.Column="0" ></TextBlock>
+
+
+            <RadioButton GroupName="21" Grid.Row="2" Grid.Column="2" IsChecked="{Binding Section2Bools[0][1].Val}"/>
+            <RadioButton GroupName="21" Grid.Row="2" Grid.Column="3" IsChecked="{Binding Section2Bools[0][2].Val}"/>
+            <RadioButton GroupName="21" Grid.Row="2" Grid.Column="4" IsChecked="{Binding Section2Bools[0][3].Val}"/>
+            <RadioButton GroupName="21" Grid.Row="2" Grid.Column="5" IsChecked="{Binding Section2Bools[0][4].Val}"/>
+            <RadioButton GroupName="21" Grid.Row="2" Grid.Column="6" IsChecked="{Binding Section2Bools[0][5].Val}"/>
+            <RadioButton GroupName="22" Grid.Row="3" Grid.Column="1" IsChecked="{Binding Section2Bools[1][0].Val}" HorizontalAlignment="Right" Margin="0,0,30,0" Content="N/A"/>
+            <RadioButton GroupName="22" Grid.Row="3" Grid.Column="2" IsChecked="{Binding Section2Bools[1][1].Val}"/>
+            <RadioButton GroupName="22" Grid.Row="3" Grid.Column="3" IsChecked="{Binding Section2Bools[1][2].Val}"/>
+            <RadioButton GroupName="22" Grid.Row="3" Grid.Column="4" IsChecked="{Binding Section2Bools[1][3].Val}"/>
+            <RadioButton GroupName="22" Grid.Row="3" Grid.Column="5" IsChecked="{Binding Section2Bools[1][4].Val}"/>
+            <RadioButton GroupName="22" Grid.Row="3" Grid.Column="6" IsChecked="{Binding Section2Bools[1][5].Val}"/>
+            <RadioButton GroupName="23" Grid.Row="4" Grid.Column="1" IsChecked="{Binding Section2Bools[2][0].Val}" HorizontalAlignment="Right" Margin="0,0,30,0" Content="N/A"/>
+            <RadioButton GroupName="23" Grid.Row="4" Grid.Column="2" IsChecked="{Binding Section2Bools[2][1].Val}"/>
+            <RadioButton GroupName="23" Grid.Row="4" Grid.Column="3" IsChecked="{Binding Section2Bools[2][2].Val}"/>
+            <RadioButton GroupName="23" Grid.Row="4" Grid.Column="4" IsChecked="{Binding Section2Bools[2][3].Val}"/>
+            <RadioButton GroupName="23" Grid.Row="4" Grid.Column="5" IsChecked="{Binding Section2Bools[2][4].Val}"/>
+            <RadioButton GroupName="23" Grid.Row="4" Grid.Column="6" IsChecked="{Binding Section2Bools[2][5].Val}"/>
+            <RadioButton GroupName="24" Grid.Row="5" Grid.Column="1" IsChecked="{Binding Section2Bools[3][0].Val}" HorizontalAlignment="Right" Margin="0,0,30,0" Content="N/A"/>
+            <RadioButton GroupName="24" Grid.Row="5" Grid.Column="2" IsChecked="{Binding Section2Bools[3][1].Val}"/>
+            <RadioButton GroupName="24" Grid.Row="5" Grid.Column="3" IsChecked="{Binding Section2Bools[3][2].Val}"/>
+            <RadioButton GroupName="24" Grid.Row="5" Grid.Column="4" IsChecked="{Binding Section2Bools[3][3].Val}"/>
+            <RadioButton GroupName="24" Grid.Row="5" Grid.Column="5" IsChecked="{Binding Section2Bools[3][4].Val}"/>
+            <RadioButton GroupName="24" Grid.Row="5" Grid.Column="6" IsChecked="{Binding Section2Bools[3][5].Val}"/>
+
+            <TextBox Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6" Text="{Binding TotalScores[1].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
+            <Rectangle Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" Fill="CornflowerBlue" />
+            <TextBlock Style="{StaticResource BlockText}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" HorizontalAlignment="Center">COMMENTS</TextBlock>
+            <TextBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7"  Text="{Binding Comments[1]}" Style="{StaticResource EssayBoxStyle}"/>
+
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="7"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="1"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="2" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="3" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="4" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="5" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="6" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7" ></Border>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" ></Border>
+
+        </Grid>
+
+        <Grid Margin="0,40,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*" />
+                <ColumnDefinition Width="30*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="10*" />
+            </Grid.ColumnDefinitions>
+
+            <Rectangle Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" Fill="Black"/>
+            <TextBlock Text="{Binding TextArray[24]}" Style="{StaticResource BlockHeading2}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="8" Foreground="White" />
+            <TextBlock Text="{Binding TextArray[25]}" Style="{StaticResource BlockHeading3}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8" />
+            <TextBox Style="{StaticResource EssayBoxStyle}" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" Text="{Binding InterventionTextInput[0]}" Margin="90,0,0,0"/>
+            <TextBlock Text="{Binding TextArray[26]}" Style="{StaticResource BlockHeading3}" Grid.RowSpan="2" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0" />
+            <TextBox Style="{StaticResource EssayBoxStyle}" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" Text="{Binding InterventionTextInput[1]}" Margin="120,0,0,0"/>
+            <TextBlock Text="{Binding TextArray[27]}" Style="{StaticResource BlockHeading3}" Grid.RowSpan="2" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" />
+            <TextBox Style="{StaticResource EssayBoxStyle}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding InterventionTextInput[2]}" Margin="140,0,0,0"/>
+            <TextBlock Text="{Binding TextArray[28]}" Style="{StaticResource BlockHeading3}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6" />
+            <TextBox Style="{StaticResource EssayBoxStyle}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding InterventionTextInput[3]}" Margin="100,0,0,0"/>
+            <TextBlock Text="{Binding TextArray[29]}" Style="{StaticResource BlockHeading3}" VerticalAlignment="Center" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6" />
+            <TextBlock Text="{Binding TextArray[14]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="3" />
+            <TextBlock Text="{Binding TextArray[15]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="4" />
+            <TextBlock Text="{Binding TextArray[16]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="5" />
+            <TextBlock Text="{Binding TextArray[17]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="6" />
+            <TextBlock Text="{Binding TextArray[18]}" Style="{StaticResource BlockText}" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="7" />
+            <TextBox Style="{StaticResource EssayBoxStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding InterventionTextInput[4]}" Margin="140,0,0,0"/>
+            <TextBlock Text="{Binding TextArray[30]}" Style="{StaticResource BlockText}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <TextBlock Text="{Binding TextArray[31]}" Style="{StaticResource BlockText}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <TextBlock Text="{Binding TextArray[32]}" Style="{StaticResource BlockText}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+            <TextBlock Text="{Binding TextArray[33]}" Style="{StaticResource BlockText}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"></TextBlock>
+
+
+            <RadioButton GroupName="31" Grid.Row="5" Grid.Column="3" IsChecked="{Binding Section3Bools[0][0].Val}"/>
+            <RadioButton GroupName="31" Grid.Row="5" Grid.Column="4" IsChecked="{Binding Section3Bools[0][1].Val}"/>
+            <RadioButton GroupName="31" Grid.Row="5" Grid.Column="5" IsChecked="{Binding Section3Bools[0][2].Val}"/>
+            <RadioButton GroupName="31" Grid.Row="5" Grid.Column="6" IsChecked="{Binding Section3Bools[0][3].Val}"/>
+            <RadioButton GroupName="31" Grid.Row="5" Grid.Column="7" IsChecked="{Binding Section3Bools[0][4].Val}"/>
+            <RadioButton GroupName="32" Grid.Row="6" Grid.Column="3" IsChecked="{Binding Section3Bools[1][0].Val}"/>
+            <RadioButton GroupName="32" Grid.Row="6" Grid.Column="4" IsChecked="{Binding Section3Bools[1][1].Val}"/>
+            <RadioButton GroupName="32" Grid.Row="6" Grid.Column="5" IsChecked="{Binding Section3Bools[1][2].Val}"/>
+            <RadioButton GroupName="32" Grid.Row="6" Grid.Column="6" IsChecked="{Binding Section3Bools[1][3].Val}"/>
+            <RadioButton GroupName="32" Grid.Row="6" Grid.Column="7" IsChecked="{Binding Section3Bools[1][4].Val}"/>
+            <RadioButton GroupName="33" Grid.Row="7" Grid.Column="3" IsChecked="{Binding Section3Bools[2][0].Val}"/>
+            <RadioButton GroupName="33" Grid.Row="7" Grid.Column="4" IsChecked="{Binding Section3Bools[2][1].Val}"/>
+            <RadioButton GroupName="33" Grid.Row="7" Grid.Column="5" IsChecked="{Binding Section3Bools[2][2].Val}"/>
+            <RadioButton GroupName="33" Grid.Row="7" Grid.Column="6" IsChecked="{Binding Section3Bools[2][3].Val}"/>
+            <RadioButton GroupName="33" Grid.Row="7" Grid.Column="7" IsChecked="{Binding Section3Bools[2][4].Val}"/>
+
+            <TextBlock Text="{Binding TextArray[34]}" Style="{StaticResource BlockText}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="7" />
+            <TextBox Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6" Text="{Binding TotalScores[2].Val, StringFormat=N0}" Style="{StaticResource DisplayBoxStyle}" IsEnabled="False"/>
+            <Rectangle Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" Fill="CornflowerBlue" />
+            <TextBlock Style="{StaticResource BlockText}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8" HorizontalAlignment="Center">COMMENTS</TextBlock>
+            <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8" Text="{Binding Comments[2]}" Style="{StaticResource EssayBoxStyle}"/>
+
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="8"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="0" Grid.RowSpan="2"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="1" Grid.RowSpan="2"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="3" Grid.Column="2" Grid.ColumnSpan="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="4"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="5"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="4" Grid.Column="7"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="4"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="5"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="5" Grid.Column="7"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="4"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="5"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="6" Grid.Column="7"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="3"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="4"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="5"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="7" Grid.Column="7"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="8"/>
+            <Border Style="{StaticResource GridBorderStyle}" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="8"/>
+
+        </Grid>
+
+    </StackPanel>
+</Page>

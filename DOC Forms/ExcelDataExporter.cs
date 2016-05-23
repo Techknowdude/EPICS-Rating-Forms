@@ -386,6 +386,130 @@ namespace DOC_Forms
         }
 
         /// <summary>
+        /// Page 3
+        /// </summary>
+        /// <param name="page"></param>
+        private static void ExportPage(Page3ViewModelAlternate page)
+        {
+            //TODO: add the alternate check box output
+            OutputBlackWhiteHeading(page.TextArray[0]);
+            OutputHeading3Text(page.TextArray[1], 0, 2);
+            OutputNormalText(page.CheckInTextInput[0], 2, 4);
+
+
+            // row data
+            var choices = new[] { "N/A", "0", "1", "2", "3", "4" };
+            for (int i = 7; i <= 9; i++)
+            {
+                OutputNormalText(page.TextArray[i], 0, 5);
+
+                for (int choice = 0; choice < choices.Length - 1; choice++)
+                {
+                    if (page.Section1Bools[i - 7][choice])
+                    {
+                        OutputNormalText(choices[choice + 1], 5, 1);
+                        break;
+                    }
+                }
+                ++_curRow;
+            }
+
+            //total
+            OutputHeading3Text(page.TextArray[10], 0, 5);
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, page.TotalScores[0].Val.ToString(), 5, 1);
+            ++_curRow;
+
+            //comments
+            OutputBlueHeading3("Comments", 0, _maxCol + 1);
+            ++_curRow;
+            OutputNormalText(page.Comments[0]);
+            ++_curRow;
+            ++_curRow;
+
+            // Section 2
+
+            OutputBlackWhiteHeading(page.TextArray[11]);
+            OutputHeading3Text(page.TextArray[12], 0, 1);
+            OutputNormalText(page.ReviewTextInput[0], 1, 2);
+            OutputHeading3Text(page.TextArray[13], 3, 1);
+            OutputNormalText(page.ReviewTextInput[1], 4, 2);
+
+
+            //rows
+            for (int i = 19; i <= 22; i++)
+            {
+                OutputNormalText(page.TextArray[i], 0, 5);
+
+                for (int choice = 0; choice < choices.Length; choice++)
+                {
+                    if (page.Section2Bools[i - 19][choice])
+                    {
+                        OutputNormalText(choices[choice], 5, 1);
+                        break;
+                    }
+                }
+                ++_curRow;
+            }
+
+            //total
+            OutputHeading3Text(page.TextArray[23], 0, 5);
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, page.TotalScores[1].Val.ToString(), 5, 1);
+            ++_curRow;
+
+            //comments
+            OutputBlueHeading3("Comments", 0, _maxCol + 1);
+            ++_curRow;
+            OutputNormalText(page.Comments[1]);
+            ++_curRow;
+            ++_curRow;
+
+            // section 3
+
+            OutputBlackWhiteHeading(page.TextArray[24]);
+            OutputHeading3Text(page.TextArray[26], 0, 2);
+            OutputNormalText(page.InterventionTextInput[0], 2, 3);
+            OutputHeading3Text(page.TextArray[27], 5, 2);
+            OutputNormalText(page.InterventionTextInput[1], 7, 3);
+            ++_curRow;
+            OutputHeading3Text(page.TextArray[28], 0, 2);
+            OutputNormalText(page.InterventionTextInput[2], 2, 3);
+            OutputHeading3Text(page.TextArray[29], 5, 2);
+            OutputNormalText(page.InterventionTextInput[3], 7, 3);
+            ++_curRow;
+            OutputHeading3Text(page.TextArray[30], 0, 2);
+            OutputNormalText(page.InterventionTextInput[4], 2, 3);
+
+            //rows
+            for (int i = 31; i <= 33; i++)
+            {
+                OutputNormalText(page.TextArray[i], 0, 5);
+
+                for (int choice = 1; choice < choices.Length; choice++)
+                {
+                    if (page.Section3Bools[i - 31][choice - 1])
+                    {
+                        OutputNormalText(choices[choice], 5, 1);
+                        break;
+                    }
+                }
+                ++_curRow;
+            }
+
+            //total
+            OutputHeading3Text(page.TextArray[34], 0, 5);
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, page.TotalScores[2].Val.ToString(), 5, 1);
+            ++_curRow;
+
+            //comments
+            OutputBlueHeading3("Comments", 0, _maxCol + 1);
+            ++_curRow;
+            OutputNormalText(page.Comments[2]);
+            ++_curRow;
+
+
+            ++_curRow;
+        }
+        /// <summary>
         /// Page 4
         /// </summary>
         /// <param name="page"></param>
@@ -743,6 +867,176 @@ namespace DOC_Forms
             ++_curRow;
 
             OutputBlueHeading3("Comments",0,_maxCol+1);
+            ++_curRow;
+            OutputNormalText(page.Comments[0]);
+            ++_curRow;
+            ++_curRow;
+
+            //Section 2
+
+            OutputBlackWhiteHeading(page.TextArray[1][0]);
+
+            OutputHeading3Text(page.TextArray[1][2], 0, 2);
+            OutputNormalText(page.TextInput[3], 2, 2);
+            ++_curRow;
+            OutputHeading3Text(page.TextArray[1][3], 0, 2);
+            OutputNormalText(page.TextInput[4], 2, 2);
+            ++_curRow;
+
+            //rows
+            for (int row = 0; row < 3; row++)
+            {
+                OutputHeading3Text(page.TextArray[1][4 + row], 0, 5);
+                for (int i = 0; i < 5; i++)
+                {
+                    if (page.BoolArray[1][0 + row][i])
+                    {
+                        OutputNormalText(i.ToString(), 5, 1);
+                    }
+                }
+                ++_curRow;
+            }
+
+            //total
+            OutputHeading3Text(page.TextArray[1][7], 0, 5);
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, page.TotalScores[1].Val.ToString(), 5, 1);
+            ++_curRow;
+
+            OutputBlueHeading3("Comments", 0, _maxCol + 1);
+            ++_curRow;
+            OutputNormalText(page.Comments[1]);
+            ++_curRow;
+            ++_curRow;
+
+            //Section 3
+            OutputBlackBlueHeading(page.TextArray[2][0]);
+            if (page.BoolArray[2][0][0])
+            {
+                OutputBlueHeading3("Missed opportunity", 0, _maxCol - _minCol + 1);
+            }
+            else
+            {
+                //rows
+                for (int i = 0; i < 3; i++)
+                {
+                    if (page.BoolArray[2][1][i])
+                    {
+                        OutputNormalText(page.TextArray[2][2 + i]);
+                        ++_curRow;
+                    }
+                }
+            }
+
+            OutputHeading3Text(page.TextArray[2][5], 0, 3);
+            OutputNormalText(page.TextInput[5], 3, _lastCol);
+            ++_curRow;
+
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, "Comments", 0, _lastCol);
+            ++_curRow;
+            OutputNormalText(page.Comments[2]);
+            ++_curRow;
+            ++_curRow;
+
+
+            //Section 4
+            OutputBlackBlueHeading(page.TextArray[3][0]);
+            if (page.BoolArray[3][0][0])
+            {
+                OutputBlueHeading3("Missed opportunity", 0, _maxCol - _minCol + 1);
+            }
+            else
+            {
+                //rows
+                for (int i = 0; i < 4; i++)
+                {
+                    if (page.BoolArray[3][1][i])
+                    {
+                        OutputNormalText(page.TextArray[3][2 + i]);
+                        ++_curRow;
+                    }
+                }
+            }
+
+            OutputHeading3Text(page.TextArray[3][6], 0, 3);
+            OutputNormalText(page.TextInput[6], 3, _lastCol);
+            ++_curRow;
+
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, "Comments", 0, _lastCol);
+            ++_curRow;
+            OutputNormalText(page.Comments[3]);
+            ++_curRow;
+            ++_curRow;
+
+            //Section 5
+            OutputBlackBlueHeading(page.TextArray[4][0]);
+            if (page.BoolArray[4][0][0])
+            {
+                OutputBlueHeading3("Missed opportunity", 0, _maxCol - _minCol + 1);
+            }
+            else
+            {
+                //rows
+                for (int i = 0; i < 4; i++)
+                {
+                    if (page.BoolArray[4][1][i])
+                    {
+                        OutputNormalText(page.TextArray[4][2 + i]);
+                        ++_curRow;
+                    }
+                }
+            }
+
+            OutputHeading3Text(page.TextArray[4][6], 0, 3);
+            OutputNormalText(page.TextInput[7], 3, _lastCol);
+            ++_curRow;
+
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, "Comments", 0, _lastCol);
+            ++_curRow;
+            OutputNormalText(page.Comments[4]);
+            ++_curRow;
+
+            ++_curRow;
+        }
+
+
+        /// <summary>
+        /// Page 6 export
+        /// </summary>
+        /// <param name="page"></param>
+        private static void ExportPage(Page6ViewModelAlternate page)
+        {
+            //TODO: add changes to the alternate export
+            OutputBlackWhiteHeading(page.TextArray[0][0]);
+            OutputHeading3Text(page.TextArray[0][1], 0, 2);
+            OutputNormalText(page.TextInput[0], 2, 2);
+            ++_curRow;
+            OutputHeading3Text(page.TextArray[0][2], 0, 2);
+            OutputNormalText(page.TextInput[1], 2, 2);
+            ++_curRow;
+            OutputHeading3Text(page.TextArray[0][3], 0, 2);
+            OutputNormalText(page.TextInput[2], 2, 4);
+            ++_curRow;
+
+            //rows
+            for (int row = 0; row < 2; row++)
+            {
+                OutputHeading3Text(page.TextArray[0][4 + row], 0, 5);
+                for (int i = 0; i < 5; i++)
+                {
+                    if (page.BoolArray[0][0 + row][i])
+                    {
+                        OutputNormalText(i.ToString(), 5, 1);
+                    }
+                }
+                ++_curRow;
+            }
+
+            //total
+            OutputHeading3Text(page.TextArray[0][6], 0, 5);
+            OutputColoredHeading3(XlRgbColor.rgbLimeGreen, page.TotalScores[0].Val.ToString(), 5, 1);
+            ++_curRow;
+
+            OutputBlueHeading3("Comments", 0, _maxCol + 1);
             ++_curRow;
             OutputNormalText(page.Comments[0]);
             ++_curRow;
