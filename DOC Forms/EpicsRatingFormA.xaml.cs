@@ -24,7 +24,6 @@ namespace DOC_Forms
         public ICommand SetPasswordCommand { get { return new DelegateCommand(SetPassword);} }
 
         private List<Page> Pages { get; set; }
-        private List<IPageInterface> PageInterfaces { get; set; }
         private int _currentPage = -1;
         private bool _isAlternate;
 
@@ -84,6 +83,7 @@ namespace DOC_Forms
 
         public EpicsRatingFormA(bool alternate = false)
         {
+            List<IPageInterface> pageInterfaces;
             _isAlternate = alternate;
             if (!alternate)
             {
@@ -96,7 +96,7 @@ namespace DOC_Forms
                 var p7 = new Page7();
 
                 Pages = new List<Page>() { p1, p2, p3, p4, p5, p6, p7 };
-                PageInterfaces = new List<IPageInterface>() { p1, p2, p3, p4, p5, p6, p7 };
+                pageInterfaces = new List<IPageInterface>() { p1, p2, p3, p4, p5, p6, p7 };
             }
             else
             {
@@ -109,10 +109,10 @@ namespace DOC_Forms
                 var p7 = new Page7();
 
                 Pages = new List<Page>() { p1, p2, p3, p4, p5, p6, p7 };
-                PageInterfaces = new List<IPageInterface>() { p1, p2, p3, p4, p5, p6, p7 };
+                pageInterfaces = new List<IPageInterface>() { p1, p2, p3, p4, p5, p6, p7 };
             }
 
-            logic = EpicsRatingFormLogic.Create(PageInterfaces, this);
+            logic = EpicsRatingFormLogic.Create(pageInterfaces, this);
             InitializeComponent();
             CurrentPage = 0;
         }
@@ -174,9 +174,9 @@ namespace DOC_Forms
                     // save the type of form
                     formatter.Serialize(stream,_isAlternate);
 
-                    foreach (var pageInterface in PageInterfaces)
+                    foreach (var pageInterface in logic.Pages)
                     {
-                        pageInterface.ViewModel.Save(stream,formatter);
+                        pageInterface.Save(stream,formatter);
                     }
                 }
                 MessageBox.Show("Saving complete.");
@@ -258,6 +258,7 @@ namespace DOC_Forms
                     logic.Pages[4] = ((IPageInterface) Pages[4]).ViewModel;
                     logic.Pages[5] = ((IPageInterface) Pages[5]).ViewModel;
                     logic.Pages[6] = ((IPageInterface) Pages[6]).ViewModel;
+
                 }
                 CurrentPage = _currentPage;
 
