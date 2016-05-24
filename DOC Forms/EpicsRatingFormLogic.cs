@@ -8,7 +8,6 @@ namespace DOC_Forms
     public class EpicsRatingFormLogic : IEpicForm
     {
         private List<IPageViewModel> _pages;
-        private EpicsRatingFormA _controlWindow;
 
         public List<IPageViewModel> Pages
         {
@@ -24,7 +23,7 @@ namespace DOC_Forms
         /// <returns></returns>
         public static EpicsRatingFormLogic Create(List<IPageInterface> pages, EpicsRatingFormA epicsRatingFormA)
         {
-            return new EpicsRatingFormLogic(pages,epicsRatingFormA);
+            return new EpicsRatingFormLogic(pages);
         }
 
         /// <summary>
@@ -32,10 +31,9 @@ namespace DOC_Forms
         /// </summary>
         /// <param name="pages"></param>
         /// <param name="epicsRatingFormA"></param>
-        private EpicsRatingFormLogic(List<IPageInterface> pages, EpicsRatingFormA epicsRatingFormA)
+        private EpicsRatingFormLogic(List<IPageInterface> pages)
         {
             _pages = new List<IPageViewModel>();
-            _controlWindow = epicsRatingFormA;
             for (int i = 0; i < pages.Count; ++i)
             {
                 _pages.Add(pages[i].ViewModel);
