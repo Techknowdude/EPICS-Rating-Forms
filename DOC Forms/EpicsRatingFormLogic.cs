@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
@@ -53,6 +54,11 @@ namespace DOC_Forms
         public IEnumerable GetPages()
         {
             return Pages;
+        }
+
+        public bool IsCompleted()
+        {
+            return Pages.All(page => page.PageComplete);
         }
     }
 }

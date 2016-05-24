@@ -1,13 +1,29 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using Microsoft.Office.Interop.Excel;
 
 namespace DOC_Forms
 {
     [Serializable]
     public abstract class IPageViewModel : ObservableObject
     {
+        private bool _pageComplete;
+
+        public bool PageComplete
+        {
+            get { return _pageComplete; }
+            internal set
+            {
+                _pageComplete = value;
+                RaisePropertyChangedEvent();
+            }
+        }
+
+        protected IPageViewModel()
+        {
+            PageComplete = false;
+        }
+
         /// <summary>
         /// Used to save a form as a file. May be used to save partial forms
         /// </summary>

@@ -30,7 +30,8 @@
             <TextBlock Grid.Row="1" Style="{StaticResource BlockHeading2}" HorizontalAlignment="Left" VerticalAlignment="Top">Skill Building or Problem Solving</TextBlock>
             <StackPanel Grid.Row="2" Margin="0,0,0,0" Orientation="Horizontal">
                 <TextBlock Style="{StaticResource BlockHeading3}" VerticalAlignment="Top">List:</TextBlock>
-                <ComboBox Margin="0,0,0,0" x:Name="CbbSkillBuilding" Width="300" VerticalContentAlignment="Center" SelectionChanged="CbbSkillBuilding_OnSelectionChanged" SelectedItem="{Binding SkillBuildingSkill}" VerticalAlignment="Center" MinWidth="250" HorizontalAlignment="Left" ItemsSource="{Binding Path=FiftySkills}"/>
+                <ComboBox Margin="0,0,0,0" x:Name="CbbSkillBuilding" Width="300" IsEditable="True" VerticalContentAlignment="Center" TextBoxBase.TextChanged="SkillComboBox_TextChanged" Text="{Binding SkillBuildingSkill}" VerticalAlignment="Center" MinWidth="250" HorizontalAlignment="Left" ItemsSource="{Binding Path=FiftySkills}">
+                </ComboBox>
             </StackPanel>
             <CheckBox Grid.Row="3" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O1.Val}" Content="{Binding OptionS1O1Text}" Style="{StaticResource OptionBoxStyle}"/>
             <CheckBox Grid.Row="4" HorizontalAlignment="Left" IsChecked="{Binding OptionS1O2.Val}" Content="{Binding OptionS1O2Text}" Style="{StaticResource OptionBoxStyle}"/>
@@ -74,7 +75,7 @@
             <TextBlock Grid.Row="1" Style="{StaticResource BlockHeading2}" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top">Carey Guide/Carey BIT</TextBlock>
             <StackPanel Grid.Row="2" Margin="0,0,0,0" Orientation="Horizontal">
                 <TextBlock Style="{StaticResource BlockHeading3}" VerticalAlignment="Top">List Carey Guide/BIT intervention:</TextBlock>
-                <ComboBox x:Name="CbbCarey" VerticalAlignment="Center" MinWidth="250" HorizontalAlignment="Stretch" SelectedItem="{Binding CareyText}" ItemsSource="{Binding Path=BlueRedGuides}"/>
+                <ComboBox x:Name="CbbCarey" IsEditable="True" VerticalAlignment="Center" MinWidth="250" HorizontalAlignment="Stretch" Text="{Binding CareyText}" ItemsSource="{Binding Path=BlueRedGuides}"/>
             </StackPanel>
             <CheckBox Grid.Row="3" IsChecked="{Binding OptionS2O1.Val}" Content="{Binding OptionS2O1Text}" Style="{StaticResource OptionBoxStyle}"/>
             <CheckBox Grid.Row="4" IsChecked="{Binding OptionS2O2.Val}" Content="{Binding OptionS2O2Text}" Style="{StaticResource OptionBoxStyle}"/>
@@ -152,7 +153,7 @@
             <TextBlock Style="{StaticResource BlockHeading2}" Grid.Row="1" FontWeight="Bold" Width="260" HorizontalAlignment="Left" VerticalAlignment="Top">Graduated Rehearsal</TextBlock>
             <StackPanel Grid.Row="2" Margin="0,0,0,0" Orientation="Horizontal">
                 <TextBlock Style="{StaticResource BlockHeading3}" HorizontalAlignment="Left" VerticalAlignment="Top">List intervention:</TextBlock>
-                <ComboBox x:Name="CbbGraduated" SelectedItem="{Binding GraduatedText}" ItemsSource="{Binding Path=FiftySkills}" VerticalAlignment="Top" MinWidth="250" Margin="0,4,0,0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
+                <ComboBox x:Name="CbbGraduated" Text="{Binding GraduatedText}" IsEditable="True" ItemsSource="{Binding Path=FiftySkills}" VerticalAlignment="Top" MinWidth="250" Margin="0,4,0,0" HorizontalAlignment="Stretch" VerticalContentAlignment="Center"/>
             </StackPanel>
 
             <CheckBox Grid.Row="3" VerticalAlignment="Center" IsChecked="{Binding OptionS4O1.Val}" Content="{Binding OptionS4O1Text}" Style="{StaticResource OptionBoxStyle}"/>

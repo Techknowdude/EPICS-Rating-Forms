@@ -72,10 +72,10 @@ namespace DOC_Forms
             {
                 if (value < Pages.Count && value >= 0)
                 {
+                    MainScrollViewer.ScrollToVerticalOffset(0);
                     PageLabel.Content = (value + 1).ToString();
                     PageFrame.Content = Pages[value];
                     _currentPage = value;
-                    MainScrollViewer.ScrollToVerticalOffset(0);
                     ToggleButtons();
                 }
             }
@@ -231,6 +231,7 @@ namespace DOC_Forms
 
         private void SaveMenuItem_Click(object sender, RoutedEventArgs e)
         {
+
             SaveFileDialog saveDialog = new SaveFileDialog();
             saveDialog.Title = "Save EPIC form";
             saveDialog.Filter = "EPIC forms (*.ef)|*.ef|All Files (*.*)|*.*";
@@ -344,11 +345,19 @@ namespace DOC_Forms
 
         private void ExcelMenuItem_OnClick(object sender, RoutedEventArgs e)
         {
+
+            if (!logic.IsCompleted())
+            {
+                if (MessageBox.Show("Some pages may not be completed. Export anyway?", "", MessageBoxButton.YesNo) !=
+                    MessageBoxResult.Yes)
+                    return;
+            }
+
             try
             {
                 ExcelDataExporter.ExportData(logic);
 
-                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -356,6 +365,14 @@ namespace DOC_Forms
         }
 
 
+        private void MainScrollViewer_OnScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            var scrollViewer = (ScrollViewer)sender;
+            if (Math.Abs(scrollViewer.VerticalOffset - scrollViewer.ScrollableHeight) < 0.001)
+            {
+                ((IPageInterface) Pages[CurrentPage]).ViewModel.PageComplete = true;
+            }
+        }
     }
 
 }

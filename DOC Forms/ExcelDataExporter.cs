@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Linq.Expressions;
-using System.Runtime.InteropServices;
 using System.Windows;
 using Microsoft.Office.Interop.Excel;
 using Microsoft.Win32;
-using Application = System.Windows.Application;
 using ExcelApplication = Microsoft.Office.Interop.Excel.Application;
-using Style = System.Windows.Style;
 
 namespace DOC_Forms
 {
@@ -40,7 +36,7 @@ namespace DOC_Forms
 
             _application = new ExcelApplication();
             _application.DisplayAlerts = false;
-            _application.Visible = false;
+            _application.Visible = true;
             _application.Workbooks.Add();
 
             _workbook = _application.ActiveWorkbook;
@@ -74,7 +70,7 @@ namespace DOC_Forms
         private static void ExportPage(Page1ViewModel page)
         {
             Range rng = GetRange(_minCol, _curRow, _maxCol, _curRow);
-            rng.Cells.Font.Size = 18;
+            rng.Cells.Font.Size = Heading1FontSize;
             rng.Cells.Font.Bold = true;
             rng.Merge();
             rng.Value = "EPICS CODING FORM";
@@ -270,7 +266,8 @@ namespace DOC_Forms
             OutputBlackWhiteHeading(page.TextArray[0]);
             OutputHeading3Text(page.TextArray[1], 0, 2);
             OutputNormalText(page.CheckInTextInput[0],2,4);
-            
+            ++_curRow;
+
 
             // row data
             var choices = new []{"N/A","0", "1", "2", "3", "4"};
@@ -306,9 +303,9 @@ namespace DOC_Forms
             OutputBlackWhiteHeading(page.TextArray[11]);
             OutputHeading3Text(page.TextArray[12], 0, 1);
             OutputNormalText(page.ReviewTextInput[0], 1, 2);
-            OutputHeading3Text(page.TextArray[13], 3, 1);
-            OutputNormalText(page.ReviewTextInput[1], 4, 2);
-            
+            OutputHeading3Text(page.TextArray[13], 3, 2);
+            OutputNormalText(page.ReviewTextInput[1], 5, 2);
+            ++_curRow;
 
             //rows
             for (int i = 19; i <= 22; i++)
@@ -342,14 +339,14 @@ namespace DOC_Forms
 
             OutputBlackWhiteHeading(page.TextArray[24]);
             OutputHeading3Text(page.TextArray[26], 0, 2);
-            OutputNormalText(page.InterventionTextInput[0], 2, 3);
-            OutputHeading3Text(page.TextArray[27], 5, 2);
-            OutputNormalText(page.InterventionTextInput[1], 7, 3);
+            OutputNormalText(page.InterventionTextInput[0], 2, 1);
+            OutputHeading3Text(page.TextArray[27], 4, 2);
+            OutputNormalText(page.InterventionTextInput[1], 6, 1); 
             ++_curRow;
             OutputHeading3Text(page.TextArray[28], 0, 2);
-            OutputNormalText(page.InterventionTextInput[2], 2, 3);
-            OutputHeading3Text(page.TextArray[29], 5, 2);
-            OutputNormalText(page.InterventionTextInput[3], 7, 3);
+            OutputNormalText(page.InterventionTextInput[2], 2, 2); 
+            OutputHeading3Text(page.TextArray[29], 4, 2); 
+            OutputNormalText(page.InterventionTextInput[3], 6, 1);
             ++_curRow;
             OutputHeading3Text(page.TextArray[30], 0, 2);
             OutputNormalText(page.InterventionTextInput[4], 2, 3);
@@ -391,7 +388,6 @@ namespace DOC_Forms
         /// <param name="page"></param>
         private static void ExportPage(Page3ViewModelAlternate page)
         {
-            //TODO: add the alternate check box output
             OutputBlackWhiteHeading(page.TextArray[0]);
             OutputHeading3Text(page.TextArray[1], 0, 2);
             OutputNormalText(page.CheckInTextInput[0], 2, 4);
@@ -408,10 +404,23 @@ namespace DOC_Forms
                     if (page.Section1Bools[i - 7][choice])
                     {
                         OutputNormalText(choices[choice + 1], 5, 1);
+                       
+
                         break;
                     }
                 }
                 ++_curRow;
+
+                // alt options text
+                int second = i - 7;
+                for (int first = 0; first < page.AlternateOptionBools[0][second].Length; first++)
+                {
+                    if (page.AlternateOptionBools[0][second][first])
+                    {
+                        OutputNormalText(page.AlternateText[0][second][first]);
+                        ++_curRow;
+                    }
+                }
             }
 
             //total
@@ -449,6 +458,17 @@ namespace DOC_Forms
                     }
                 }
                 ++_curRow;
+                // alt options text
+                int second = i - 19;
+                for (int first = 0; first < page.AlternateOptionBools[1][second].Length; first++)
+                {
+                    if (page.AlternateOptionBools[1][second][first])
+                    {
+                        OutputNormalText(page.AlternateText[1][second][first]);
+                        ++_curRow;
+                    }
+                }
+
             }
 
             //total
@@ -493,6 +513,17 @@ namespace DOC_Forms
                     }
                 }
                 ++_curRow;
+                // alt options text
+                int second = i - 31;
+                for (int first = 0; first < page.AlternateOptionBools[2][second].Length; first++)
+                {
+                    if (page.AlternateOptionBools[2][second][first])
+                    {
+                        OutputNormalText(page.AlternateText[2][second][first]);
+                        ++_curRow;
+                    }
+                }
+
             }
 
             //total
@@ -529,8 +560,7 @@ namespace DOC_Forms
             }
             if (page.SectionBools[0][2])
             {
-                OutputNormalText(page.TextArray[3], 0, _maxCol+1);
-                // extra stuff here
+                OutputNormalText(page.TextArray[3], 0, 5);
                 int col = 5;
                 for (int i = 0; i < 5; ++i)
                 {
@@ -672,6 +702,7 @@ namespace DOC_Forms
 
                 // Output selected skill
                 OutputHeading3Text(page.SkillBuildingSkill);
+                ++_curRow;
 
                 // List all checked items
                 if (page.OptionS1O1)
@@ -724,6 +755,7 @@ namespace DOC_Forms
 
                 // Output selected skill
                 OutputHeading3Text(page.CareyText);
+                ++_curRow;
 
                 // List all checked items
                 if (page.OptionS2O1)
@@ -766,6 +798,7 @@ namespace DOC_Forms
 
                 // Output selected skill
                 OutputHeading3Text(page.OtherInterventionText);
+                ++_curRow;
 
                 // List all checked items
                 if (page.OptionS3O1)
@@ -813,6 +846,7 @@ namespace DOC_Forms
 
                 // Output selected skill
                 OutputHeading3Text(page.GraduatedText);
+                ++_curRow;
 
                 // List all checked items
                 if (page.OptionS4O1)
@@ -838,10 +872,10 @@ namespace DOC_Forms
         {
             OutputBlackWhiteHeading(page.TextArray[0][0]);
             OutputHeading3Text(page.TextArray[0][1], 0, 2);
-            OutputNormalText(page.TextInput[0], 2, 2);
+            OutputNormalText(page.TextInput[0], 2, 1); 
             ++_curRow;
             OutputHeading3Text(page.TextArray[0][2], 0, 2);
-            OutputNormalText(page.TextInput[1], 2, 2);
+            OutputNormalText(page.TextInput[1], 2, 1); 
             ++_curRow;
             OutputHeading3Text(page.TextArray[0][3],0,2);
             OutputNormalText(page.TextInput[2],2,4);
@@ -877,10 +911,10 @@ namespace DOC_Forms
             OutputBlackWhiteHeading(page.TextArray[1][0]);
 
             OutputHeading3Text(page.TextArray[1][2], 0, 2);
-            OutputNormalText(page.TextInput[3], 2, 2);
+            OutputNormalText(page.TextInput[3], 2, 1);
             ++_curRow;
             OutputHeading3Text(page.TextArray[1][3], 0, 2);
-            OutputNormalText(page.TextInput[4], 2, 2);
+            OutputNormalText(page.TextInput[4], 2, 1);
             ++_curRow;
 
             //rows
@@ -913,6 +947,7 @@ namespace DOC_Forms
             if (page.BoolArray[2][0][0])
             {
                 OutputBlueHeading3("Missed opportunity", 0, _maxCol - _minCol + 1);
+                ++_curRow;
             }
             else
             {
@@ -943,6 +978,7 @@ namespace DOC_Forms
             if (page.BoolArray[3][0][0])
             {
                 OutputBlueHeading3("Missed opportunity", 0, _maxCol - _minCol + 1);
+                ++_curRow;
             }
             else
             {
@@ -1029,6 +1065,16 @@ namespace DOC_Forms
                     }
                 }
                 ++_curRow;
+                // alt options text
+                for (int index = 0; index < page.AlternateOptions[0].Length; index++)
+                {
+                    ObservableBool check = page.AlternateOptions[0][index];
+                    if (check.Val)
+                    {
+                        OutputNormalText(page.AlternateText [0][index]);
+                        ++_curRow;
+                    } 
+                }
             }
 
             //total
@@ -1067,6 +1113,16 @@ namespace DOC_Forms
                 ++_curRow;
             }
 
+            // alt options text
+            for (int index = 0; index < page.AlternateOptions[1].Length; index++)
+            {
+                ObservableBool check = page.AlternateOptions[1][index];
+                if (check.Val)
+                {
+                    OutputNormalText(page.AlternateText[1][index]);
+                    ++_curRow;
+                }
+            }
             //total
             OutputHeading3Text(page.TextArray[1][7], 0, 5);
             OutputColoredHeading3(XlRgbColor.rgbLimeGreen, page.TotalScores[1].Val.ToString(), 5, 1);

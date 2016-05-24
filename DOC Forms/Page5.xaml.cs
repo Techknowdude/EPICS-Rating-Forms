@@ -37,21 +37,10 @@ namespace DOC_Forms
         }
 
         public IPageViewModel ViewModel { get; set; }
-        
-        private void CbbSkillBuilding_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+
+        private void SkillComboBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            CbbGraduated.SelectedIndex = CbbSkillBuilding.SelectedIndex;
-            if (PageLogic != null) PageLogic.SkillBuildingSkill = CbbGraduated.SelectedValue.ToString();
+            CbbGraduated.Text = CbbSkillBuilding.Text;
         }
-
-        //private void CbbCarey_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    if (PageLogic != null) PageLogic.CareyText = CbbCarey.SelectedValue.ToString();
-        //}
-
-        //private void CbbGraduated_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
-        //{
-        //    if (PageLogic != null) PageLogic.GraduatedText = CbbGraduated.SelectedValue.ToString();
-        //}
     }
 }

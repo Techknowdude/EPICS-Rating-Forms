@@ -34,7 +34,7 @@
             </MenuItem>
 
         </Menu>
-        <ScrollViewer Grid.Row="1" Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,0,0">
+        <ScrollViewer Grid.Row="1" Name="MainScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Margin="0,0,0,0" ScrollChanged="MainScrollViewer_OnScrollChanged">
             <Frame x:Name="PageFrame" NavigationUIVisibility="Hidden"></Frame>
         </ScrollViewer>
         <Button Grid.Row="2" x:Name="PrevPageButton" Command="{Binding PrevPageCommand}" Margin="10,1,1,5" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Left" >Prev</Button>
